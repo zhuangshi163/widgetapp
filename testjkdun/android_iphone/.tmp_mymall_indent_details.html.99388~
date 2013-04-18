@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/h_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+<!-- 
+<div data-role="header" class="ui-header ui-bar-a ui-header-fixed ui-bar-glass " >
+<div  class="ui-btn  ui-btn-left  ui-btn-corner-all ui-shadow  ui-btn-c  ">  <span class="ui-btn-inner ui-btn-corner-all"> <span class="ui-btn-text">返回</span>  </span> <button class="ui-btn-hidden"></button> </div>
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+订单详情
+</h1> 
+</div>-->
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed  h_t_color ui_title" >
+<!-- <div onclick="uexWindow.close('-1');" class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span  id="btn_c" class="ui-btn-text">返回</span>  </span>  </div></div></div></div> -->
+<div onClick="uexWindow.evaluateScript('','0','uexWindow.close(\'-1\')')" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span id="btn_c" class="ui-btn-text">返回</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+我的订单
+</h1> 
+<!-- <div id="pay_id" style="display:block;" onclick="pay()" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"><div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">付款</span></span></div></div></div></div>  -->
+<!-- <div id="pay_id" onclick="pay()" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">付款</span> </span></div>-->
+ 
+	
+</div>
+
+<div id="page_1" class="ui-page ui-body-a ui-page-active" tabindex="0" style="background:#ffffff">
+<div class="ui-content ui-body-a ui-fixed-top h_cn_color">
+
+<div>
+<h3 style="color:#000;padding-top:0.5em;">订单状态</h3>
+<div class="ui-bar ui-bar-d ui-corner-all h-con-w">
+	订单号:<span id="orderNum"></span> <br/>
+	订单状态：<span id="orderSta"></span><br/>
+	付款状态：<span id="orderMoney"></span><br/>
+	配送状态：<span id="orderSend"></span><br/>
+</div>
+</div>
+
+<h3 style="color:#000;padding-top:0.5em;">订单信息</h3> 
+
+<div class="ui-bar ui-bar-d ui-corner-all h_cu_color ui-body_h">
+<div id="list_id">
+<!-- <li class=" ui-body-d   ui-li-has-thumb  ui-corner-all  ui-li-static  ui-li ui-corner-f ui-field-f" style="padding-left: 7.2em;"> -->
+<!--     <span  class="ui-li-thumb hx-im-w" style="background-image:url('css/res-apple/stor-pic.png');" > -->
+<!--     	<img alt="" src="css/res-apple/hover_bg.png"> -->
+<!--     </span> -->
+<!-- 	<h3 class="ui-li-heading">页面 </h3><br/><br/> -->
+<!-- 	<div style="font-weight: normal;">2.4英寸1600万色QVGA分辨（240×320像素）液晶显示屏</div> -->
+<!-- 	<div style="font-weight: normal;">数量：1</div> -->
+<!-- 	<div class="ui-grid-b ui-li-hs"> -->
+<!-- 		<div class="ui-block-a">诺基亚:<span>E66</span></div> -->
+<!-- 		<div class="ui-block-b">颜色:<span> 白色</span></div> -->
+<!-- 		<div class="ui-block-c">￥:<span>2988</span></div> -->
+<!-- 	</div>     -->
+<!-- 	<br/> -->
+<!-- 	<div class="ui-li-hs">   -->
+<!-- 	比市场价&nbsp;&nbsp;￥<span style="color:#f00;">2757.60</span>元<br/><br/> -->
+<!-- 	节省了&nbsp;&nbsp;&nbsp;&nbsp;￥<span style="color:#f00;">459.60元(17%)</span> -->
+<!-- 	</div> -->
+<!-- </li>  -->
+ 
+</div>
+
+<p style="color:#000;" class="title-hyc">配送方式：</p>
+<div id="ship5" style="display:block;" class="ui-radio ui-radio-hyc"><input type="radio" name="" class="ui-hide" checked="checked" id="radio-0-1" value=""><label onclick="zy_for(event);selectSend(1)" class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-btn-d-hyc"><label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">  <span class="ui-btn-text" id="psfs_"></span></span></label></div>
+<div id="ship3" style="display:none;" class="ui-radio ui-radio-hyc"><input type="radio" name="" class="ui-hide" checked="checked" id="radio-0-2" value=""><label onclick="zy_for(event);selectSend(2)" class="ui-btn ui-btn-icon-right  ui-btn-d ui-btn-d-hyc"><label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">  <span class="ui-btn-text">城际快递:10.0元 </span></span></label></div>
+<div id="ship6" style="display:none;" class="ui-radio ui-radio-hyc"><input type="radio" name="" class="ui-hide" checked="checked" id="radio-0-3" value=""><label onclick="zy_for(event);selectSend(3)" class="ui-btn ui-btn-icon-right ui-controlgroup-last ui-corner-bottom ui-btn-d ui-btn-d-hyc"><label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">  <span class="ui-btn-text">邮局平邮:3.5&nbsp;&nbsp;元 </span></span></label></div>
+<!-- 
+<li class=" ui-body-d     ui-corner-top  ui-li-static  ui-li  ui-corner-f ui-field-f">
+	<div class="ui-li-hs">
+		<div id="goodBox">商品包装 （免费额度 ￥800.00）</div><br/>
+		<div style="margin:0 0.2em; font-size: 0.9em;">
+			<span id="box_f" class="h-sp-c h-border-b" onclick="changStyle('box_f','box_s',false,0)">不要包装</span>￥0.0元
+			<span id="box_s" class="h-sp-c" onclick="changStyle('box_f','box_s',true,0)">精品包装</span><span id="boxMoney">￥5.0元</span>
+		</div><br/>
+		<div id="cardBox">祝福贺卡 （免费额度 ￥1000.00）</div><br/>
+		<div style="margin:0 0.2em; font-size: 0.9em;">
+			<span id="card_f" class="h-sp-c h-border-b" onclick="changStyle('card_f','card_s',false,1)">不要贺卡</span>￥0.0元
+			<span id="card_s" class="h-sp-c" onclick="changStyle('card_f','card_s',true,1)">精品贺卡</span><span id="cardMoney">￥5.0元</span>
+		</div><br/>
+		<textarea placeholder="贺卡祝福语..."  name="textarea-0" id="textareaCard" disabled=true class="ui-input-text ui-body-null ui-btn-corner-all ui-shadow-inset ui-btn-d"></textarea>
+	</div>	
+</li> -->
+<li class=" ui-body-d     ui-corner-bottom  ui-li-static  ui-li  ui-corner-f ui-field-f" style="border-bottom-width: 0px !important">
+	<div class="ui-li-hs" >
+		<!--<div>该订单完成后，您将获得 <span id="integral_id">2298</span> 积分</div><br/>-->
+		<div id="price_num"></div>
+		<div style="color:#f00;text-align: right;">应付款金额:&nbsp;&nbsp;  <span id="all_price"></span></div>
+	</div> 
+</li>
+</div>
+<br/>
+<div  class="ui-btn-center" tabindex="0"> 
+<!-- <div onclick="submit_order()" data-role="button" class=" ui-corner-all ui-btn  ui-btn-d   ui-shadow h-wei-s"> <span class="ui-btn-inner ui-corner-all"> <span class="ui-btn-text">提交订单</span> </span></div>  -->
+
+
+<h3 style="color:#000;">收获地址</h3>
+<!--<div onclick="modityAddress();" class="h-mod-st">修改</div>-->
+<div class="ui-bar ui-bar-d ui-corner-all h-con-w" id="address_id">
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/h_main.js"></script>
+<script type="text/javascript">
+	var all_money = 0;
+	var orderName = '';
+	/*付款*/
+	function pay(){
+		uexPay.pay(orderName, orderName, inBody, all_money);
+		//	uexPay.pay(number_, number_, number_, '0.01');
+	}
+	
+	/*取回数据并进行处理*/
+	function httpSuccess(opid,status,result){//status 状态 0 接收，1完成
+		if(status == 1){uexWindow.closeToast();
+			if(opid == 1){
+				result = result.replace(/\n/g,'<br>');
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var o = JSON.parse(res);
+				var goods_arr = o.goods_list;
+				
+				//商品
+				var list_str = "";
+				if(goods_arr && goods_arr.length > 0){
+					for(var n = 0; n < goods_arr.length; n++){
+						var good_obj = goods_arr[n];
+						list_str += '<li class=" ui-body-d   ui-li-has-thumb  ui-corner-all  ui-li-static  ui-li ui-corner-f ui-field-f" style="padding-left: 1em;padding-bottom: 0;">'+
+								'<h3 class="" style="line-height:1.1em;">'+good_obj.goods_name+' </h3>'+
+								'<div style="font-weight: normal;line-height:1.5em;">'+good_obj.goods_attr+'</div>'+
+								'<div class="accounts-ui">'+
+								'<div class="ui-grid-b ui-li-hs" style="float:right;margin-right:0.5em;">'+
+								'<div class="" style="">价格：<span>'+good_obj.goods_price+'</span></div>'+
+								'</div><div style="font-weight: normal;float:right;margin-right:1.5em;">数量：'+good_obj.goods_number+'</div>'+
+								'</div></li> ';
+					}
+					$id("list_id").innerHTML = list_str;
+					
+					//状态
+					var order_obj = o.order;
+					orderName = order_obj.order_sn;//订单号
+					all_money = order_obj.order_amount;//订单总价
+					$id("orderNum").innerHTML = order_obj.order_sn;
+					var ostr = "";
+					var os = order_obj.order_status;
+					switch(os){
+						case '0':ostr = "未确认";break;
+						case '1':ostr = "确认";break;
+						case '2':ostr = "已取消";break;
+						case '3':ostr = "无效";break;
+						case '4':ostr = "退款";break;
+						default:break;
+					}
+					/*if(os != 1){
+						$id("fk").style.display = "none";
+					}*/
+					$id("orderSta").innerHTML = ostr;
+					var mstr = "";
+					var ms = order_obj.pay_status;
+					switch(ms){
+						case '0':mstr = "未付款";
+					//	$id("pay_id").style.display = "block";
+						break;
+						case '1':mstr = "付款中";break;
+						case '2':mstr = "已付款";break;						
+						default:break;
+					}
+					$id("orderMoney").innerHTML = mstr;
+					var sstr = "";
+					var ss = order_obj.shipping_status;
+					switch(ss){
+						case '0':sstr = "未发货";break;
+						case '1':sstr = "已发货";break;
+						case '2':sstr = "已收货";break;	
+						case '4':sstr = "退货";break;						
+						default:break;
+					}
+					$id("orderSend").innerHTML = sstr;
+					
+					//配送方式
+					var pf = order_obj.shipping_id;		
+					/*switch(pf){
+						case '5':$id("ship5").style.display = 'block';break;
+						case '3':$id("ship3").style.display = 'block';break;
+						case '6':$id("ship6").style.display = 'block';break;						
+						default:break;
+					}*/
+					$id("psfs_").innerHTML = order_obj.shipping_name + ":" + order_obj.formated_shipping_fee;
+					
+					//价钱
+					$id("price_num").innerHTML = "总价："+order_obj.formated_goods_amount+" + 运费：<span id='send_id'>"+order_obj.formated_shipping_fee+"</span>";
+					$id("all_price").innerHTML = order_obj.formated_order_amount;
+					
+					//收货人信息
+					$id("address_id").innerHTML = "收货人："+order_obj.consignee+"<br/>详细地址："+
+					order_obj.country_name+'-'+order_obj.province_name+'-'+order_obj.city_name+'-'+order_obj.district_name+'-'+
+					order_obj.address+"<br/>联系电话："+order_obj.mobile;
+				}else{
+					uexWindow.alert("提示",o.status,"确定");
+				}
+			}else if(opid == 2){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+				var html = 'accountsState.html?parm='+encodeURI(res)
+				openNewWin('accountsState','2',html);
+			}
+		}
+		uexXmlHttpMgr.close(opid);
+	}
+	function paySuccess(status, des){
+		uexWindow.alert("提示",des,"确定");
+	}
+	//parseParam();
+	var indent_id = 0;
+	/*window.uexOnload = function(){
+		uexXmlHttpMgr.onData = httpSuccess;
+		var indent_detail_url = httpUrl+"user.php?jsoncallback=?&act=order_detail&order_id="+indent_id;
+		xmlHttp(1,indent_detail_url);
+		uexPay.onStatus = paySuccess;
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+	}*/
+	zy_fix("header","","",function(){
+		//获取参数
+		parseParam();
+		indent_id = params.orderId;
+		
+		uexXmlHttpMgr.onData = httpSuccess;
+		var indent_detail_url = httpUrl+"user.php?jsoncallback=?&act=order_detail&order_id="+indent_id;
+		//alert(indent_detail_url)
+		xmlHttp(1,indent_detail_url);
+		uexPay.onStatus = paySuccess;
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+	});
+	
+
+</script>
+</body>
+</html>

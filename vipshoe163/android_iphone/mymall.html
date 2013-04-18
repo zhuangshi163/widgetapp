@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css"> 
+	<link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+	<script>
+		function openage(page,url){
+			//uexWindow.open('windowname','0','uexFunction.html','2','','',0x0);
+			 uexWindow.open(page, '0', url, '2', '', '', 0x0);
+		}
+		function openNewWin(page,url,aid){
+			//uexWindow.open('windowname','0','uexFunction.html','2','','',0x0);
+			 uexWindow.open(page, '0', url, aid, '', '', 0x0);
+		}
+		
+	</script>
+</head>
+<body class="ui-mobile-viewport ui_body_d" >
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+		<strong>我的</strong>
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-right" onclick="uexWindow.evaluateScript('', '0','cancellation()')"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text" style="font-size: .8125em;">注销</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1>
+	<div onclick="uexWindow.evaluateScript('', '0','cancellation()')" id="zx" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">注销</span> </span></div> 
+	
+</div>
+
+<div id="page_2" class="ui-page-active ui_page_ddd" tabindex="0">
+	<div class="w_set">
+    	
+		<ul class=" ui_body_dd ui_fixed_bottom mymall_box_dwx ">
+			<li class="ui-bar-d ui-corner-top ui-btn-icon-right ui-li ui_body_b_dwx" id="zhxx" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" onclick="openage('mymall_userinfo','mymall_userinfo.html');" style="cursor: pointer;">
+				<div class="ui-btn-inner ui-li ui-btn-text">
+					<div class="ui-link-inherit">
+		  				<h3 class="ui-li-heading ui-li-heading-dwx margin-sy">账户信息</h3>
+		  			</div>
+		  			<span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span>
+		  		</div>
+		  	</li> 
+			<li class=" ui-bar-d ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx" id="dzgl" ontouchstart="t_m_start_top(this.id)" ontouchmove="t_m_move_top(this.id)" ontouchend="t_m_end_top(this.id)" onclick="openage('mymall_address_list','mymall_address_list.html');" style="cursor: pointer;">
+				<div class="ui-btn-inner ui-li ui-btn-text">
+					<div class="ui-link-inherit">
+		  				<h3 class="ui-li-heading ui-li-heading-dwx margin-sy">地址管理 </h3>
+		  			</div>
+		  			<span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span>
+		  		</div>
+		  	</li> 
+		  	<li class=" ui-bar-d ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx" id="wddd" ontouchstart="t_m_start_top(this.id)" ontouchmove="t_m_move_top(this.id)" ontouchend="t_m_end_top(this.id)" onclick="openage('mymall_indent','mymall_indent.html');" style="cursor: pointer;">
+				<div class="ui-btn-inner ui-li ui-btn-text">
+					<div class="ui-link-inherit">
+		  				<h3 class="ui-li-heading ui-li-heading-dwx margin-sy">我的订单</h3>
+		  			</div>
+		  			<span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span>
+		  		</div>
+		  	</li>
+		  	<li class=" ui-bar-d ui-corner-bottom ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx" id="wdsc" ontouchstart="t_m_start_down(this.id)" ontouchmove="t_m_move_down(this.id)" ontouchend="t_m_end_down(this.id)" onclick="openage('mymall_collectt','mymall_collectt.html');" style="cursor: pointer;">
+				<div class="ui-btn-inner ui-li ui-btn-text">
+					<div class="ui-link-inherit">
+		  				<h3 class="ui-li-heading ui-li-heading-dwx margin-sy">我的收藏 </h3>
+		  			</div>
+		  			<span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span>
+		  		</div>
+		  	</li>
+			<!--<li class=" ui-bar-d ui-corner-bottom ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx" id="wdly" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" onclick="openage('mymall_message','mymall_message.html');" style="cursor: pointer;">
+				<div class="ui-btn-inner ui-li ui-btn-text">
+					<div class="ui-link-inherit">
+		  				<h3 class="ui-li-heading ui-li-heading-dwx">我的留言 </h3>
+		  			</div>
+		  			<span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span>
+		  		</div>
+		  	</li>-->
+		</ul>
+	</div>
+</div>
+<div id="footer" data-role="footer" class="ui-footer ui-bar-a ui-footer-fixed">
+	<div class="ui-navbar ui-bar-a ui-nav-iphone ui_nav_iphone ui_grid_a">
+		<ul class="ui-grid-a">
+			<li class="ui-block-a ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToIndex()');"><input type="radio" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+			<li class="ui-block-b ui_block_a" onclick="uexWindow.open('sort', '0', 'sort.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">分类</span></span></label></li>
+			<li class="ui-block-c ui_block_a" onclick="uexWindow.evaluateScript('', '0','openNewWin_t(\'shoppingCar\',\'shoppingCar.html\',0,\'4\')');"><input type="radio" name="radiof1" id="radio-f1c" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-shop"></span><span class="ui-btn-inner"><span class="ui-btn-text">购物车</span></span></label></li>
+			<li class="ui-block-d ui_block_a" onclick="uexWindow.evaluateScript('', '0','window.location.reload()');"><input type="radio" checked="checked" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的</span></span></label></li>
+			<li class="ui-block-e ui_block_a" onclick="uexWindow.open('w_more', '0', 'w_more.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1e" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">更多</span></span></label></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript">
+function openNewWin_t(winName,htmlUrl,aid,isRe){
+	uexWindow.evaluateScript(winName, '0','getGoodsList()');
+	uexWindow.open(winName, '0', htmlUrl, aid, '', '', '0');
+}
+	var userName = '';
+	var password = '';
+	
+	function goToIndex(){
+		uexWindow.evaluateScript("root", '0','isFile_()');
+		uexWindow.open('root', '0', 'index.html', '0', '', '', '0');
+	}
+	
+	//注销用户
+	function cancellation(){
+		var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=logout';
+		//uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('1', "GET", url, "");
+        uexXmlHttpMgr.send('1');
+	}
+	zy_fix('header','footer','',function(){
+		//弹动效果
+		uexWindow.setBounce("1");
+		uexWindow.showBounceView("0","#F2F2F2","0");
+		uexWindow.showBounceView("1","#F2F2F2","0");
+		
+		uexWindow.setReportKey('0', '1');
+		uexWindow.onKeyPressed = function(keyCode){
+			uexWidget.finishWidget('');
+		}
+        uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+            uexWindow.alert("提示",opCode+":"+errorCode+":"+errorInfo,"确定");
+        }
+        uexXmlHttpMgr.onData = function(opCode, type, result){
+        	if (type == 1) {
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var o_ = JSON.parse(res);
+				if(o_.pluginstatus){
+					uexXmlHttpMgr.close(opCode);
+					uexWindow.closeToast();
+					uexWindow.alert("提示",o_.pluginstatus,"确定");
+					return;
+				}
+                if (opCode == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					if (s.status == "注销成功") {
+						deleteFileByPath("wgt://data/uesrInfo.txt");//删除本地文件
+						goToIndex();
+					}else {
+						uexWindow.alert("提示",s.status,"确定");
+					}
+				}
+            }
+        }
+		uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+			if (data == 0) {
+				openLogin();//跳转到登录页
+			}
+        }
+		isFileExistByPath("wgt://data/uesrInfo.txt");
+    });
+	//删除本地文件
+	function deleteFileByPath(path){
+		uexFileMgr.deleteFileByPath(path);
+	}
+	 //判断文件是否存在
+    function isFileExistByPath(path){
+        uexFileMgr.isFileExistByPath(path);
+    }
+	//跳转到登录页面
+	function openLogin(id,name){
+		var html_url = 'login.html?name=mymall';
+		openNewWin("login",html_url,2);
+	}
+	//回调函数
+    function loginSuccess(){
+        setTimeout(function(){
+        }, 500);
+    }
+	//点击列表事件
+	var t_m = false, t_start_x, t_end_x;
+	function t_m_start(id){
+		document.getElementById(id).className = 'ui-bar-d ui-corner-top ui-btn-icon-right ui-li ui_body_b_dwx s_li_click_sy';
+	    t_m = true;
+	    t_start_x = e.touches[0].pageX;
+	}
+	function t_m_move(id){
+		document.getElementByIdid(id).className = 'ui-bar-d ui-corner-top ui-btn-icon-right ui-li ui_body_b_dwx';
+	}
+	
+	
+	function t_m_end(id){
+		document.getElementById(id).className = 'ui-bar-d ui-corner-top ui-btn-icon-right ui-li ui_body_b_dwx';
+	    t_m = false;
+	}
+	//点击列表事件
+	var t_m_top = false, t_start_x_top, t_end_x_top;
+	function t_m_start_top(id){
+		document.getElementById(id).className = 'ui-bar-d ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx s_li_click_sy';
+	    t_m_top = true;
+	    t_start_x_top = e.touches[0].pageX;
+	}
+	function t_m_move_top(id){
+		document.getElementByIdid(id).className = 'ui-bar-d ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx';
+	}
+	
+	
+	function t_m_end_top(id){
+		document.getElementById(id).className = 'ui-bar-d ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx';
+	    t_m_top = false;
+	}
+	//点击列表事件
+	var t_m_down = false, t_start_x_down, t_end_x_down;
+	function t_m_start_down(id){
+		document.getElementById(id).className = 'ui-bar-d ui-corner-bottom ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx s_li_click_sy';
+	    t_m_down = true;
+	    t_start_x_down = e.touches[0].pageX;
+	}
+	function t_m_move_down(id){
+		document.getElementByIdid(id).className = 'ui-bar-d ui-corner-bottom ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx';
+	}
+	
+	function t_m_end_down(id){
+		document.getElementById(id).className = 'ui-bar-d ui-corner-bottom ui-btn-icon-right ui-li ui_body_b_dwx ui_li_ddwx';
+	    t_m_down = false;
+	}
+</script>
+</body>
+
+
+</html>

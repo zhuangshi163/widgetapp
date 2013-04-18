@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-media.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-apple.css"> 
+        <link rel="stylesheet" href="css/h_style.css">
+        <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+        </script>
+        <script src="js/zy_control.js">
+        </script>
+        <script src="js/zy_tmpl.js">
+        </script>
+         <script type="text/javascript" src="js/config.js"></script>
+    </head>
+    <body class="ui-mobile-viewport ui_body_d">
+        <div data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title ui-title_top">
+        <div onclick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+        
+            <h1 class="ui-title title_top" tabindex="0" role="heading" aria-level="1">
+<!--                 <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text">返回</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+                修改信息
+            </h1>
+        </div>
+        <div id="page_7" class="ui-page-active ui_page_ddd" tabindex="0">
+			<div class="w_set">
+		    	<!-- <div class="ui_body_dwx"></div> -->
+	            <ul class="  ui_body_dd ui_fixed_top ui_fixed_bottom ui_fixed_bottom_dwx">
+	                <li class="li_title" style="display:none;">
+	                    <em id="user_name">帐户名称:12345678</em>
+	                </li> 
+	                <li class=" ui-body-b ui-corner-top ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text">
+	                            出生日期:
+	                        </label>
+	                        <div class="ui-select ui-select-dwx">
+	                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-d ui-btn-dwx-margin">
+	                                <span class="ui-btn-inner ui-btn-corner-all ui-btn-inner-dwx-right"><span id="year_" class="ui-btn-text">item1</span>
+	                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow ui-li-link-alt-dwx">
+	                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow  ui-icon-dwx-img"></span>
+	                                    </div>
+	                                </span>
+	                                <select name="select-choice-1" selectedIndex="0" id="select-year" onchange="zy_slectmenu(this.id)">
+	                                    <option value="item1">item1</option>
+	                                    <option value="item2">item2</option>
+	                                    <option value="item3">item3</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="ui-select ui-select-dwx">
+	                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-d ui-btn-dwx-margin">
+	                                <span class="ui-btn-inner ui-btn-corner-all ui-btn-inner-dwx-right"><span id="month_" class="ui-btn-text">item1</span>
+	                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow ui-li-link-alt-dwx">
+	                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow ui-icon-dwx-img"></span>
+	                                    </div>
+	                                </span>
+	                                <select name="select-choice-1" selectedIndex="0" id="select-month" onchange="zy_slectmenu(this.id)">
+	                                    <option value="item1">item1</option>
+	                                    <option value="item2">item2</option>
+	                                    <option value="item3">item3</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="ui-select ui-select-dwx">
+	                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-d ui-btn-dwx-margin">
+	                                <span class="ui-btn-inner ui-btn-corner-all ui-btn-inner-dwx-right"><span id="day_" class="ui-btn-text">item1</span>
+	                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow ui-li-link-alt-dwx">
+	                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow  ui-icon-dwx-img"></span>
+	                                    </div>
+	                                </span>
+	                                <select name="select-choice-1" selectedIndex="0" id="select-day" onchange="zy_slectmenu(this.id)">
+	                                    <option value="item1">item1</option>
+	                                    <option value="item2">item2</option>
+	                                    <option value="item3">item3</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx ui_body_b_dwx ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text float_d">
+	                            性别:
+	                        </label>
+	                        <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui_controlgroup_dwx">
+	                            <div class="label_font_top float_d">
+	                                <input type="radio" name="radio-6" class="ui-hide float_d" id="sex_2" value="" />
+	                                <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui_btn_dw float_d">
+	                                    <label class="ui-icon ui-icon-radio ui-icon-shadow ui_icon_dw">
+	                                    </label>
+	                                    <span class="label_font_select"><span class="ui-btn-text">女</span></span>
+	                                </label>
+	                            </div>
+	                            <div class="label_font_top float_d">
+	                                <input type="radio" name="radio-6" class="ui-hide float_d" id="sex_1" value="" />
+	                                <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui_btn_dw float_d">
+	                                    <label class="ui-icon ui-icon-radio ui-icon-shadow ui_icon_dw">
+	                                    </label>
+	                                    <span class="label_font_select"><span class="ui-btn-text">男</span></span>
+	                                </label>
+	                            </div>
+	                            <div class="label_font_top float_d">
+	                                <input type="radio" name="radio-6" class="ui-hide float_d" id="sex_0" value="" />
+	                                <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui_btn_dw float_d">
+	                                    <label class="ui-icon ui-icon-radio ui-icon-shadow ui_icon_dw">
+	                                    </label>
+	                                    <span class="label_font_select"><span class="ui-btn-text">保密</span></span>
+	                                </label>
+	                            </div>
+	                        </fieldset>
+	                        <div style="clear:both;">
+	                        </div>
+	                    </div>
+	                    <div style="clear:both;">
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text">
+	                            邮箱:
+	                        </label>
+	                        <input placeholder="" name="text-0" id="email" type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text">
+	                            MSN:
+	                        </label>
+	                        <input placeholder="" name="text-0" id="msn" type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text">
+	                            Q Q:
+	                        </label>
+	                        <input placeholder="" name="text-0" id="qq" type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text">
+	                            办公电话:
+	                        </label>
+	                        <input placeholder="" name="text-0" id="office_phone" type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-corner-bottom ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text">
+	                            手机:
+	                        </label>
+	                        <input placeholder="" name="text-0" id="mobile_phone" type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class="li_button">
+	                	<div class="ui-btn-center" tabindex="0">
+			                <div data-role="button" onclick="edit_userInfo()" class=" ui-btn-corner-all ui-btn  ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+			                    <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">确认修改</span></span>
+			                </div>
+			            </div>
+	                </li>
+	                <!-- <li class="li_title">
+	                    <em>修改账户密码</em>
+	                </li>
+	                <li class=" ui-body-b ui-corner-top ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text ui_input_text">
+	                            旧密码:
+	                        </label>
+	                        <input placeholder="请输入旧密码" name="text-0" id="pwd" type="password" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text"/>
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text ui_input_text">
+	                            　新密码:
+	                        </label>
+	                        <input placeholder="请输入新密码" name="text-0" id="pwd_new" type="password" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class=" ui-body-b ui-corner-bottom ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+	                    <div class="ui-has-label">
+	                        <label for="text-0" class="ui-input-text ui_input_text ui_input_text">
+	                            确认新密码:
+	                        </label>
+	                        <input placeholder="请输入确认密码" name="text-0" id="pwd_new_ok" type="password" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text" />
+	                    </div>
+	                </li>
+	                <li class="li_button">
+	                	<div class="ui-btn-center ui_btn_center_dwx" tabindex="0">
+			                <div data-role="button" onclick="edit_password()" class=" ui-btn-corner-all ui-btn  ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+			                    <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">确认修改</span></span>
+			                </div>
+			            </div>
+	                </li> -->
+	            </ul>
+        	</div>
+        </div>
+        <script type="text/javascript" src="js/main.js">
+        </script>
+        <script type="text/javascript" src="js/zy_json.js">
+        </script>
+        <script type="text/javascript">
+            //获取参数
+            parseParam();
+            var user_name = "";//用户名
+            var birth_date = "";//出生日期
+            var sex = "";//性别
+            var email = "";//电子邮箱
+            var msn = "";//msn
+            var qq = "";//qq
+            var office_phone = "";//办公电话
+            var mobile_phone = "";//手机
+            
+			var year = "";
+			var month = "";
+			var day = "";
+			
+            //初始化用户信息
+            function init_userInfo(){
+				initYear();//初始化出生日期（年）
+                $id("user_name").innerHTML = "账户名称：" + user_name;//用户
+                //$id("birth_date").value = birth_date;//出生日期=
+				var birth_date1 = birth_date;
+				var date_ = birth_date1.split("-");
+				year = date_[0];
+				month = date_[1];
+				day = date_[2];
+				$id("year_").innerHTML = year;
+				$id("month_").innerHTML = month;
+				$id("day_").innerHTML = day;
+                $id("email").value = email;//电子邮箱
+                $id("msn").value = msn;//msn
+                $id("qq").value = qq;//qq
+                $id("office_phone").value = office_phone;//办公电话
+                $id("mobile_phone").value = mobile_phone;//手机
+                if (sex == "男") {
+                    $id("sex_1").checked = "checked";
+                }
+                else 
+                    if (sex == "女") {
+                        $id("sex_2").checked = "checked";
+                    }
+                    else 
+                        if (sex == "保密") {
+                            $id("sex_0").checked = "checked";
+                        }
+            }
+            
+            //修改用户信息
+            function edit_userInfo(){
+                var email = $id("email").value;//电子邮箱
+                var msn = $id("msn").value;//msn
+                var qq = $id("qq").value;//qq
+                var office_phone = $id("office_phone").value;//办公电话
+                var mobile_phone = $id("mobile_phone").value;//手机
+                var year_ = $id("year_").innerHTML;
+				var month_ = $id("month_").innerHTML;
+				var day_ = $id("day_").innerHTML;
+                var sex_ = '';
+                if($id("sex_1").checked == true){
+					sex_ = 1;
+				}else if($id("sex_2").checked == true){
+					sex_ = 2;
+				}else if($id("sex_0").checked == true){
+					sex_ = 0;
+				}
+				if (!isValidation()) {
+					
+				}else{
+					var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=act_edit_profile&birthdayYear=' + year_ + '&birthdayMonth=' + month_ + '&birthdayDay=' + day_ + '&email=' + email + '&extend_field1=' + msn + '&extend_field2=' + qq + '&extend_field3=' + office_phone + '&extend_field5=' + mobile_phone + '&sex=' + sex_;
+					//uexWindow.toast("1","5","加载中...","0");
+					uexXmlHttpMgr.open('1', "GET", url, "");
+					uexXmlHttpMgr.send('1');
+				}
+            }
+			
+			//修改密码
+			function edit_password(){
+				var password = $id("pwd").value;
+				var password_new = $id("pwd_new").value;
+				var password_new_ok = $id("pwd_new_ok").value;
+				
+				if (!isValidationPwd(password,password_new,password_new_ok)) {
+				}else {
+					var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=act_edit_password&old_password=' + password + '&new_password=' + password_new;
+					//uexWindow.toast("1","5","加载中...","0");
+					uexXmlHttpMgr.open('2', "GET", url, "");
+					uexXmlHttpMgr.send('2');
+				}
+			}
+			
+			//初始化出生日期（年）
+			function initYear(){
+				var year_list = '';
+				for(var i=0;i<62;i++){
+					year_list += '<option value="'+(1952+i)+'">'+(1952+i)+'</option>';
+				}
+				$id("select-year").innerHTML = year_list;
+				initMonth(); //初始化出生日期（月）
+			}
+            //初始化出生日期（月）
+			function initMonth(){
+				var month_list = '';
+				for(var i=0;i<12;i++){
+					month_list += '<option value="'+(i+1)+'">'+(i+1)+'</option>';
+				}
+				$id("select-month").innerHTML = month_list;
+				initDay();//初始化出生日期（日）
+			}
+			//初始化出生日期（日）
+			function initDay(){
+				var day_list = '';
+				for(var i=0;i<31;i++){
+					day_list += '<option value="'+(i+1)+'">'+(i+1)+'</option>';
+				}
+				$id("select-day").innerHTML = day_list;
+			}
+			
+			//验证
+			function isValidation(){
+				var email = $id("email").value;//电子邮箱
+                var msn = $id("msn").value;//msn
+                var qq = $id("qq").value;//qq
+                var office_phone = $id("office_phone").value;//办公电话
+                var mobile_phone = $id("mobile_phone").value;//手机
+                
+				if(email == ""){
+					uexWindow.alert("提示","请输入电子邮箱","确定");
+					return false;
+				}else{
+					if (!/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/.test(email)) {
+						uexWindow.alert("提示","电子邮箱 格式不正确！","确定");
+						return false;
+					}
+				}
+				if(msn == ""){
+					uexWindow.alert("提示","请输入msn","确定");
+					return false;
+				}else{
+					if (!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/.test(msn)) {
+						uexWindow.alert("提示","msn地址不正确！","确定");
+						return false;
+					}
+				}
+				if(qq == ""){
+					uexWindow.alert("提示","请输入qq号码","确定");
+					return false;
+				}else{
+					if(!/^\d+$/.test(qq)){
+						uexWindow.alert("提示","qq号码不正确！","确定");
+						return false;
+					}
+				}
+				if(office_phone == ""){
+					uexWindow.alert("提示","请输入办公电话","确定");
+					return false;
+				}else{
+					if (!/^\d{7,8}$/.test(office_phone) && !/^(\d{3,4})+-(\d{7,8}$)+/.test(office_phone)) {
+						uexWindow.alert("提示","电话 格式不正确","确定");
+						return false;
+					}
+				}
+				if(mobile_phone == ""){
+					uexWindow.alert("提示","请输入手机号码","确定");
+					return false;
+				}else{
+					if (!/^0*(1(3|8|5))\d{9}$/.test(mobile_phone)) {
+						uexWindow.alert("提示","手机格式不正确！","确定");
+						return false;
+					}
+				}
+				return true;
+			}
+			//验证密码
+			function isValidationPwd(password,password_new,password_new_ok){
+				if(password == ""){
+					uexWindow.alert("提示","密码不能为空","确定");
+					return;
+				}
+				if(password_new == ""){
+					uexWindow.alert("提示","请输入新密码","确定");
+					return;
+				}
+				if(password_new_ok == ""){
+					uexWindow.alert("提示","确认密码不能为空","确定");
+					return;
+				}else if(password_new != password_new_ok){
+					uexWindow.alert("提示","两次输入的密码不一致，请重新输入","确定");
+					return;
+				}
+				return true
+			}
+            window.uexOnload = function(){
+				//获取参数
+	            parseParam();
+	            user_name = decodeURIComponent(params.user_name);//用户名
+	            birth_date = decodeURIComponent(params.birth_date);//出生日期
+	            sex = decodeURIComponent(params.sex);//性别
+	            email = decodeURIComponent(params.email);//电子邮箱
+	            msn = decodeURIComponent(params.msn);//msn
+	            qq = params.qq;//qq
+	            office_phone = params.office_phone;//办公电话
+	            mobile_phone = params.mobile_phone;//手机
+            
+                uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+					uexWindow.alert("提示",opCode+":"+errorCode+":"+errorInfo,"确定");
+                }
+                uexXmlHttpMgr.onData = function(opCode, type, result){
+                    if (type == 1) {
+						if (opCode == 1) {
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							if(s.status == "*邮件地址不合法"){
+								uexWindow.alert("提示","邮件地址不合法","确定");
+							}else if(s.status == "- MSN地址不是一个有效的邮件地址"){
+								uexWindow.alert("提示","MSN地址不合法","确定");
+							}else if(s.status == "- QQ号码不是一个有效的号码"){
+								uexWindow.alert("提示","QQ号码不合法","确定");
+							}else if(s.status == "办公电话不是一个有郊号码"){
+								uexWindow.alert("提示","办公电话号码不合法","确定");
+							}else if(s.status == "- 手机号码不是一个有效号码"){
+								uexWindow.alert("提示","手机号码不合法","确定");
+							}else if(s.status == "- 此邮箱已存在"){
+								uexWindow.alert("提示","此邮箱已存在","确定");
+							}else if(s.status == "您的个人资料已经成功修改"){
+								uexWindow.alert("提示","修改成功","确定");
+								uexWindow.evaluateScript('mymall_userinfo', '0','getUserInfo()');
+								uexWindow.close('-1');
+							}else if(s.status == "修改个人资料操作失败"){
+								uexWindow.alert("提示","修改失败","确定");
+							}
+							
+						}else if(opCode == 2){
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							
+							if(s.status == "修改密码失败，密码输入不正确请再次尝试"){
+								uexWindow.alert("提示","修改失败","确定");
+							}else if(s.status == "修改密码成功，您的密码已经更新时刻保护账号安全"){
+								uexWindow.alert("提示","修改成功","确定");
+								uexWindow.evaluateScript('mymall_userinfo', '0','getUserInfo()');
+								uexWindow.close('-1');
+							}else{
+								uexWindow.alert("提示",s.status,"确定");
+							}
+						}
+					}
+                }
+                init_userInfo();//初始化用户信息
+            }
+			//点击列表事件
+			var t_m = false, t_start_x, t_end_x;
+			function t_m_start(id){
+				document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+			    t_m = true;
+			    t_start_x = e.touches[0].pageX;
+			}
+			function t_m_move(id){
+				document.getElementByIdid(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+			}
+			
+		    function t_m_end(id){
+				document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+			    t_m = false;
+			} 
+        </script>
+    </body>
+    <script>
+        zy_init();
+    </script>
+</html>

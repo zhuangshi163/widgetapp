@@ -1,0 +1,405 @@
+body,p,div,ul,ol,li,dl,dt,dd,span,var,em,a,img,strong,table,td,tr,h2,h3,h4,h5,input{
+	font-family: Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	font-family:΢���ź�;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a,img{border:none;}
+ul,ol{list-style-type:none;}
+.clear{height:0;clear:both;}
+a{text-decoration:none;}
+var,em{font-style:normal;font-weight:noraml;}
+
+
+.ui-body-d .font-color{
+	color:#fff;
+	}
+.cc{
+	padding-bottom: 0em;
+	padding-left: 0;
+	padding-right: 0;
+	background:none;
+}
+.dwx_padding {
+	padding-left: 0;
+	padding-right: 0;
+	background:none;
+}
+.bb{margin: 0;}
+.aa{width:33.33%}
+.s{padding: .6em 0;}
+.ui-body-a .ui-link-inherit{color: black;}
+.ui-content .a{margin: 0px 0px 0 0px;}
+#wrapper { width:100%;overflow:auto; z-index:4; top:6.2em;  bottom:0px; position:absolute;  }
+#wrapper1 { width:100%;overflow:auto; z-index:4; top:2.7em;  bottom:0px; position:absolute;  }
+.ui-grid-a .ui_block_a{
+	width: 20%;
+}
+.ui_grid_a {
+	border: 1px solid #424242;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px black;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#2d2d2e), to(#000000), color-stop(50%, #171717),color-stop(51%, #020202));
+}
+  .ui_nav_iphone input[type="radio"]:checked + label {
+	background: url("res-apple/hover_bg.png") no-repeat !important;
+	border-radius: 0;
+	border: 0px;
+	-webkit-background-size: 100% auto;
+}
+/* .ui_title {
+	border: none;
+	border-bottom:1px #000 solid;
+	border-top:1px black solid;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#929292), to(#151515), color-stop(50%, #565656),color-stop(51%, #2b2b2b));
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px black;
+ } */
+
+/* .ui_body_d { */
+/* 	border: none; */
+/* 	color: #fff; */
+/* 	text-shadow: 0 0 0 0; */
+/* 	background: url("res-apple/back.png") repeat !important; */
+/* } */
+.ui_body_d {
+	border: none;
+	color: #fff;
+	text-shadow: 0 0 0 0;
+	background: url("res-apple/my_bg.png") repeat !important;
+}
+.ui_body_a_dwx {
+	border: none;
+	background: none;
+	color: white;
+	text-shadow: 0 1px 0 black;
+	font-weight: normal;
+	background-image: none;
+}
+
+
+
+.ui-li-thumb1{top:0.6em; left: 0.4em;width:63px;height:63px;}
+.ui-li-thumb2{height: 22%; width: 6em;}
+.ui-li-thumb3{width: 5em;display: -webkit-box;-webkit-box-align: center;-webkit-box-pack: center;border-image: initial;-webkit-box-orient:horizontal;}
+.ui-li-thumb4{
+	width: 5em;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	border-image: initial;
+	-webkit-box-orient:horizontal;
+	visibility: hidden;
+}
+.ui-li.sort-li{padding-left:5.8em;}
+
+.ui-li-has-thumb .ui-btn-inner div.ui-li-font{padding-left:1.2em;}
+.ui-btn-up-a, .ui-li-font-color {
+border: 1px solid #8C8C8C;
+background: #fff;
+font-weight: bold;
+color: black;
+text-shadow: none ;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),to(#fff) );
+background-image: -webkit-linear-gradient(top, #fff, #fff);
+background-image: linear-gradient(top, #fff, #fff);
+}
+.ui-li-font-color1 {
+border: 1px solid #8C8C8C;
+background: #fff;
+font-weight: bold;
+color: black;
+text-shadow: none ;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),to(#fff) );
+background-image: -webkit-linear-gradient(top, #fff, #fff);
+background-image: linear-gradient(top, #fff, #fff);
+}
+.ui-body-d .li-font-color {
+color: #404040;
+}
+
+.div-center{text-align:center;}
+.div-center img{margin:3em 0 1.5em 0;}
+
+.ui-body-screening {
+border: none;
+background: #EEE;
+color: #333;
+text-shadow: 0 1px 0 black;
+font-weight: normal;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#EEE),
+ to(#EEE) );
+background-image: -webkit-linear-gradient(top, #EEE, #EEE);
+background-image: linear-gradient(top, #EEE, #EEE);
+}
+.ui-content .ui-screeing {
+margin: 0;
+}
+.ui-li-div {
+font-size: 1em;
+font-weight: bold;
+float:right;
+width:70%;
+line-height:1.9em;
+}
+.ui-select{margin: 0.1em 5px;}
+.ui-body-li-s {
+background: #EEE;
+}
+
+
+.bb1{margin: 0.5em 2%;}
+.tort_box{
+	margin-left:1.6em;
+}
+.aa1{
+	width:33.33%;
+	border: 1px solid #666;
+	background: #333;
+	font-weight: normal;
+	color: #000;
+	text-shadow: 0 1px 1px #fff;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#999) );
+	background-image: -webkit-linear-gradient(top, #fff, #999);
+	background-image: linear-gradient(top, #fff, #999);
+
+}
+.aa_click{
+	width:33.33%;
+	border: 1px solid #990033;
+	background: #D2011C;
+	font-weight: normal;
+	color: #fff;
+	text-shadow: none;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#E0575D), to(#D2011C), color-stop(50%, #CA012C),color-stop(51%, #B80117));
+	
+}
+.ui-body-a .ui-link-inherit{color: black;}
+.ui-content .a1{margin: 0px 0px 0 0px;}
+.ui-btn-icon-right .w_sort{
+	background: url("res-apple/w_sort1.png") no-repeat; 
+	width:1em;
+	height:1.1em;
+	right:0.45em;
+}
+.ui-btn-icon-right .w_sort2{
+	background: url("res-apple/w_sort2.png") no-repeat; 
+	width:1em;
+	height:1.1em;
+	right:0.45em;
+}
+.ui-btn-icon-right .w_sort_name{padding:0.4em 21px 0.6em 0;}
+.ui-li-static.w_brand_img{
+	padding-left:5em;
+	border-top:1px #8E8E8E solid;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#F0F1F1), to(#CACCCE));
+	color: #272727;
+}
+.ui-li-static.w_brand_img_click{
+	padding-left:5em;
+	border-top:1px #A50316 solid;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#E0575D), to(#D2011C), color-stop(50%, #CA012C),color-stop(51%, #B80117));
+	color: #fff;
+	text-shadow: none;
+}
+.w_goods_pic{
+	width:63px;
+	height:63px;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	border-image: initial;
+	top:12%;
+}
+.w_goods_pic img{width:63px;height:63px;}
+.w_fontsize1{font-size:0.975em;}
+.w_color{color:#F10117}
+.w_color2{color:#fff}
+
+.w_radius_left {
+-webkit-border-top-left-radius: 0.6em;
+border-top-left-radius: 0.6em;
+-webkit-border-bottom-left-radius: 0.6em;
+border-bottom-left-radius: 0.6em;
+ margin-left:-.6em;
+}
+ .w_radius_right {
+-webkit-border-top-right-radius: 0.6em;
+border-top-right-radius: 0.6em;
+-webkit-border-bottom-right-radius: 0.6em;
+border-bottom-right-radius: 0.6em;
+margin-left:-.6em;
+}
+.w_color{color:#F10117;}
+.w_color2{color:#fff;}
+
+fieldset.ui-controlgroup-padding {
+padding: 0;
+padding: 0;
+
+}
+fieldset.ui-controlgroup-padding .ui-btn-text-width{
+	display:block;
+	width: 15em;
+	margin: -0.7em 0 0 -0.8em;
+}
+.sy_list_box {list-style-type:none; margin:0 15px;}
+.sy_list_box li{ padding:1em 0.3em; clear: both;}
+.sy_list_box li strong , .sy_list_box li span , .sy_list_box li input {
+	display: block;
+	float: left;
+	font-style: normal;
+	list-style-type:none;
+	font-weight: normal;
+}
+.sy_list_box li span.email {
+	margin:.5em 0;
+}
+.sy_list_box li input.text_border {
+	border: 1px solid #CCC;
+	background: white;
+	font-weight: bold;
+	color: #444;
+	border-radius:0;
+	padding:.4em;
+	width: 60%;
+}
+.ui-btn-inner_sy {
+	padding: .4em 0.5em;
+	padding-top: .4em !important;
+}
+.ui-btn_sy {
+	margin: .5em 6em;
+}
+.ui-controlgroup-horizontal .ui-btn, .ui-controlgroup-horizontal .ui-checkbox, .ui-controlgroup-horizontal .ui-radio {
+	display: inline-block;
+	margin: 0 0 0 -10px;
+}
+.w_comment_con{font-size:.875em;line-height:2em;}
+
+.rating_sy{float:left;}
+
+
+
+.sy_list_box li .star_list {}
+.sy_list_box li .star_list a { 
+	display: block;
+	float: left;
+	background: url("res-apple/rating2.png") no-repeat;
+	width: 1em;
+	height:1em;
+	-webkit-background-size: 100% auto;
+}
+
+
+.sy_list_box li .star_list a:hover , .sy_list_box li .star_list a:active , .sy_list_box li .star_list a.star_hover{ 
+	display: block;
+	float: left;
+	background: url("res-apple/rating.png") no-repeat;
+	width: 1em;
+	height:1.5em;
+	-webkit-background-size: 100% auto;
+}
+
+.more_p{line-height:3em;border-top:1px solid #ccc;border-bottom:1px solid #ccc;text-align:center;color:#000;background:#fff;}
+.more_p a{color:#000;}
+
+.sort_title_one {
+	background:#fff; border-bottom:1px #ccc solid; padding: 1.5em;
+}
+.sort_title_one strong { float: left; }
+.sort_title_one span { float: right; }
+
+.boutique {
+	background: url("res-apple/bottom_img.png") no-repeat;
+	-webkit-background-size: 100% auto;
+	display: block;
+	width: 1.2em;
+	height: 1.2em;
+}
+.boutique_up {
+	background: url("res-apple/top_img.png") no-repeat;
+	-webkit-background-size: 100% auto;
+	display: block;
+	width: 1.2em;
+	height: 1.2em;
+}
+.boutique1 {
+	background: url("res-apple/right_dian.png") no-repeat;
+	-webkit-background-size: 77% auto;
+	display: block;
+	width: 1.2em;
+	height: 1.2em;
+}
+.sort_list_two {}
+.sort_list_two li {
+	background:#eee; border-bottom:1px #ccc solid; padding: 1em;padding-left: 1.7em;
+}
+.sort_color_li{background:#DFDFDF !important; border-bottom:1px #ccc solid; padding: 1em;padding-left: 2.2em !important;}
+.list-font_sy{font-size: 1.2em;}
+.ui-btn-iphone .ui-btn-sy_{padding-top: 0.4em !important;}
+.ui-header .ui-btn-inner, .ui-footer .ui-btn-inner, .ui-bar .ui-btn-inner- {
+padding: .4em 0.4em .5em;
+}
+.sort_list_two li.w_li_click,.s_li_click_sy{
+	border-bottom:1px #A50316 solid;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#E67882), to(#D12A37));
+	font-weight: normal;
+	color: #fff;
+	text-shadow: 0px 0 0 #000 ;
+}
+.s_li_click_sy h3 {
+	color: #fff;
+}
+.ui-header .w_search_btn111{float:right;margin-right:10px;}
+.ui-header .w_head_btn {
+border: 1px solid #454545;
+background: #333;
+font-weight: bold;
+color: white;
+text-shadow: 0 -1px 1px #666;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#858585), to(#161616));	
+-webkit-box-shadow: inset 0px -1px 1px rgba(0, 0, 0, .5),0px 1px 1px rgba(255, 255, 255, .5);
+box-shadow: inset 0px -1px 1px rgba(0, 0, 2, .5),0px 1px 1px rgba(255, 255, 255, .5);
+-webkit-border-radius:0.5em;
+top: 0.5em !important;
+}
+.ui-header .w_head_btn_click {
+border: 1px solid #810102;
+background: #333;
+font-weight: bold;
+color: white;
+text-shadow: 0 -1px 1px #666;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E0656E), to(#B0020F), color-stop(50%, #D3333F),color-stop(51%, #BC020F));	
+-webkit-box-shadow: inset 0px -1px 0px rgba(129, 1, 2, .5),0px 1px 1px rgba(255, 255, 255, .5);
+box-shadow: inset 0px -1px 0px rgba(129, 1, 2, .5),0px 1px 1px rgba(255, 255, 255, .5);
+-webkit-border-radius:0.5em;
+top: 0.5em !important;
+}
+.ui-header .www_padding{padding:0.5em 0.7em;}
+
+.pic-margin-sy{
+margin: 0 1% 0 10% !important;
+-webkit-border-radius: 0.5em;
+width: 34.5%;
+height:100%
+}
+.pic-margin-sy1{-webkit-border-radius:0.5em;width:41.5%;height:100%}
+.margin-sy{margin: 0.7em 0;}
+
+.ui-details-img-height{
+	height: 7em;
+}
+
+@media screen and (min-width:768px) and (max-width:800px) {
+	.ui-details-img-height{
+		height: 10em;
+	}
+}
+.border_sy_ui{
+	border-bottom:1px solid #ccc;	
+}
+

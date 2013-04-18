@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css"> 
+    <link rel="stylesheet" href="css/h_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+  </head>
+  <body class="ui-mobile-viewport" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui-bar-glass h_t_color" >
+<!-- <div onclick="goIndex();" class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span  id="btn_c" class="ui-btn-text">返回</span>  </span>  </div></div></div></div> -->
+<div onclick="uexWindow.evaluateScript('','0','goIndex()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span  id="btn_c" class="ui-btn-text">返回</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+订单提交
+</h1> 
+
+ 
+
+</div>
+
+<div id="page_0" class="ui-page ui-body-a ui-page-active h_cn_color" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top h_cn_color" style="padding-top: 0;">
+	<div class="ui-bar ui-bar-d ui-corner-all h-con-w hd-w">
+		<div>感谢您在本店购物！您的订单已提交成功，请记住您的订单号</div><br/>
+		订单号： <span id="order_number"></span><br/><br/>
+		应付金额：<span id="order_money"></span>元
+	</div>
+	
+	<div onClick="checkOrder();" class="ui-btn-center" tabindex="0"> 
+		<div data-role="button" class=" ui-corner-all ui-btn  ui-btn-d   ui-shadow h-wei-s"> <span class="ui-btn-inner ui-corner-all"> <span class="ui-btn-text">查看订单</span> </span></div>
+	</div>
+</div>
+</div>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/h_main.js"></script>
+ <script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript">
+	//parseParam();
+	var id_ = 0;
+	var number_ = 0;
+	var price_ = "";
+	
+	
+	/*查看订单*/
+	function checkOrder(){
+		var url='mymall_indent_details.html?orderId='+id_;
+		openNewWin('mymall_indent_details','2',url);
+	}
+	
+	function paySuccess(status, des){
+		uexWindow.alert("提示",des,"确定");
+	}
+
+	function payFailed(opCode, errorCode, des){
+		uexWindow.alert("提示",des,"确定");
+	}
+	zy_fix("header","","",function(){
+		uexWindow.setReportKey('0', '1');
+		uexWindow.onKeyPressed = function(keyCode){
+			goIndex();
+		}
+		//获取参数
+		parseParam();
+		id_ = params.orderId;
+		number_ = params.orderNo;
+		price_ = params.price;
+		
+		$id("order_number").innerHTML = number_;
+		$id("order_money").innerHTML = price_;
+		uexPay.onStatus = paySuccess;
+		uexWidgetOne.cbError = payFailed;
+	});
+	/*window.uexOnload = function(){
+		uexPay.onStatus = paySuccess;
+		uexWidgetOne.cbError = payFailed;
+	}*/
+	function goIndex(){
+		 openNewWin('root',1,'index.html')
+		 setTimeout(function (){uexWindow.close('0');},1000);
+	}
+</script>
+
+  </body>
+</html>

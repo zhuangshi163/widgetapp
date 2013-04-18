@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css"> 
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/w_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onClick="uexWindow.evaluateScript('','0','close_()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<!-- <div onclick="uexWindow.close('-1');"  class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone      "> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">返回</span>  </span>  </div></div></div></div>  -->
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+站内快讯
+</h1> 
+
+</div>
+
+<div id="page_0" class="ui-page ui-body-a ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom w_content_padding w_set">
+<div class="w_opacity"></div>
+<div class="w_goods_con">
+<ul data-role="listview" id="w_express" class="ui-listview  ui-corner-none  ui-shadow wa"> 
+<!-- <li class=" ui-bar-a      ui-btn-icon-right   ui-li w_cursor w_more_li" onclick="openage('page_1','w_brand_details.html');"> -->
+<!-- <div class="ui-btn-inner ui-li ui-btn-text">  <div class="ui-link-inherit w_comment_color"> -->
+<!--   <h3 class="ui-li-heading">关键词：E66</h3>       </div>       <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>     </div>    </li>  -->
+<!-- <li class=" ui-bar-a      ui-btn-icon-right   ui-li w_more_li"> -->
+<!-- <div class="ui-btn-inner ui-li ui-btn-text">  <div class="ui-link-inherit  w_comment_color"> -->
+<!--   <h3 class="ui-li-heading">关键词：E66 </h3>       </div>       <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>     </div>    </li>  -->
+<!-- <li class=" ui-bar-a      ui-btn-icon-right   ui-li w_more_li"> -->
+<!-- <div class="ui-btn-inner ui-li ui-btn-text">  <div class="ui-link-inherit w_comment_color"> -->
+<!--   <h3 class="ui-li-heading">关键词：E66 </h3>       </div>       <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>     </div>    </li>  -->
+</ul>
+</div>
+</div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+	//zy_init();
+	/*页面切换*/
+	function openage(id){
+			var html_url='w_express_page.html?id='+id;
+			openNewWin("expressPage",html_url,2);
+		}
+	function express(){
+    	var w_url=image_url + "plugins/zywx/rpc/article.php?jsoncallback=?&act=article_list";
+		uexWindow.toast("1","5","请稍后...","0");
+    	uexXmlHttpMgr.open('1', "GET",w_url,"");
+    	uexXmlHttpMgr.send('1');
+     } 
+	 zy_fix("header","","",function(){
+	 	uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+	    		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+	    	}
+	    	uexXmlHttpMgr.onData = function(opCode,status,result){
+	    		if(status == 1){
+		    		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);//截取字符串：去掉？（）
+		    		var express = JSON.parse(res);//把result的结果转化为json对象
+		    		uexXmlHttpMgr.close(opCode);
+					uexWindow.closeToast();
+		    		if(express && express.length > 0){
+			    		var express_list="";
+			    		for(var i=0; i<express.length; i++){
+			    			express_list += '<li id="znkx_'+i+'"  class=" ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li ui-li-brbtm-sy" onclick="openage('+express[i].id+');"><div class="ui-btn-inner ui-li ui-btn-text"><div class="ui-link-inherit w_comment_color"><h3 class="ui-li-heading">'+express[i].short_title+'</h3></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span></div></li> '
+						}
+			    		$id("w_express").innerHTML = express_list;
+		    		}else{
+		    			uexWindow.toast('0','5','暂时没有快讯！',5000);
+		    		}
+	    		}
+	    	}
+	    	express();
+	 })
+	/*window.uexOnload = function(){
+	    	uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+	    		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+	    	}
+	    	uexXmlHttpMgr.onData = function(opCode,status,result){
+	    		if(status == 1){
+		    		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);//截取字符串：去掉？（）
+		    		var express = JSON.parse(res);//把result的结果转化为json对象
+		    		uexXmlHttpMgr.close(opCode);
+		    		
+		    		var express_list="";
+		    		for(var i=0; i<express.length; i++){
+		    			express_list += '<li id="znkx_'+i+'" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" class=" ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li" onclick="openage('+express[i].id+');"><div class="ui-btn-inner ui-li ui-btn-text"><div class="ui-link-inherit w_comment_color"><h3 class="ui-li-heading">'+express[i].short_title+'</h3></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow w_icon"></span></div></li> '
+					}
+		    		$id("w_express").innerHTML = express_list;
+	    		}
+	    	}
+	    	express();
+	}*/
+	/*//点击列表事件
+	var t_m = false, t_start_x, t_end_x;
+	function t_m_start(id){
+		document.getElementById(id).className = 'ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li s_li_click_sy';
+	    t_m = true;
+	    t_start_x = e.touches[0].pageX;
+	}
+	function t_m_move(id){
+		document.getElementByIdid(id).className = 'ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li';
+	}
+	
+	
+	function t_m_end(id){
+		document.getElementById(id).className = 'ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li';
+	    t_m = false;
+	}*/
+    //关闭本窗口
+	function close_(){
+		uexWindow.close('-1');
+	}
+  </script>
+  </body>
+</html>

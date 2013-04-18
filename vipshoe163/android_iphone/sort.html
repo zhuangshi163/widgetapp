@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css"> 
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/s_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+    <script src="js/zy_control.js"></script>
+ 	<script src="js/zy_tmpl.js"></script>
+	<script src="js/zy_json.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+分类 
+
+
+
+</h1> 
+</div>
+
+<div id="page_0" class="ui-page ui-body-d ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom dwx_padding" style="padding-top:2.6em;">
+<div id="">
+	<div id="my_sort_one">
+		 <!--<div class="sort_title_one">
+			<strong></strong>
+			<span class="boutique"></span>
+			<div style=" clear:both;"></div>
+		</div>
+		<ul id="my_sort_two" class="sort_list_two" style="display:block;">
+			<li></li>
+		</ul> -->
+	</div>
+<!--<ul data-role="listview" id="sort_ul" class="ui-listview  ui-btn-corner-all  ui-shadow a"> 
+<li class=" ui-btn-d  ui-btn-icon-right   ui-li ui-li-font-color">
+	<div class="ui-btn-text ui-li ui-btn-inner">
+		<div class="ui-link-inherit font-color ui-li-font">
+			<h3 class="ui-li-heading li-font-color">手机 </h3>
+		</div>
+		<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+	</div>
+</li> 
+
+<li class=" ui-btn-d  ui-btn-icon-right   ui-li">
+	<div class="ui-btn-inner ui-li ui-btn-text">
+		<div class="ui-link-inherit">
+  			<h3 class="ui-li-heading">页面 </h3>
+		</div>
+  		<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+	</div>
+</li>
+</ul> -->
+</div>
+</div>
+</div>
+
+
+<div id="footer" data-role="footer" class="ui-footer ui-bar-a ui-footer-fixed ">
+	<div class="ui-navbar ui-bar-a ui-nav-iphone ui_grid_a  ui_nav_iphone">
+		<ul class="ui-grid-a">
+			<li class="ui-block-a ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToIndex()');"><input type="radio" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+			<li class="ui-block-b ui_block_a" onclick="uexWindow.evaluateScript('', '0','window.location.reload()');"><input type="radio"  checked="checked" name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">分类</span></span></label></li>
+			<li class="ui-block-c ui_block_a" onclick="uexWindow.evaluateScript('', '0','openNewWin_t(\'shoppingCar\',\'shoppingCar.html\',0,\'4\')');"><input type="radio" name="radiof1" id="radio-f1c" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-shop"></span><span class="ui-btn-inner"><span class="ui-btn-text">购物车</span></span></label></li>
+			<li class="ui-block-d ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToMymall()');"><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的</span></span></label></li>
+			<li class="ui-block-e ui_block_a" onclick="uexWindow.open('w_more', '0', 'w_more.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1e" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">更多</span></span></label></li>
+		</ul>
+	</div>
+</div>
+
+<script type="application/javascript" src="js/iscroll.js"></script>
+<script type="application/javascript" src="js/main.js"></script>		
+<script>
+	var myId = "";
+	var num1 = '';
+	function goToMymall(){
+		uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+	}
+	function openNewWin_t(winName,htmlUrl,aid,isRe){	
+		uexWindow.evaluateScript(winName, '0','getGoodsList()');
+		uexWindow.open(winName, '0', htmlUrl, aid, '', '', '0');
+	}
+    function goToIndex(){
+		uexWindow.evaluateScript("root", '0','isFile_()');
+		openWindow('root','index.html','0');
+	}
+    //获取分类列表
+	function getSortList(){
+		var url = image_url+"plugins/zywx/rpc/category.php?jsoncallback=?&act=tree_list";
+		//alert(url);
+		uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('1', "GET", url, ""); 
+		uexXmlHttpMgr.send('1');
+	}
+	function getSortList2(myid){
+		myId = myid;
+		if ($id("my_sort_" + myId).innerHTML == "") {
+			var url = image_url + "plugins/zywx/rpc/category.php?jsoncallback=?&act=tree_list";
+			
+			uexWindow.toast("1", "5", "请稍后...", "0");
+			uexXmlHttpMgr.open('2', "GET", url, "");
+			uexXmlHttpMgr.send('2');
+		}else{
+			if($id("my_sort_"+myId).style.display == "none"){
+				$id("my_sort_"+myId).style.display = "block";
+				$id("span_"+myId).className = "boutique_up";
+			}else{
+				$id("my_sort_"+myId).style.display = "none";
+				$id("span_"+myId).className = "boutique";
+			}
+		}
+	}
+	function show_(){
+		var num_ = num1.substr(0,num1.length-1);
+		var num = num_.split(",");
+		for(var i=0;i<num.length;i++){
+			if($id("goods_s_"+num[i]).style.display == "none"){
+				
+				$id("goods_s_"+num[i]).style.display = "block";
+			}else{
+				$id("goods_s_"+num[i]).style.display = "none";
+			}
+		}
+	}
+	var sort_list = '';
+	zy_fix("header","footer","",function(){
+		/*uexWindow.setReportKey('0', '1');
+		uexWindow.onKeyPressed = function(keyCode){
+			uexWidget.finishWidget('');
+		}*/
+		/*uexWindow.setBounce("1");
+		uexWindow.showBounceView("0","#F2F2F2","0");
+		uexWindow.showBounceView("1","#F2F2F2","0");*/
+		uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+			if(data == 1){
+				uexWindow.open('mymall', '0', 'mymall.html', '0', '', '','0');
+			}else{
+				uexWindow.open('login', '0', 'login.html?name=root', '0', '', '','0');
+			}
+		}
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}  
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			
+			if(type == 1){
+				/*var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var s = JSON.parse(res);
+				uexWindow.closeToast();
+				uexXmlHttpMgr.close(opCode);
+				for(o in s){
+					sort_list += '<li class="ui-btn-d  ui-btn-icon-right   ui-li ui-li-font-color" onclick="openSortShop('+s[o].id+')">'+
+					'<div class="ui-btn-text ui-li ui-btn-inner"><div class="ui-link-inherit font-color ui-li-font">'+
+					'<h3 class="ui-li-heading li-font-color">'+s[o].name+' </h3></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></div></li>';
+				}
+				$id("sort_ul").innerHTML = sort_list;*/
+				if(opCode == 1){
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					//alert(res);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					for(var o in s){
+						if (s[o].cat_id != "") {
+							sort_list += '<div><div class="sort_title_one " id="title_' + o + '" ontouchstart="t_m_start1(this.id)" ontouchmove="t_m_move1(this.id)" ontouchend="t_m_end1(this.id)" onclick="getSortList2(' + s[o].id + ')"><strong>' + s[o].name + '</strong><span id="span_' + s[o].id + '" class="boutique"></span>' +
+							'<div style=" clear:both;"></div></div><ul id="my_sort_' +
+							s[o].id +
+							'" class="sort_list_two" style="display:block;"></ul></div>';
+						}else{
+							sort_list += '<div><div class="sort_title_one " id="title_' + o + '" ontouchstart="t_m_start1(this.id)" ontouchmove="t_m_move1(this.id)" ontouchend="t_m_end1(this.id)" onclick="openSortShop('+s[o].id+',\''+encodeURIComponent(s[o].name)+'\')"><strong>' + s[o].name + '</strong><span id="span_' + s[o].id + '" class="boutique"></span>' +
+							'<div style=" clear:both;"></div></div><ul id="my_sort_' +
+							s[o].id +
+							'" class="sort_list_two" style="display:block;"></ul></div>';
+						}
+					}
+					$id("my_sort_one").innerHTML = sort_list;
+				}else if(opCode == 2){
+					var sort_list1 = '';
+					var sort_list2 = '';
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					
+					for(var o in s){
+						if (myId == s[o].id) {
+							for (var i in s[o].cat_id) {
+								//sort_list1 += '<li class="" id="goods_'+i+'" ontouchstart="t_m_start_list1(this.id)" ontouchmove="t_m_move_list1(this.id)" ontouchend="t_m_end_list1(this.id)" onclick="openSortShop('+s[o].cat_id[i].id+',\''+encodeURIComponent(s[o].cat_id[i].name)+'\')">' + s[o].cat_id[i].name + '</li>';
+								if(s[o].cat_id[i].cat_id != ""){
+									for(var j in s[o].cat_id[i].cat_id){
+										sort_list1 += '<li id="goods_s_'+j+'" class="sort_color_li" style="display:none;" onclick="openSortShop('+s[o].cat_id[i].cat_id[j].id+',\''+encodeURIComponent(s[o].cat_id[i].cat_id[j].name)+'\')">' + s[o].cat_id[i].cat_id[j].name + '</li>';
+										num1 += j+',';
+									}
+									sort_list2 += '<li class="" id="goods_'+i+'" ontouchstart="t_m_start_list1(this.id)" ontouchmove="t_m_move_list1(this.id)" ontouchend="t_m_end_list1(this.id)" onclick="show_()">' + s[o].cat_id[i].name + '</li>' + sort_list1; 
+									
+								}else{
+									sort_list2 += '<li class="" id="goods_'+i+'" ontouchstart="t_m_start_list1(this.id)" ontouchmove="t_m_move_list1(this.id)" ontouchend="t_m_end_list1(this.id)" onclick="openSortShop('+s[o].cat_id[i].id+',\''+encodeURIComponent(s[o].cat_id[i].name)+'\')">' + s[o].cat_id[i].name + '</li>';
+								}
+							}
+						}
+					}
+					$id("my_sort_"+myId).innerHTML = sort_list2;
+				}
+			}
+		}
+		getSortList();//获取分类列表
+	});
+	/*window.uexOnload = function(){
+		uexWindow.setReportKey('0', '1');
+		uexWindow.onKeyPressed = function(keyCode){
+			var mycars = ["确定","取消"];
+			uexWindow.confirm("警告","您确定要退出吗？",mycars);
+			
+		}
+		uexWindow.cbConfirm = function(opId, dataType, data){
+			if(data == 0){
+				uexWidget.finishWidget('');
+			}
+		}
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			alert(errorInfo);
+		}
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			var sort_list = '';
+			if(type == 1){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var s = JSON.parse(res);
+				uexWindow.closeToast();
+				uexXmlHttpMgr.close(opCode);
+				for(o in s){
+					sort_list += '<li class="ui-btn-d  ui-btn-icon-right   ui-li ui-li-font-color" onclick="openSortShop('+s[o].id+')">'+
+					'<div class="ui-btn-text ui-li ui-btn-inner"><div class="ui-link-inherit font-color ui-li-font">'+
+					'<h3 class="ui-li-heading li-font-color">'+s[o].name+' </h3></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></div></li>';
+				}
+				$id("sort_ul").innerHTML = sort_list;
+			}
+		}
+		getSortList();//获取分类列表
+	}*/
+	//打开商品分类列表页面
+	function openSortShop(id,goods_name){
+		var html_url = "sort_shop.html?id="+id+"&goods_name="+goods_name;
+		uexWindow.open("sort_shop", '0', html_url, '2', '', '', 0x0);
+		//openNewWin("sort_shop",html_url,'2');
+	}
+	//打开窗口
+	function openWindow(name,page,aid){
+		var html_url = page;
+		openNewWin(name,html_url,aid);
+	}
+	
+	//点击列表事件
+	var t_m_ = false, t_start_x_, t_end_x_;
+	function t_m_start_list1(id){
+		document.getElementById(id).className = 'w_li_click';
+	    t_m_ = true;
+	    t_start_x_ = e.touches[0].pageX;
+	}
+	function t_m_move_list1(id){
+		document.getElementById(id).className = '';
+	}
+	
+	
+	function t_m_end_list1(id){
+		document.getElementById(id).className = '';
+	    t_m_ = false;
+	}
+	
+	var t_m1 = false, t_start_x1, t_end_x1;
+	function t_m_start1(id){
+		document.getElementById(id).className = 'sort_title_one s_li_click_sy';
+	    t_m1 = true;
+	    t_start_x1 = e.touches[0].pageX;
+	}
+	function t_m_move1(id){
+		document.getElementById(id).className = 'sort_title_one';
+	}
+	
+	
+	function t_m_end1(id){
+		document.getElementById(id).className = 'sort_title_one';
+	    t_m1 = false;
+	}
+  </script>
+  </body>
+</html>

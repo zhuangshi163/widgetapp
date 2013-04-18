@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html
+	class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-base.css"> 
+    <link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/h_style.css">
+    <link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+    <script src="js/zy_control.js"></script>
+    <script type="text/javascript" src="js/h_main.js"></script>
+     <script type="text/javascript" src="js/config.js"></script>
+	 <script type="text/javascript" src="js/zy_click.js"></script>
+    <script>
+	window.onload=function()
+	{
+		document.body.children[0].style.position="absolute";
+	}
+	function goLo(){
+		uexWindow.open('login', '0', 'login.html?name=root', '2', '', '','0');
+	}
+	//点击列表事件
+	var t_m = false, t_start_x, t_end_x;
+	function t_m_start(id){
+		document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+	    t_m = true;
+	    t_start_x = e.touches[0].pageX;
+	}
+	function t_m_move(id){
+		document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	}
+	
+	
+	function t_m_end(id){
+		document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	    t_m = false;
+	}
+	//点击列表事件
+	var t_m2 = false, t_start_x2, t_end_x2;
+	function t_m_start2(id){
+		document.getElementById(id).className = 'ui-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_search_btn111 w_head_btn ui-btn-search w_head_btn_click';		 										
+	    t_m2 = true;
+	    t_start_x2 = e.touches[0].pageX;
+	}
+	function t_m_move2(id){
+		document.getElementById(id).className = 'ui-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_search_btn111 w_head_btn ui-btn-search';
+	}
+	
+	
+	function t_m_end2(id){
+		document.getElementById(id).className = 'ui-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_search_btn111 w_head_btn ui-btn-search';
+	    t_m2 = false;
+	}
+	//点击列表事件
+	var t_m3 = false, t_start_x3, t_end_x3;
+	function t_m_start_right(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn  w_head_btn_click';
+	    t_m3 = true;
+	    t_start_x3 = e.touches[0].pageX;
+	}
+	function t_m_move_right(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	}
+	
+	
+	function t_m_end_right(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	    t_m3 = false;
+	}
+	//点击列表事件
+	var t_m4 = false, t_start_x4, t_end_x4;
+	function t_m_start_login(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+	    t_m4 = true;
+	    t_start_x4 = e.touches[0].pageX;
+	}
+	function t_m_move_login(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	}
+	
+	
+	function t_m_end_login(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	    t_m4 = false;
+	}
+	function getTitleName(titleName){
+		$id("title_name").innerHTML = titleName;
+	}
+	//结算按钮隐藏显示
+	function showBtn_(){
+		$id("jiesuanId").style.display = "none";
+	}
+	function title1(search_result){
+		if(search_result.length > 5){
+			search_result = search_result.substr(0,5) + "...";
+		}
+		$id("search_title").innerHTML = "搜索："+search_result;
+	}
+	function titleName1(goods_name){
+		$id("sort_name").innerHTML = goods_name;
+	}
+	
+</script>
+  </head>
+<body class="ui-mobile-viewport">  

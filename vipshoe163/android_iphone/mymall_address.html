@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script> 
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+</head>
+<body class="ui-mobile-viewport ui_body_d" >
+
+<div data-role="header" class="ui-header ui-bar-iphone ui-header-fixed ui_title" >
+<div onclick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<strong>地址管理</strong>
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" onclick="modity_address();"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">确定</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1>
+	<div onclick="modity_address();" id="qd" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">确定</span> </span></div> 
+	
+</div>
+
+<div id="page_4" class="ui-page-active ui_page_ddd" tabindex="0">
+	<div class="w_set">
+    	<div class="ui_body_dwx"></div>
+		<div id="list_id" class=" ui_body_dd  ui_fixed_bottom">
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/h_main.js"></script>
+<script type="text/javascript">
+//parseParam();
+var oldId = 0;
+var newId = '';
+/*获取要修改的地址id*/
+function getdAddressId(nid){
+	newId = nid;
+}
+/*修改地址*/
+function modity_address(){
+	var moAdUrl = httpUrl +'user.php?jsoncallback=?&act=update_user_default_address&address_id='+newId;
+	xmlHttp(2,moAdUrl);
+}
+
+/*取回数据并进行处理*/
+function httpSuccess(opid,status,result){//status 状态 0 接收，1完成
+	if(status == 1){
+		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+		var o_ = JSON.parse(res);
+		if(o_.pluginstatus){
+			uexXmlHttpMgr.close(opid);
+			uexWindow.closeToast();
+			uexWindow.alert("提示",o_.pluginstatus,"确定");
+			return;
+		}
+		uexWindow.closeToast();
+		if(opid == 1){
+		//	result = '?({"6":{"address":"\u4e2d\u56fd-\u5317\u4eac-\u5317\u4eac-\u6d77\u6dc0\u533a-\u4e2d\u5173\u6751\u5927\u885719\u53f7\u65b0\u4e2d\u5173\u5927\u53a6A\u5ea711\u5c42","mobile":"13691372267","username":"\u970d\u6c38\u660c"},"7":{"address":"\u4e2d\u56fd-\u5317\u4eac-\u5317\u4eac-\u6d77\u6dc0\u533a-\u97e9\u5bb6\u5ddd12\u53f7","mobile":"222222222222222","username":"\u970d\u6c38\u660c"}})';
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var list_obj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if(list_obj && list_obj != null){
+				if(list_obj.status != "status"){
+					var list_str = "";
+					for(var addid in list_obj){
+						var add_obj = list_obj[addid];
+						var tmb_str = "";
+						if(oldId == addid){
+							tmb_str = '<input type="radio" name="radio-0" class="ui-hide" checked="checked" id="radio-0-1" value="">';
+						}else {
+							tmb_str = '<input type="radio" name="radio-0" class="ui-hide" id="radio-0-1" value="">';
+						}
+						list_str += '<fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical">'+
+									'<div class="ui-radio ui_radio_dwx">'+
+									tmb_str +
+									'<label onclick="zy_for(event);getdAddressId('+addid+')" class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-corner-bottom ui-btn-d-dwx">'+
+									'<label class="ui-icon ui-icon-radio ui-icon-shadow ui_icon_dwx_y"></label>'+
+									'<span class="ui-btn-inner">'+
+									'<span class="ui-btn-text">收货人：'+add_obj.username+'<p class="ui-li-desc ui_li_desc_dwx_width">'+
+									'<span>收货地址：'+add_obj.address+'</span>联系电话：'+add_obj.mobile+'</p></span></span></label></div></fieldset>';
+					}
+					$id("list_id").innerHTML = list_str;
+				}else{
+					uexWindow.alert("提示",list_obj.status,"确定");
+				}
+			}
+		}else if(opid == 2){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var staObj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if(staObj.status == '修改用户默认收获地址成功'){				
+				uexWindow.evaluateScript('accounts','0','changeSuccess()');
+				uexWindow.close(-1);
+			}
+			else
+				uexWindow.alert("提示",staObj.status,"确定");
+		}
+	}
+	//uexXmlHttpMgr.close(opid);
+}
+
+window.uexOnload = function(){
+	//获取参数
+	parseParam();
+	oldId = params.oldAddId;
+	
+	uexXmlHttpMgr.onData = httpSuccess;
+	var address_url = httpUrl+"user.php?jsoncallback=?&act=address_list";	
+	xmlHttp(1,address_url);
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+	}
+}
+</script>
+</body>
+
+<script>
+	zy_init();
+</script>
+</html>

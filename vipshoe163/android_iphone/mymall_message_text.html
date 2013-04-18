@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+</head>
+<body class="ui-mobile-viewport ui_body_d" >
+
+<div data-role="header" class="ui-header ui-bar-iphone ui-header-fixed ui_title" >
+<div onclick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		我的留言
+	</h1>
+</div>
+
+<div id="page_11" class="ui-page-active ui_page_ddd" tabindex="0">
+		<ul class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom ui_body_dd ui_fixed_top ui_fixed_bottom  ui-content-box_dwx">
+			<li class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border">
+				<div class="ui-has-label">
+					<label for="textarea-0" class="ui-input-text" >留言类型：</label>
+					<div class="ui-select">
+						<div  class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-d ui-btn-padding-dwx">
+							<span class="ui-btn-inner ui-btn-corner-all" > 
+								<span class="ui-btn-text" id="type_">请选择</span> 
+								<div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+									<span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+								</div>
+							</span>
+							<select name="select-choice-0" selectedIndex="0" id="select-type" onchange="zy_slectmenu(this.id)">
+								<option value="-1">请选择</option>
+								<option value="0">留言</option>
+								<option value="1">投诉</option>
+								<option value="2">询问</option>
+								<option value="3">售后</option>
+								<option value="4">求购</option>
+							</select>
+						</div>
+					</div>
+				</div> 
+			</li> 
+			<li class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border">
+				<div class="ui-has-label">
+					<label for="textarea-0" class="ui-input-text " >主　　题：</label>
+					<input placeholder="主题"  name="textarea-0" id="theme" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d" />
+				</div>
+			</li>
+			<li class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border">
+				<div class="ui-has-label">
+					<label for="textarea-0" class="ui-input-text " >留言内容：</label>
+					<textarea placeholder="请输入留言内容"  name="textarea-1" id="content" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d"></textarea>
+				</div>
+			</li>
+			<li class="li_button">
+				<div class="ui-btn-center" tabindex="0"> 
+					<div data-role="button" onclick="addMessage()" class=" ui-btn-corner-all ui-btn ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+						<span class="ui-btn-inner ui-btn-corner-all"> 
+							<span class="ui-btn-text">提交留言</span> 
+						</span>
+					</div> 
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript">
+	//添加留言
+	function addMessage(){
+		if($id("type_").innerHTML == "请选择"){
+			uexWindow.alert("提示","请选择留言类型","确定");
+			return;
+		}
+		var type = $id("select-type").value;//类型		
+		var theme = $id("theme").value;//主题
+		if(theme == ""){
+			uexWindow.alert("提示","请输入主题","确定");
+			return;
+		}
+		var content = $id("content").value;
+		if(content == ""){
+			uexWindow.alert("提示","请输留言内容","确定");
+			return;
+		}
+		var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=act_add_message&msg_type='+type+'&msg_title='+encodeURIComponent(theme)+'&msg_content='+encodeURIComponent(content);
+		uexWindow.toast("1","5","请稍后...","0");
+        uexXmlHttpMgr.open('1', "GET", url, "");
+        uexXmlHttpMgr.send('1');
+	}
+	
+    window.uexOnload = function(){
+        uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+        	uexWindow.alert("提示",errorInfo,"确定");
+        }
+        uexXmlHttpMgr.onData = function(opCode, type, result){
+            if (type == 1) {
+                var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                var s = JSON.parse(res);
+                uexWindow.closeToast();
+                uexXmlHttpMgr.close(opCode);
+                
+				if(s.status == "留言成功请您耐心等待回复"){
+					uexWindow.alert("提示","留言成功","确定");
+					uexWindow.evaluateScript('mymall_message','0','messOk()');
+					uexWindow.close(-1);
+					//openMessageList();//跳转到留言列表页
+				}else if(s.status == "未登录"){
+					uexWindow.alert("提示","请登录","确定");
+				}else{
+					uexWindow.alert("提示","留言失败","确定");
+				}
+            }
+        }
+    }
+	//跳转到留言列表页
+	function openMessageList(){
+		var html_url = 'mymall_message.html';
+		openNewWin("messageList",html_url,'2');
+	}
+</script>
+<script>
+	zy_init();
+</script>
+</html>

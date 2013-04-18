@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css"> 
+	<link rel="stylesheet" href="css/ui-new.css">
+		<link rel="stylesheet" href="css/s_style.css">
+		<link rel="stylesheet" href="css/h_style.css">
+		<link rel="stylesheet" href="css/w_style.css"> 
+	<script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+	<script>
+		function openage(page,url){
+			//uexWindow.open('windowname','0','uexFunction.html','2','','',0x0);
+			 uexWindow.open(page, '0', url, '2', '', '', 0x0);
+		}		
+	</script>
+</head>
+<body class="ui-mobile-viewport ui_body_d" >
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onClick="uexWindow.evaluateScript('','0','uexWindow.close(\'-1\')');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div onClick="uexWindow.close('-1');" class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		地址管理
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" id="screening_id"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text" onclick="openage('mymall_alter_info','mymall_alter_info.html');">添加</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1> 
+	<div id="screening_id" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text" onclick="uexWindow.evaluateScript('','0','openage(\'mymall_alter_info\',\'mymall_alter_info.html\')');">添加</span> </span></div> 
+	
+</div>
+
+<div id="page_10" class="ui-page-active ui_page_ddd" tabindex="0">
+	<div class="w_set">
+    	<div class="ui_body_dwx"></div>
+		<div id="list_id" class=" ui_body_dd ui_fixed_bottom ">
+		</div>
+	</div>
+</div>	
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/h_main.js"></script>
+<script type="text/javascript">
+
+
+/*取回数据并进行处理*/
+function httpSuccess(opid,status,result){//status 状态 0 接收，1完成
+	if(status == 1){uexWindow.closeToast();
+		if(opid == 1){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var list_obj = JSON.parse(res);
+			if(list_obj && list_obj != null){
+				if(list_obj.status && list_obj.status != "未登录"){
+					uexWindow.alert("提示",list_obj.status,"确定");
+					return;
+				}
+				if(list_obj.status != "未登录"){
+					var list_str = "";
+					if(list_obj.length == 0){
+						$id("list_id").innerHTML = '<fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical">'+
+										'<div class="ui-radio ui_radio_dwx">'+
+										'<label class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-corner-bottom ui-btn-d-dwx">'+
+										'<span class="ui-btn-inner ui-btn-inner-dwx-padding" style="text-align:center;">'+
+										'<span class="ui-btn-text">您暂时没有添加收获地址！'+
+										'</span></span></label></div></fieldset>';
+					}else{
+						for(var addid in list_obj){
+							var add_obj = list_obj[addid];
+							list_str += '<fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical" style="position: reltive">'+
+										'<div class="ui-radio ui_radio_dwx">'+
+										'<label onclick="openage(\'mymall_address_edit\',\'mymall_address_edit.html?addId='+addid+'\')" class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-corner-bottom ui-btn-d-dwx">'+
+										'<span class="ui-btn-inner ui-btn-inner-dwx-padding">'+
+										'<span class="ui-btn-text">收货人：'+add_obj.username+'	<p class="ui-li-desc ui_li_desc_dwx_width" >'+
+										'<span>收货地址：'+add_obj.address+'</span>联系电话：'+add_obj.mobile+'</p></span></span></label><span class="rightlist_img"></span></div></fieldset>';
+						}
+						$id("list_id").innerHTML = list_str;
+					}
+				}else{
+					var html_url = 'login.html?name=mymall_address_list';//在登录页判断
+					openNewWin('login',2,html_url);
+				}
+			}
+		}
+		uexXmlHttpMgr.close(opid);
+	}
+}
+/*登录成功回调*/
+function loginSuccess(){
+	setTimeout(function(){
+		var address_url = httpUrl+"user.php?jsoncallback=?&act=address_list";
+		xmlHttp(1,address_url);
+	},500);
+}
+function getList_(){
+	setTimeout(function(){
+		var address_url = httpUrl+"user.php?jsoncallback=?&act=address_list";
+		xmlHttp(1,address_url);
+	},500);
+}
+zy_fix("header","","",function(){
+	uexXmlHttpMgr.onData = httpSuccess;
+	
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+	}
+	
+	uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+		if(data == 1){	
+			var address_url = httpUrl+"user.php?jsoncallback=?&act=address_list";
+			xmlHttp(1,address_url);
+		}else{
+			var html_url = 'login.html?name=mymall_address_list';//在登录页判断
+			openNewWin('login',2,html_url);
+		}
+	}
+	uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+});
+/*window.uexOnload = function(){
+	uexXmlHttpMgr.onData = httpSuccess;
+	
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+	}
+	
+	uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+		if(data == 1){	
+			var address_url = httpUrl+"user.php?jsoncallback=?&act=address_list";
+			xmlHttp(1,address_url);
+		}else{
+			var html_url = 'login.html?name=mymall_address_list';//在登录页判断
+			openNewWin('login',2,html_url);
+		}
+	}
+	uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+}*/
+//点击列表事件
+var t_m = false, t_start_x, t_end_x;
+function t_m_start(id){
+	document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+    t_m = true;
+    t_start_x = e.touches[0].pageX;
+}
+function t_m_move(id){
+	document.getElementByIdid(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+}
+
+function t_m_end(id){
+	document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+    t_m = false;
+}
+//点击列表事件
+var t_m3 = false, t_start_x3, t_end_x3;
+function t_m_start_right(id){
+	document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+    t_m3 = true;
+    t_start_x3 = e.touches[0].pageX;
+}
+function t_m_move_right(id){
+	document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+}
+
+
+function t_m_end_right(id){
+	document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+    t_m3 = false;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+  <title>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="css/ui-media.css">
+  <link rel="stylesheet" href="css/ui-base.css">
+  <link rel="stylesheet" href="css/ui-apple.css">
+  <script src="js/zy_anim.js">
+  </script>
+  <script src="js/zy_control.js">
+  </script>
+ 	<script src="js/zy_tmpl.js">
+  </script>
+  <script src="js/zy_json.js">
+  </script>
+  <script src="js/interface.js">
+  </script>
+  <script>
+  var params=zy_parse();
+  var sinceID=0;
+  var maxID=0;
+  function j2vCb(d,c)
+  {
+ 	 if(c.length>1)
+ 	 {
+ 		switch(c[1])
+ 		{
+ 			case 'id':
+ 				if(sinceID<d.id || sinceID==0)
+ 					sinceID=d.id;
+ 				if(maxID>d.id || maxID==0)
+ 					maxID=parseInt(d.id)-1;
+ 				return "";
+ 			break;
+ 			case 'created_at':
+ 			{
+	    			var date=new Date(d.created_at);
+	    			var nowTime=new Date;
+	    			var d=(nowTime.valueOf()-date.valueOf())/1000/60;
+	    			if(d<60)
+	    				return parseInt(d+0.5)+"分钟前";
+	    			else
+	    			{
+	    				d=d/60;
+	    				if(d<24)
+	    					return parseInt(d+0.5)+"小时前";
+	    				else
+	    					return parseInt(d/24+0.5)+"天前";
+	    			}
+ 			}
+ 			break;
+ 			case 'thumbnail_pic':
+ 				if(!d.thumbnail_pic)
+ 				{
+ 					return "";	
+ 				}
+ 				else
+ 				{
+ 					return '<div class="ui-bar" style="max-height:4em"><img style="max-width:4em" src="'+d.thumbnail_pic+'"></img></div><p></p>';	
+ 				}
+ 				break;
+ 			case 'retweeted_status':
+ 				if(!d.retweeted_status)
+ 				{
+ 					return "";	
+ 				}
+ 				else
+ 				{
+ 					var tmpl='<div class="ui-bar ui-body-d"><div class="ui-li-desc ui-smaller ui-float-left" >${user.name}</div><div class="ui-li-desc ui-smaller ui-float-right" >${cb:created_at}</div><p></p><h3 class="ui-li-heading" style="white-space:normal">${text}</h3>${cb:thumbnail_pic}<div onclick="event.preventDefault();" class="ui-li-desc ui-smaller ui-float-left" >来自${source}</div><div class="ui-li-desc ui-smaller ui-float-right" >转发${reposts_count}</div><div class="ui-li-desc ui-smaller ui-float-right" >|</div><div class="ui-li-desc ui-smaller ui-float-right" >收藏${favourites_count}</div><div class="ui-li-desc ui-smaller ui-float-right" >|</div><div class="ui-li-desc ui-smaller ui-float-right" >评论${comments_count}</div></div><p></p>'
+ 					return zy_tmpl_s(tmpl,d.retweeted_status,j2vCb);
+ 				}
+ 				break;
+ 		}
+ 	 }
+  }
+  function cbError(opid,errCode,errDes)
+  {
+  	Log(errDes);
+  }
+  function j2vHome(opId,data)
+  {
+	//<div class="ui-bar" style="max-height:3em"><img style="max-width:3em" src="${thumbnail_pic}"></img></div>
+	Log("opid="+opId);
+  	var json=JSON.parse(data);
+  	var tmpl='${cb:id}<li class=" ui-body-d ui-li-has-thumb ui-li-static ui-li"><span class="ui-li-thumb" style="background-position:top;background-image:url(${user.profile_image_url});" ></span><div class="ui-li-desc ui-smaller ui-float-left" >${user.name}</div><div class="ui-li-desc ui-smaller ui-float-right" >${cb:created_at}</div><p></p><h3 class="ui-li-heading" style="white-space:normal">${text}</h3>${cb:thumbnail_pic} ${cb:retweeted_status}<div onclick="event.preventDefault();" class="ui-li-desc ui-smaller ui-float-left" >来自${source}</div><div class="ui-li-desc ui-smaller ui-float-right" >转发${reposts_count}</div><div class="ui-li-desc ui-smaller ui-float-right" >|</div><div class="ui-li-desc ui-smaller ui-float-right" >收藏${favourites_count}</div><div class="ui-li-desc ui-smaller ui-float-right" >|</div><div class="ui-li-desc ui-smaller ui-float-right" >评论${comments_count}</div></li>';
+	var res=zy_tmpl(tmpl,json.statuses,zy_tmpl_count(json.statuses),j2vCb);
+	var cContent=document.getElementById("homeContent");
+	Log("res="+res);
+	switch(parseInt(opId))
+	{
+		case 0:
+		case 1:
+		{
+			if(res!="")
+			{
+				var node=document.createElement("ul");
+
+				node.className="ui-listview  ui-corner-none  ui-shadow";
+				node.innerHTML=res;
+				Log("createNode success");
+				Log("first Chlid "+cContent.firstElementChild);
+				cContent.insertBefore(node,cContent.firstElementChild);
+				Log("insert success");
+				document.getElementById("moreItem").style.display="block";
+				Log("show more Item");
+			}
+		}
+  		break;
+		case 2:
+		{
+			var node=document.createElement("ul");
+			node.className="ui-listview  ui-corner-none  ui-shadow";
+			node.innerHTML=res;
+			Log("lastChild "+cContent.lastElementChild);
+			cContent.insertBefore(node,cContent.lastElementChild);
+			Log("insert Success ");
+		}	
+		break;
+	}
+	uexWindow.closeToast();
+  	Log(res);
+  }
+  
+  function loadWeiBo(cmd)
+  {
+	  Log("cmd "+cmd);
+	  var url=if_pub_tl+"?access_token="+params['token']+"&count=10";
+	  Log("sinceID "+sinceID);
+	  Log("maxID "+maxID);
+	  Log("token is "+params['token']);
+	  if(cmd==1 && sinceID!=0) url+=("&since_id="+sinceID);
+	  if(cmd==2 && maxID!=0) url+=("&max_id="+maxID);
+	  uexWindow.toast("1","5","数据加载中...",0);
+	  Log("url "+url);
+	  uexXmlHttpMgr.open(cmd,"GET",url,"60000");
+  }
+  zy_fix("homeTitle","navBar",0,function()
+  {
+	  Log("zy_fix ");
+	  uexWidgetOne.cbError=cbError;
+	  uexXmlHttpMgr.onData=j2vHome;
+	  loadWeiBo(0);
+	  uexWindow.evaluateScript("sinaLoginWin","0","uexWindow.close('0');");
+  });
+  
+  function refreshWeibo()
+  {
+	  loadWeiBo(1);
+  }
+  </script>
+  </head>
+  <body class="ui-mobile-viewport" >
+
+<div id="homeTitle" id="homeTitle" data-role="header" class="ui-header ui-bar-c ui-bar-glass ui-header-fixed" >
+<div onclick="uexWindow.open('newMsg','0','editMessage.html')" class="ui-btn ui-btn-limit ui-btn-left   ui-btn-iphone ">  <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">发表</span>  </span>  </div></div></div></div> 
+<h1 id=“weiboType” class="ui-title">公共微博</h1>
+<div onclick="uexWindow.evaluateScript('sinaMainWin','0','refreshWeibo();');" class="ui-btn ui-btn-limit ui-btn-right   ui-btn-iphone ">  <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">刷新</span>  </span>  </div></div></div></div> 
+</div>
+
+ 
+<div id="pubPage" class="ui-page ui-body-d ui-page-active " tabindex="0">
+<div id="homeContent" class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom">
+
+<div onclick="loadWeiBo(2)" id="moreItem" class="ui-bar ui-bar-d" style="border:0px;margin: 0px -15px;text-align:center">
+<h1 class="ui-title">更多</h1>
+</div>
+</div>
+
+</div>
+
+
+
+<div id="navBar" data-role="footer" class="ui-footer ui-bar-a ui-footer-fixed">
+ <div class="ui-navbar  ui-nav-iphone ui-bar-glass">
+ <ul class="ui-grid-d">
+  <li class="ui-block-a"><input type="radio" checked="checked" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="zy_for(event)" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+  <li class="ui-block-b"><input type="radio" name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="zy_for(event)" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-talk"></span><span class="ui-btn-inner"><span class="ui-btn-text">消息</span></span></label></li>
+  <li class="ui-block-c"><input type="radio" name="radiof1" id="radio-f1c" class="ui-hide"><label onclick="zy_for(event)" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的资料</span></span></label></li>
+  <li class="ui-block-d"><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="zy_for(event)" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">广场</span></span></label></li>
+  <li class="ui-block-e"><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="zy_for(event)" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">设置</span></span></label></li>
+</ul>
+</div>
+</div>
+
+  </body>
+</html>

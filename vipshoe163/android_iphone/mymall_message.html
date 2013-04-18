@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-media.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-apple.css">
+        <link rel="stylesheet" href="css/ui-new.css">
+		<link rel="stylesheet" href="css/s_style.css">
+		<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+        </script>
+        <script src="js/zy_control.js">
+        </script>
+        <script src="js/zy_tmpl.js"> 
+        </script>
+         <script type="text/javascript" src="js/config.js"></script>
+    </head>
+    <body class="ui-mobile-viewport ui_body_d">
+        <div id="header" data-role="header" class="ui-header ui-bar-iphone ui-header-fixed ui_title">
+        <div onclick="uexWindow.evaluateScript('','0','uexWindow.close(\'-1\')');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+        
+            <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!--                 <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.evaluateScript('','0','uexWindow.close(\'-1\')');"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text">返回</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+                <strong>我的留言</strong>
+<!--                 <div onclick="uexWindow.evaluateScript('','0','openMessage()');" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text">留言</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+            </h1>
+            <div onclick="uexWindow.evaluateScript('','0','openMessage()');" id="ly" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">留言</span> </span></div> 
+	
+        </div>
+        <!--<div id="page_6" class="ui-page-active ui_page_ddd" tabindex="0">-->
+        	<div id="page_0" class="ui-page ui-body-a ui-page-active ui_body_a_dwx" tabindex="0">
+			<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom cc">
+            <ul id="message_list" class=" ui-body-d ui-fixed-bottom ui_body_dd ui_fixed_bottom  ui-content-box_dwx">
+                <!--<li class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border">
+                    <div class="ui-btn-text ui-li ui-btn-inner">
+                        <div class="ui-link-inherit">
+                            <span></span>
+                        </div>
+                        <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                    </div>
+                </li>
+                <li class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border">
+                    <div class="ui-btn-text ui-li ui-btn-inner">
+                        <div class="ui-link-inherit">
+                            <span></span>
+                        </div>
+                        <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                    </div>
+                </li>-->
+            </ul>
+			<p class='more_p' id="more_" style="display:none;"><a href='javascript:addMore()'>更多</a></p>
+        </div>
+		</div>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/zy_json.js"></script>
+        <script type="text/javascript">
+        	var page = '';
+			var pagesize = '';
+			var msssage_list = '';
+        	var flag = ''
+        	function messOk(){
+        		setTimeout(function(){
+					flag = "true";
+        			getMessageList(1);
+        		},500);
+        	}
+            //获取留言列表
+            function getMessageList(page){
+				if(flag == "true"){
+					msssage_list = '';
+				}
+                var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=message_list&page='+page;
+                uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('1', "GET", url, "");
+                uexXmlHttpMgr.send('1');
+            }
+            zy_fix("header","","",function(){
+				uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+					uexWindow.alert("提示",opCode+":"+errorCode+":"+errorInfo,"确定");
+                }
+                uexXmlHttpMgr.onData = function(opCode, type, result){
+                   
+					var type_ = '';
+                    if (type == 1) {
+                        var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                        var s = JSON.parse(res);
+                        uexWindow.closeToast();
+                        uexXmlHttpMgr.close(opCode);
+                        if (s.status == "未登录") {
+							openLogin();//跳转到登录页面
+						}else if (s.status == "没留言信息") {
+							msssage_list = "暂时无留言";
+						}else{
+							page = s.pager.page;
+							pagesize = s.pager.page_count;
+							if(page < pagesize){
+								$id("more_").style.display = "block";
+							}else{
+								$id("more_").style.display = "none";
+							}
+							for (var i in s.messagelist) {
+								if(s.messagelist[i].msg_type == "0"){
+									type_ = "留言";
+								}else if(s.messagelist[i].msg_type == 1){
+									type_ = "投诉";
+								}else if(s.messagelist[i].msg_type == 2){
+									type_ = "询问";
+								}else if(s.messagelist[i].msg_type == 3){
+									type_ = "售后";
+								}else if(s.messagelist[i].msg_type == 4){
+									type_ = "求购";
+								}
+	                            msssage_list += '<li onclick="openMessageDetails('+s.messagelist[i].msg_id+')" class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border"><div class="ui-btn-text ui-li ui-btn-inner">'+
+	                        	'<div class="ui-link-inherit">'+type_+'：<span>'+s.messagelist[i].msg_title+'</span></div>'+
+	                        	'<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></div></li>';
+                        	}
+							$id("message_list").innerHTML = msssage_list;
+						}
+                    }
+                }
+				getMessageList(1);//获取留言列表
+			});
+            /*window.uexOnload = function(){
+                uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+                    alert(errorInfo);
+                }
+                uexXmlHttpMgr.onData = function(opCode, type, result){
+                    var msssage_list = '';
+					var type_ = '';
+                    if (type == 1) {
+                        var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                        var s = JSON.parse(res);
+                        uexWindow.closeToast();
+                        uexXmlHttpMgr.close(opCode);
+                        if (s.status == "未登录") {
+							openLogin();//跳转到登录页面
+						}else if (s.status == "没留言信息") {
+							msssage_list = "暂时无留言";
+						}else{
+							for (var i in s.messagelist) {
+								if(s.messagelist[i].msg_type == "0"){
+									type_ = "留言";
+								}else if(s.messagelist[i].msg_type == 1){
+									type_ = "投诉";
+								}else if(s.messagelist[i].msg_type == 2){
+									type_ = "询问";
+								}else if(s.messagelist[i].msg_type == 3){
+									type_ = "售后";
+								}else if(s.messagelist[i].msg_type == 4){
+									type_ = "求购";
+								}
+	                            msssage_list += '<li onclick="openMessageDetails('+s.messagelist[i].msg_id+')" class=" ui-btn-d ui-btn-icon-right ui-li ui-li-dwx_border"><div class="ui-btn-text ui-li ui-btn-inner">'+
+	                        	'<div class="ui-link-inherit">'+type_+'：<span>'+s.messagelist[i].msg_title+'</span></div>'+
+	                        	'<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></div></li>';
+								alert(msssage_list);
+                        	}
+							$id("message_list").innerHTML = msssage_list;
+						}
+                    }
+                }
+				getMessageList();//获取留言列表
+            }*/
+			//添加更多
+			function addMore(){
+				flag = '';
+				var current_page = parseInt(page)+1;
+				if(current_page > pagesize){
+					current_page = pagesize;
+				}
+				getMessageList(current_page);
+			}
+			//跳转到登录页面
+			function openLogin(){
+				var html_url = 'login.html?flag=messageList';
+				openNewWin("login",html_url,'2');
+			}
+			//跳转到留言详情页
+			function openMessageDetails(id){
+				var html_url = 'mymall_message_list.html?id='+id;
+				openNewWin("messageDetails",html_url,'2');
+			}
+			//跳转到留言页
+			function openMessage(){
+				var html_url = 'mymall_message_text.html';
+				openNewWin("mymall_message_text",html_url,'2');
+			}
+        </script>
+    </body>
+    <script>
+        zy_init();
+    </script>
+</html>

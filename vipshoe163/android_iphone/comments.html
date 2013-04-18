@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css"> 
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div data-role="header" class="ui-header ui-bar-a ui-header-fixed ui-bar-glass" >
+<!-- <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onClick="uexWindow.close('-1');"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">返回</span></span></div></div></div></div>  -->
+<div onClick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+用户评论 
+</h1> 
+<!-- <div id="comments" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">评价</span></span></div></div></div></div>  -->
+<div id="comments" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">评价</span> </span></div> 
+
+</div>
+
+<div id="page_0" class="ui-page ui-body-a ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom cc">
+<div id="">
+<div id="tip_" style="color:#646464; text-align: center;padding-top:.5em;display:none">暂无用户评论</div>
+<ul data-role="listview" id="comments_list" class="ui-listview  ui-btn-corner-all  ui-shadow a">
+<!-- <li class=" ui-body-d     ui-btn-corner-top  ui-li-static  ui-li"> -->
+<!--    	          <p class="ui-li-desc">用户名：<span>zhangsan</span></p><p class="ui-li-desc">评价等级：<span class="star"><span class="rating"></span><span id="rating" class="rating_solid"></span></span></p><p class="ui-li-desc">评价内容：<span>我不告诉你，哈哈</span></p>       </li>   -->
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/zy_json.js"></script>
+ <script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript">
+	//获取参数
+	//parseParam();
+    var id = 0;
+	var good_name = "";
+	//获取评论列表
+	function getCommentsList(){
+		var url = image_url + 'plugins/zywx/rpc/comment.php?jsoncallback=?&act=show_comment&goods_id='+id+'&page=1&page_size=10';
+		uexWindow.toast("1","5","请稍后...","0");
+        uexXmlHttpMgr.open('1', "GET", url, "");
+        uexXmlHttpMgr.send('1');
+	}
+	window.uexOnload = function(){
+		//获取参数
+		parseParam();
+	    id = params.id;
+		good_name = decodeURIComponent(params.name);
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+            uexWindow.alert("提示",errorInfo,"确定");
+        }
+        uexXmlHttpMgr.onData = function(opCode, type, result){
+			var comments_list = '';
+            if (type == 1) {
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var o_ = JSON.parse(res);
+				if(o_.pluginstatus){
+					uexXmlHttpMgr.close(opCode);
+					uexWindow.closeToast();
+					uexWindow.alert("提示",o_.pluginstatus,"确定");
+					return;
+				}
+				if (opCode == 1) {//获取用户信息
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					if(s.length == 0){
+						$id("tip_").style.display = "block";
+					}else{
+						$id("tip_").style.display = "none";
+						for(var i in s.comments){
+							if (s.comments[i].rank == 1) {
+	                            comments_list += '<li style="font-size: 0.975em;" class=" ui-body-d ui-btn-corner-top ui-li-static  ui-li"><p class="ui-li-desc w_comment_con">用户名：<span>' + s.comments[i].username + '</span></p><p class="ui-li-desc w_comment_con"><span class="rating_sy">评价等级：</span><span class="star1"><span class="rating1"></span><span id="rating" style="left:-77%;width:5.9em;" class="rating_solid1_s"></span></span><p class="clear"></p></p><p class="ui-li-desc w_comment_con">评价内容：<span>' + s.comments[i].content + '</span></p></li>';
+							}else if(s.comments[i].rank == 2){
+								comments_list += '<li style="font-size: 0.975em;" class=" ui-body-d ui-btn-corner-top ui-li-static  ui-li"><p class="ui-li-desc w_comment_con">用户名：<span>' + s.comments[i].username + '</span></p><p class="ui-li-desc w_comment_con"><span class="rating_sy">评价等级：</span><span class="star1"><span class="rating1"></span><span id="rating" style="left:-77%;width:5.9em;" class="rating_solid2_s"></span></span><p class="clear"></p></p><p class="ui-li-desc w_comment_con">评价内容：<span>' + s.comments[i].content + '</span></p></li>';
+							}else if(s.comments[i].rank == 3){
+								comments_list += '<li style="font-size: 0.975em;" class=" ui-body-d ui-btn-corner-top ui-li-static  ui-li"><p class="ui-li-desc w_comment_con">用户名：<span>' + s.comments[i].username + '</span></p><p class="ui-li-desc w_comment_con"><span class="rating_sy">评价等级：</span><span class="star1"><span class="rating1"></span><span id="rating" style="left:-77%;width:5.9em;" class="rating_solid_s"></span></span><p class="clear"></p></p><p class="ui-li-desc w_comment_con">评价内容：<span>' + s.comments[i].content + '</span></p></li>';
+							}else if(s.comments[i].rank == 4){
+								comments_list += '<li style="font-size: 0.975em;" class=" ui-body-d ui-btn-corner-top ui-li-static  ui-li"><p class="ui-li-desc w_comment_con">用户名：<span>' + s.comments[i].username + '</span></p><p class="ui-li-desc w_comment_con"><span class="rating_sy">评价等级：</span><span class="star1"><span class="rating1"></span><span id="rating" style="left:-77%;width:5.9em;" class="rating_solid4_s"></span></span><p class="clear"></p></p><p class="ui-li-desc w_comment_con">评价内容：<span>' + s.comments[i].content + '</span></p></li>';
+							}else if(s.comments[i].rank == 5){
+								comments_list += '<li style="font-size: 0.975em;" class=" ui-body-d ui-btn-corner-top ui-li-static  ui-li"><p class="ui-li-desc w_comment_con">用户名：<span>' + s.comments[i].username + '</span></p><p class="ui-li-desc w_comment_con"><span class="rating_sy">评价等级：</span><span class="star1"><span class="rating1"></span><span id="rating" style="left:-77%;width:5.9em;" class="rating_solid5_s"></span></span><p class="clear"></p></p><p class="ui-li-desc w_comment_con">评价内容：<span>' + s.comments[i].content + '</span></p></li>';
+							}
+						}
+					}
+					//var tmpl = '<li class=" ui-body-d ui-btn-corner-top ui-li-static  ui-li"><p class="ui-li-desc">用户名：<span>${}</span></p><p class="ui-li-desc"><span class="rating_sy">评价等级：</span><span>5颗星星</span></p><p class="ui-li-desc">评价内容：<span>我不告诉你，哈哈</span></p></li>';
+					
+					$id("comments_list").innerHTML = comments_list;
+				}
+            }
+        }
+		uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+            if (data == 1) {
+                openGoodsComments(id,encodeURIComponent(good_name));
+            }else {
+            	openLogin();
+            }				
+        }
+		getCommentsList();//获取评论列表
+	}
+	//判断文件是否存在
+    function isFileExistByPath(path){
+        uexFileMgr.isFileExistByPath(path);
+    }
+	//打开商品评论页面
+    function openGoodsComments(id,name){
+        var html_url = 'goods_comments.html?id='+id+'&name_='+name;
+		uexWindow.open('goodsComments', '0', html_url, '2', '', '', '0x0');
+    }
+	$id("comments").onclick = function(){
+		isFileExistByPath("wgt://data/uesrInfo.txt");
+	}
+	//跳转到登录页面
+	function openLogin(){
+		var html_url = 'login.html?name=goodsComments';
+		openNewWin("login",html_url,2);
+	}
+
+</script>
+  </body>
+  <script>
+	zy_init();
+  </script>
+</html>

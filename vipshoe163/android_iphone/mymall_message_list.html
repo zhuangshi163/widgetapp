@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-media.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-apple.css">
+        <link rel="stylesheet" href="css/ui-new.css">
+        <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+        </script>
+        <script src="js/zy_control.js">
+        </script> 
+        <script src="js/zy_tmpl.js">
+        </script>
+         <script type="text/javascript" src="js/config.js"></script>
+    </head>
+    <body class="ui-mobile-viewport ui_body_d">
+        <div data-role="header" class="ui-header ui-bar-iphone ui-header-fixed ui_title">
+        <div onclick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+        
+            <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!--                 <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text" >返回</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+                我的留言
+<!--                 <div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" onclick="deleteMessage()"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text">删除</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+            </h1>
+            <div onclick="deleteMessage()" id="sc" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)"  data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">删除</span> </span></div> 
+	
+        </div>
+        <div id="page_12" class="ui-page-active ui_page_ddd" tabindex="0">
+			<div class="w_set">
+		    	<div class="ui_body_dwx"></div>
+	            <div class="ui_body_dd ui_fixed_bottom  ui-content-box_dwx">
+	                <p class="li_title">
+	                    <em id="message"></em>
+	                </p>
+					<div id="message_details">
+		                <!--<div class="ui-bar ui-bar-d ui-corner-all box_bg_dwx">
+		                    <div class="ly_title_dwx">
+		                        我的留言：                2012.02.14    11:35:20
+		                    </div>
+		                    <p class="ly_content_dwx">
+		                        fghfghx的复合风管回复黑胡椒风格和符合规范好得很fghfghx的复合风管回复黑胡椒风格和符合规范好得很fghfghx的复合风管回复黑胡椒风格和符合规范好得很fghfghx的复合风管回复黑胡椒风格和符合规范好得很
+		                    </p>
+		                </div>
+		                <div class="ui-bar ui-bar-d ui-corner-all box_bg_dwx">
+		                    <div class="ly_title_dwx">
+		                        我的留言：                2012.02.14    11:35:20
+		                    </div>
+		                    <p class="ly_content_dwx">
+		                        fghfghx的复合风管回复黑胡椒风格和符合规范好得很fghfghx的复合风管回复黑胡椒风格和符合规范好得很fghfghx的复合风管回复黑胡椒风格和符合规范好得很fghfghx的复合风管回复黑胡椒风格和符合规范好得很
+		                    </p>
+		                </div>-->
+					</div>
+	                <div onclick="openMessage()" class="ui-btn-center" tabindex="0">
+	                    <div data-role="button" class=" ui-btn-corner-all ui-btn ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+	                        <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">留言</span></span>
+	                    </div>
+	                </div>
+	            </div>
+	    	</div>
+        </div>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/zy_json.js"></script>
+		<script type="text/javascript">
+			//获取参数
+			//parseParam();
+            var id = 0;
+			//获取留言详细
+			function getMessageList(){
+				var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=message_info&msg_id='+id;
+				uexWindow.toast("1","5","请稍后...","0");
+		        uexXmlHttpMgr.open('1', "GET", url, "");
+		        uexXmlHttpMgr.send('1');
+			}
+			//删除留言
+			function deleteMessage(){
+				var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=del_msg&msg_id='+id;
+				//uexWindow.toast("1","5","请稍后...","0");
+		        uexXmlHttpMgr.open('2', "GET", url, "");
+		        uexXmlHttpMgr.send('2');
+			}
+			
+            window.uexOnload = function(){
+				//获取参数
+				parseParam();
+	            id = params.id;
+				
+                uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+                   	uexWindow.alert("提示",opCode+":"+errorCode+":"+errorInfo,"确定");
+                }
+                uexXmlHttpMgr.onData = function(opCode, type, result){
+                    var msssage_details = '';
+                    if (type == 1) {
+						if(opCode == "1"){
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+	                        var s = JSON.parse(res);
+	                        uexWindow.closeToast();
+	                        uexXmlHttpMgr.close(opCode);
+							var type_ = "";
+							for(var i in s){
+								if(s[i].msg_type == "0"){
+									type_ = "留言";
+								}else if(s[i].msg_type == 1){
+									type_ = "投诉";
+								}else if(s[i].msg_type == 2){
+									type_ = "询问";
+								}else if(s[i].msg_type == 3){
+									type_ = "售后";
+								}else if(s[i].msg_type == 4){
+									type_ = "求购";
+								}
+								$id("message").innerHTML = type_ + ":" +s[i].msg_title;
+								msssage_details += '<div class="ui-bar ui-bar-d ui-corner-all box_bg_dwx">'+
+								'<div class="ly_title_dwx">我的留言：                '+s[i].msg_time+'</div>'+
+	                    		'<p class="ly_content_dwx">'+s[i].msg_content+'</p></div>';
+							}
+							$id("message_details").innerHTML = msssage_details;
+						}else if(opCode == "2"){
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+	                        var s = JSON.parse(res);
+	                        uexWindow.closeToast();
+	                        uexXmlHttpMgr.close(opCode);
+							
+							if(s.status == "删除留言失败"){
+								uexWindow.alert("提示","删除失败","确定");
+							}else if(s.status == "删除留言成功"){
+								uexWindow.alert("提示","删除成功","确定");
+								openMessageList();//跳转到留言列表页
+							}
+						}
+                    }
+                }
+				getMessageList();//获取留言列表
+            }
+			//跳转到留言页
+			function openMessage(){
+				var html_url = 'mymall_message_text.html';
+				openNewWin("message",html_url,'2');
+			}
+			//跳转到留言列表页
+			function openMessageList(){
+				var html_url = 'mymall_message.html';
+				openNewWin("messageList",html_url,'2');
+			}
+		</script>
+    </body>
+    <script>
+        zy_init();
+    </script>
+</html>

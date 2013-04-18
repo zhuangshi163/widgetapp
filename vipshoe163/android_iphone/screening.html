@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-media.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-apple.css"> 
+        <link rel="stylesheet" href="css/ui-new.css">
+		<link rel="stylesheet" href="css/s_style.css">
+		<link rel="stylesheet" href="css/h_style.css">
+		<link rel="stylesheet" href="css/w_style.css"> 
+        <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+        </script>
+        <script src="js/zy_control.js">
+        </script>
+        <script src="js/zy_tmpl.js">
+        </script>
+         <script type="text/javascript" src="js/config.js"></script>
+    </head>
+    <body class="ui-mobile-viewport">
+        <div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+        <div onClick="uexWindow.evaluateScript('', '0','closeTheWin()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+        
+            <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!--                 <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onClick="uexWindow.close('-1');"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text">返回</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+                筛选
+<!--                 <div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" id="select_id"> -->
+<!--                     <div class="ui-btn-apple-nl"> -->
+<!--                         <div class="ui-btn-apple-nr"> -->
+<!--                             <div class="ui-btn-apple-nc"> -->
+<!--                                 <span class="ui-btn-inner "><span class="ui-btn-text">查找</span></span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+            </h1>
+            <div id="select_id" onClick="uexWindow.evaluateScript('', '0','openScreeningResult()');" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">查找</span> </span></div> 
+	
+        </div>
+        <div id="page_0" class="ui-page ui-body-a ui-page-active ui-body-screening" tabindex="0">
+            <div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom cc ui-body-screening">
+                <ul data-role="listview" class="ui-listview  ui-corner-none  ui-shadow ui-screeing" id="screeing-ul">
+                    <li class=" ui-body-d ui-li-static  ui-li ui-body-li-s" id="li_brand" style="display:none;">
+                        <div class="ui-select ui-li-div">
+                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-bar-d ui-select">
+                                <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" id="brand_span">全部</span>
+                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+                                    </div>
+                                </span>
+                                <select name="select-choice-1" selectedIndex="0" id="select-brand" onchange="zy_slectmenu(this.id)">
+                                    <option value="item1">全部</option>
+                                    <option value="item2">item2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3 class="ui-li-heading">品　　牌： </h3>
+                    </li>
+                    <li class=" ui-body-d ui-li-static  ui-li ui-body-li-s" id="li_price" style="display:none;">
+                        <div class="ui-select ui-li-div">
+                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-bar-d ui-select">
+                                <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" id="price_span">全部</span>
+                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+                                    </div>
+                                </span>
+                                <select name="select-choice-2" selectedIndex="0" id="select-price" onchange="zy_slectmenu(this.id)">
+                                    <option value="item1">全部</option>
+                                    <option value="item2">item2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3 class="ui-li-heading">价　　格：</h3>
+                    </li>
+                    <!--<li class=" ui-body-d       ui-li-static  ui-li ui-body-li-s" id="li_tiem" style="display:block;">
+                        <div class="ui-select ui-li-div">
+                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-bar-d ui-select">
+                                <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" id="time_span">全部</span>
+                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+                                    </div>
+                                </span>
+                                <select name="select-choice-3" selectedIndex="0" id="select-time" onchange="zy_slectmenu(this.id)">
+                                    <option value="item1">全部</option>
+                                    <option value="item2">item2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3 class="ui-li-heading">上市时间： </h3>
+                    </li>
+                    <li class=" ui-body-d ui-li-static  ui-li ui-body-li-s" id="li_color" style="display:block;">
+                        <div class="ui-select ui-li-div">
+                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-bar-d ui-select">
+                                <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">全部</span>
+                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+                                    </div>
+                                </span>
+                                <select name="select-choice-4" selectedIndex="0" id="select-color" onchange="zy_slectmenu(this.id)">
+                                    <option value="item1">全部</option>
+                                    <option value="item2">item2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3 class="ui-li-heading">颜　　色： </h3>
+                    </li>
+                    <li class=" ui-body-d       ui-li-static  ui-li ui-body-li-s" id="li_style" style="display:block;">
+                        <div class="ui-select ui-li-div">
+                            <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-bar-d ui-select">
+                                <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">全部</span>
+                                    <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+                                        <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+                                    </div>
+                                </span>
+                                <select name="select-choice-5" selectedIndex="0" id="select-appearanceStyle" onchange="zy_slectmenu(this.id)">
+                                    <option value="item1">全部</option>
+                                    <option value="item2">item2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3 class="ui-li-heading">外观样式： </h3>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript">
+	//获取参数
+	//parseParam();
+	var id = 0;
+	var num_length = 0;
+	//获取品牌
+	function brand(){
+		var url = image_url + 'plugins/zywx/rpc/category.php?jsoncallback=?&act=brands&id='+id;
+		//alert(url);
+		uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('1', "GET", url, ""); 
+		uexXmlHttpMgr.send('1');
+	}
+	//获取价格
+	function price(){
+		var url = image_url + 'plugins/zywx/rpc/category.php?jsoncallback=?&act=prices&id='+id;
+		//alert(url);
+		uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('2', "GET", url, ""); 
+		uexXmlHttpMgr.send('2');
+	}
+	//上市时间、颜色、外观样式
+	function time_color_style(){
+		var url = image_url + 'plugins/zywx/rpc/category.php?jsoncallback=?&act=attr_list&id='+id;
+		//alert(url);
+		uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('3', "GET", url, ""); 
+		uexXmlHttpMgr.send('3');
+	}
+	function screeningSuccess(sid){
+        setTimeout(function(){
+        	id = sid;
+        	brand();//获取品牌
+        }, 500);
+    }
+	zy_fix("header","","",function(){
+		//获取参数
+		parseParam();
+		id = params.id;
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			var brand_select = '';//品牌
+			var price_select = '';//价格
+			var time_select = '';//上市时间
+			var color_select = '';//颜色
+			var appearanceStyle_select = '';//外观样式
+			if (opCode == 1) {
+				if (type == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					if (s.status != "品牌为空") {
+						$id("li_brand").style.display = "block";
+						for (var i = 0; i < s.length; i++) {
+							brand_select += '<option value="' + s[i].brand_id + '">' + s[i].brand_name + '</option>';
+						}
+						$id("select-brand").innerHTML = "<option value='0'>全部</option>" + brand_select;
+					}
+					price();//获取价格
+				}
+			}else if(opCode == 2){
+				if (type == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					
+					if (s.status != "价格等级为空") {
+						$id("li_price").style.display = "block";
+						for (var i = 0; i < s.length; i++) {
+							price_select += '<option value="' + s[i].brand_id + '">' + s[i].start + '-' + s[i].end + '</option>';
+						}
+						$id("select-price").innerHTML = "<option value='0'>全部</option>" + price_select;
+					}
+					time_color_style();//上市时间、颜色、外观样式
+				}
+			}else if(opCode == 3){
+				if (type == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					var screening_list = '';
+					var list_ = "";
+					if (s.status != "筛选属性为空") {
+						for (var j = 0; j < s.length; j++) {
+							num_length = s.length;
+							screening_list += '<li class=" ui-body-d ui-li-static  ui-li ui-body-li-s" id="li_color">'+
+								'<div class="ui-select ui-li-div"><div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-bar-d ui-select">'+
+								'<span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">全部</span>'+
+								'<div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow"><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>'+
+								'</div></span><select name="select-choice-4" selectedIndex="0" id="select-'+j+'" onchange="zy_slectmenu(this.id)">';
+								
+								for (var i = 0; i < s[j].attr_list.length; i++) {
+									time_select += '<option value="' + s[j].attr_list[i].goods_attr_id + '">' + s[j].attr_list[i].attr_value + '</option>';
+								}
+								list_ += screening_list + "<option value='0'>全部</option>" + time_select +'</select></div></div><h3 class="ui-li-heading">'+s[j].filter_attr_name+'： </h3></li>';
+								time_select = '';
+								screening_list = ''
+						}
+						var obj = document.createElement("div");
+						obj.innerHTML = list_;
+						$id("screeing-ul").appendChild(obj);
+					}
+				}
+			}
+		}
+		brand();//获取品牌
+	});
+	/*window.uexOnload = function(){
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			var brand_select = '';//品牌
+			var price_select = '';//价格
+			var time_select = '';//上市时间
+			var color_select = '';//颜色
+			var appearanceStyle_select = '';//外观样式
+			if (opCode == 1) {
+				if (type == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					
+					for(var i=0;i<s.length;i++){
+						brand_select += '<option value="'+s[i].brand_id+'">'+s[i].brand_name+'</option>';
+					}
+					$id("select-brand").innerHTML = "<option value='0'>全部</option>"+brand_select;
+					price();//获取价格
+				}
+			}else if(opCode == 2){
+				if (type == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					
+					for(var i=0;i<s.length;i++){
+						price_select += '<option value="'+s[i].brand_id+'">'+s[i].start+'-'+s[i].end+'</option>';
+					}
+					$id("select-price").innerHTML = "<option value='0'>全部</option>"+price_select;
+					time_color_style();//上市时间、颜色、外观样式
+				}
+			}else if(opCode == 3){
+				if (type == 1) {
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					for (var j = 0; j < s.length; j++) {
+						if (j == 0) {
+							for (var i = 0; i < s[j].attr_list.length; i++) {
+								time_select += '<option value="' + s[j].attr_list[i].goods_attr_id + '">' + s[j].attr_list[i].attr_value + '</option>';
+							}
+						}else if(j == 1){
+							for (var i = 0; i < s[j].attr_list.length; i++) {
+								color_select += '<option value="' + s[j].attr_list[i].goods_attr_id + '">' + s[j].attr_list[i].attr_value + '</option>';
+							}
+						}else if(j == 2){
+							for (var i = 0; i < s[j].attr_list.length; i++) {
+								appearanceStyle_select += '<option value="' + s[j].attr_list[i].goods_attr_id + '">' + s[j].attr_list[i].attr_value + '</option>';
+							}
+						}
+					}
+					$id("select-time").innerHTML = "<option value='0'>全部</option>" + time_select;
+					$id("select-color").innerHTML = "<option value='0'>全部</option>" + color_select;
+					$id("select-appearanceStyle").innerHTML = "<option value='0'>全部</option>" + appearanceStyle_select;
+				}
+			}
+		}
+		brand();//获取品牌
+	}*/
+	//跳转到筛选结果页面
+	function openScreeningResult(){
+		var brand = $id("select-brand").value;//品牌
+		var price = $id("price_span").innerHTML;//价格
+		/*var time = $id("select-time").value;//上市时间
+		var color = $id("select-color").value;//颜色
+		var app_style = $id("select-appearanceStyle").value;//外观样式*/
+		//alert("品牌："+ brand+"价格："+price+"上市时间："+time+"颜色："+color+"外观样式："+app_style);
+		var str = '';
+		for(var i=0;i<num_length;i++){
+			str += $id("select-" + i).value + ".";	
+		}
+		var html_url = "screening_result.html?id="+id+"&brand="+encodeURIComponent(brand)+"&price="+encodeURIComponent(price)+"&str="+encodeURIComponent(str);
+		openNewWin("screening_result",html_url,'2');
+	}
+	//点击查找
+	/*$id("select_id").onclick = function(){
+		openScreeningResult(id);//跳转到筛选结果页面
+	}*/
+	function closeTheWin(){
+		uexWindow.close(-1);
+	}
+</script>
+    </body>
+</html>

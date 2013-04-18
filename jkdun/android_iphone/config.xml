@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget appId="11132570" channelCode="0007" height="480" sreensize="3.5" version="0.3" widgetId="" width="320"> 
+  <name>test2020</name>  
+  <description>ECshop</description>  
+  <author email=""/>  
+  <icon src="icon.png"/>  
+  <license href=""/>  
+  <content encoding="utf-8" src="index.html"/>  
+  <updateurl>http://app.jkdun.com/plugins/zywx/rpc/upgrade.php?act=widget_upgrade</updateurl>  
+  <logserverip>192.168.1.130</logserverip>  
+  <showmyspace>false</showmyspace>  
+  <obfuscation>false</obfuscation>  
+  <bgcolor/>  
+  <orientation>1</orientation>  
+  <appSec>b810cac848b1af02046b9600356524e0</appSec> 
+</widget>

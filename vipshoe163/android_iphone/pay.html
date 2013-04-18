@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css"> 
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/h_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport" >
+   
+
+<div data-role="header" class="ui-header ui-bar-a ui-header-fixed ui-bar-glass h_t_color" >
+<!-- <div class="ui-btn  ui-btn-left  ui-btn-corner-all ui-shadow  ui-btn-c" onClick="uexWindow.close(-1);">  <span class="ui-btn-inner ui-btn-corner-all"> <span class="ui-btn-text">返回</span>  </span> <button class="ui-btn-hidden"></button> </div> -->
+<div onClick="uexWindow.close(-1);" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+订单详情
+</h1> 
+</div>
+
+<div id="page_0" class="ui-page ui-body-a ui-page-active" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom h_cn_color">
+	
+<ul data-role="listview" class="ui-listview ui-listview-inset ui-corner-none  ui-shadow "> 
+<li class=" ui-body-d  ui-li-static  ui-li h-lb-c ui-li-hs h-field-contain"> 选择付款方式    </li> 
+<li class=" ui-body-d  ui-li-static  ui-li ui-li-hs"> 信用卡快捷支付   </li> 
+<li class=" ui-body-d  ui-li-static  ui-li ui-li-hs"> 支付宝    </li> 
+</ul>
+
+<ul data-role="listview" class="ui-listview ui-listview-inset ui-corner-none  ui-shadow"> 
+<li class=" ui-body-d       ui-li-static  ui-li">
+  <h3 class="ui-li-heading">支付方式：支付宝</h3>
+  <div style="width:100%;" class="ui-li-hs">商品详情：E662.4英寸1600万象素分辨率（240*320）象素液晶显示器<br/><br/>
+  	商品总价值：￥<span style="color:red;">2500.0</span>元<br/><br/>
+  	会员账户余额：￥<span>2500.0</span>元<br/><br/>
+  </div>
+</li> 
+</ul>
+
+
+<ul data-role="listview" class="ui-listview ui-listview-inset ui-corner-none  ui-shadow"> 
+<li class=" ui-body-d       ui-li-static  ui-li ui-li-hs">
+  
+  应付总价：￥<span>2505.0</span>元<br/><br/>
+<div class="ui-has-label">
+	<label for="text-0" class="ui-input-text " >支付密码：</label>
+	<input placeholder="" name="text-0" id="text-0"  type="text" value="" class="ui-input-text ui-body-null ui-btn-corner-all ui-shadow-inset ui-btn-d"/>
+</div>
+</ul>
+
+<div data-role="button" class=" ui-btn-corner-all ui-btn  ui-btn-e   ui-shadow h-btn-pay"> <span class="ui-btn-inner ui-btn-corner-all" style="color:#fff;"> <span class="ui-btn-text">按钮</span> </span></div> 
+
+
+</div>
+</div>
+
+
+
+  </body>
+</html>

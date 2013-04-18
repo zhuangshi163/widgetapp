@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css"> 
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+</head>
+<body class="ui-mobile-viewport ui_body_d" >
+
+<div data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+<div onclick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<strong>账户信息</strong>
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" onclick="edit()"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">编辑</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1>
+	<div onclick="edit()" id="qd" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">编辑</span> </span></div> 
+	
+</div>
+
+<div id="page_3" class="ui-page-active ui_page_ddd" tabindex="0">
+	<div class="w_set">
+    	<div class="ui_body_dwx"></div>
+		<ul class=" ui_body_dd ui_fixed_bottom" style="margin-top: 0.5em;">
+			<li class="li_title" style="display:none;"><input type="hidden" id="user_name"/><em>我的账户</em></li>
+			<li class=" ui-body-b ui-corner-top ui-li-static ui-li ui_body_b_dwx">出生日期: <em class="many_color_dwx" id="birth_date"></em></li> 
+			<li class=" ui-body-b ui-li-static  ui-li  ui_body_b_dwx ui_li_ddwx">性　　别: <em class="many_color_dwx" id="sex"></em></li> 
+			<li class=" ui-body-b ui-li-static  ui-li ui_body_b_dwx ui_li_ddwx">邮　　箱: <em class="many_color_dwx" id="email"></em></li> 
+			<li class=" ui-body-b ui-li-static  ui-li ui_body_b_dwx ui_li_ddwx">M　S　N: <em class="many_color_dwx" id="msn"></em></li> 
+			<li class=" ui-body-b ui-li-static  ui-li ui_body_b_dwx ui_li_ddwx">Q　　 Q: <em class="many_color_dwx" id="qq"></em></li> 
+			<li class=" ui-body-b ui-li-static  ui-li ui_body_b_dwx ui_li_ddwx">办公电话: <em class="many_color_dwx" id="office_phone"></em></li> 
+			<li class=" ui-body-b ui-corner-bottom  ui-li-static  ui-li ui_body_b_dwx ui_li_ddwx">手　　机: <em class="many_color_dwx" id="mobile_phone"></em></li>
+		</ul>
+		<!--<div class="ui-btn-center" tabindex="0"> 
+			<div data-role="button" onclick="" class=" ui-btn-corner-all ui-btn ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+				<span class="ui-btn-inner ui-btn-corner-all"> 
+					<span class="ui-btn-text">注销账号</span> 
+				</span>
+			</div> 
+		</div>-->
+	</div> 
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript">
+	//获取账户信息
+	function getUserInfo(){
+		var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=profile';
+		uexWindow.toast("1","5","请稍后...","0");
+        uexXmlHttpMgr.open('1', "GET", url, "");
+        uexXmlHttpMgr.send('1');
+	}
+	//注销用户
+	function cancellation(){
+		var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=logout';
+		uexWindow.toast("1","5","请稍后...","0");
+        uexXmlHttpMgr.open('2', "GET", url, "");
+        uexXmlHttpMgr.send('2');
+	}
+    window.uexOnload = function(){
+        uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+           uexWindow.alert("提示",opCode+":"+errorCode+":"+errorInfo,"确定");
+        }
+        uexXmlHttpMgr.onData = function(opCode, type, result){
+            if (type == 1) {
+                if (opCode == 1) {//获取用户信息
+                    var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                    var s = JSON.parse(res);
+                    uexWindow.closeToast();
+                    uexXmlHttpMgr.close(opCode);
+					if(s){
+						var sex_ = '';
+						$id("birth_date").innerHTML = s.birthday;
+						if(s.sex == 0){
+							sex_ = '保密';
+						}else if(s.sex == 1){
+							sex_ = '男';
+						}else if(s.sex == 2){
+							sex_ = '女';
+						}
+						$id("user_name").value = s.user_name;
+						$id("sex").innerHTML = sex_;
+						$id("email").innerHTML = s.email;
+						$id("msn").innerHTML = s.msn;
+						$id("qq").innerHTML = s.qq;
+						$id("office_phone").innerHTML = s.office_phone;
+						$id("mobile_phone").innerHTML = s.mobile_phone;
+					}else{
+						uexWindow.alert("提示",s.status,"确定");
+					}
+                }
+            }
+        }
+		getUserInfo();//获取用户信息
+    }
+	//跳转到编辑页面
+	function edit(){
+		var user_name = $id("user_name").value;//用户名
+		var birth_date = $id("birth_date").innerHTML;//出生日期
+		var sex = $id("sex").innerHTML;//性别
+		var email = $id("email").innerHTML;//电子邮箱
+		var msn = $id("msn").innerHTML;//msn
+		var qq = $id("qq").innerHTML;//qq
+		var office_phone = $id("office_phone").innerHTML;//办公电话
+		var mobile_phone = $id("mobile_phone").innerHTML;//手机
+		
+		var html_url = 'mymall_info_edit.html?user_name='+encodeURIComponent(user_name)+'&birth_date='+encodeURIComponent(birth_date)+'&sex='+encodeURIComponent(sex)+'&email='+encodeURIComponent(email)+'&msn='+encodeURIComponent(msn)+'&qq='+qq+'&office_phone='+office_phone+'&mobile_phone='+mobile_phone;
+		openNewWin("edit",html_url,'2');
+	}
+	//点击列表事件
+	var t_m = false, t_start_x, t_end_x;
+	function t_m_start(id){
+		document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+	    t_m = true;
+	    t_start_x = e.touches[0].pageX;
+	}
+	function t_m_move(id){
+		document.getElementByIdid(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	}
+	
+	function t_m_end(id){
+		document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	    t_m = false;
+	}
+	//点击列表事件
+	var t_m3 = false, t_start_x3, t_end_x3;
+	function t_m_start_right(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+	    t_m3 = true;
+	    t_start_x3 = e.touches[0].pageX;
+	}
+	function t_m_move_right(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	}
+	
+	
+	function t_m_end_right(id){
+		document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+	    t_m3 = false;
+	}
+</script>
+</body>
+
+<script>
+	zy_init();
+</script>
+</html>

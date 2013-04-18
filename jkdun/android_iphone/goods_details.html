@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-media.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-apple.css"> 
+        <link rel="stylesheet" href="css/ui-new.css">
+		<link rel="stylesheet" href="css/s_style.css">
+		<link rel="stylesheet" href="css/h_style.css">
+		<link rel="stylesheet" href="css/w_style.css">
+        <link rel="stylesheet" href="css/ui-flip.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/zy_anim.js">
+        </script>
+        <script src="js/zy_control.js">
+        </script>
+        <script src="js/zy_tmpl.js">
+        </script>
+         <script type="text/javascript" src="js/config.js"></script>
+        <script type="text/javascript" src="js/zyflip.js"></script>
+		<script type="text/javascript" src="js/zy_click.js"></script>
+		
+    </head>
+    <body class="ui-mobile-viewport ui_body_d_sy">
+        <div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+<!--             <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone "> -->
+<!--                 <div class="ui-btn-apple-nl"> -->
+<!--                     <div class="ui-btn-apple-nr"> -->
+<!--                         <div class="ui-btn-apple-nc"> -->
+<!--                             <span class="ui-btn-inner" onClick="uexWindow.evaluateScript('','0','close_()');"><span class="ui-btn-text">返回</span></span> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
+			<div data-role="button" id="fh" ontouchstart="zy_touch('',function(){uexWindow.evaluateScript('','0','close_()');})" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+            <h1 class="ui-title" tabindex="0" role="heading" aria-level="1" id="title">商品详情</h1>
+        </div>
+		<!-- 大图片弹出层 -->
+		<!-- <div class="pic_opacity" id="pic_div_" style="display:none;"></div>
+		<div class="pic_big" id="pic_div" style="display:none;">
+			<div class="pic_close"></div>
+			<ul class="pic_con">
+				<li class="pic_before"><a href="javascript:pic_prev()" class="pic_left"></a></li>
+				<li style="width:100%;height:100%;" class="pic_details"><a style="display:block;width:100%;height:100%;" href="javascript:bigPic_show_hide()" id="pic_big_a_"><span id="pic_big" style="display:block;width:100%;height:100%;background:url('')" ></span></a></li>
+				<li class="pic_next"><a href="javascript:pic_next()"></a></li>
+			</ul>
+		</div> -->
+        <div id="page_0" class="ui-page ui-body-a ui-page-active ui_body_a_dwx " tabindex="0">
+            <div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom cc">
+            	 <div class="w_goods" id="" style="" >
+            	 	
+            	 	<!--<div id="ssww" class="ui-flip-doc" style="height:7em;overflow:hidden;border:1px solid #0f0;">
+            	 		<div class="www_details_img" style="border:1px solid #f00;">
+                        	<div class="ui-flip-doc pic-margin-sy" >
+								<div id="fliphor1"  class="ui-flip-hor " style="height: 7em;">
+									<section class="ui-flip-section" style="background:url('css/res-apple/11.jpg')"></section>
+								</div>
+							</div>
+							<div class="ui-flip-doc pic-margin-sy1" >
+								<div id="fliphor2"  class="ui-flip-hor " style="height: 7em;">
+									<section class="ui-flip-section" style="background:url('css/res-apple/bj12.png')"></section>
+								</div>
+							</div>
+						</div>
+					</div>-->
+					<!--<div  style="border:1px solid #f00;" >
+						<div id="ssww" class="ui-flip-doc " style="">
+							<section class="ui-flip-section " >
+	                        	<div class=" pic-margin-sy"  >
+									<div id="fliphor1"  class="ui-flip-hor" style="height: 7em;">
+										<div class="pic-margin-sy1" style="background:url('css/res-apple/11.jpg')"></div>
+									</div>
+								</div>
+								<div class=" pic-margin-sy"  >
+									<div id="fliphor1"  class="ui-flip-hor" style="height: 7em;">
+										<div class="pic-margin-sy1" style="background:url('css/res-apple/11.jpg')"></div>
+									</div>
+								</div>
+							</section>
+						</div>-->
+						<!--<div  style="border:1px solid #f00;">-->
+							<div class="ui-flip-doc">
+								<div id="ssww" class="ui-flip-hor ui-details-img-height">
+									<!--<section class="ui-flip-section "  style=" height:100%; width: 100%;">
+											<div class="pic-margin-sy" style="background:url('css/res-apple/11.jpg'); "></div>
+											<div class="pic-margin-sy" style="background:url('css/res-apple/bj12.png'); "></div>
+									</section>
+									<section class="ui-flip-section "  style=" height:100%; width: 100%;">
+											<div class="pic-margin-sy" style="background:url('css/res-apple/bj12.png'); "></div>
+											<div class="pic-margin-sy" style="background:url('css/res-apple/bj12.png'); "></div>
+									</section>
+									<section class="ui-flip-section " style=" height:100%; width: 100%;">
+											<div class="pic-margin-sy" style="background:url('css/res-apple/bj12.png'); "></div>
+											<div class="pic-margin-sy" style="background:url('css/res-apple/bj12.png'); "></div>
+									</section>-->
+							    </div>
+							</div>
+						<!--</div>-->
+                    <ul class="w_order" id="point">
+                    	<li class="w_order_show"><span></span></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+               
+			   
+			    <div id="">
+                	<div class="w_brand_details" id="goods_details_" style="display:none">此商品暂无详细信息</div>
+                    <div class="w_brand_details" id="goods_detail" style="display:none">
+                       
+                        <!-- 商品信息 -->
+                        <div class = "goods_details" style="padding-bottom:0;">
+                            <div class="w_opacity222">
+                            </div>
+                            <div class="w_goods_con">
+                                <h3 id="title_"></h3>
+                                <ul class = "details_con">
+                                    <li>
+                                        <p class = "">
+                                            商品货号：<span id="goods_num"></span>
+                                        </p>
+                                        <p class = "">
+                                            商品重量：<span id="goods_weight"></span>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class = "w_left">
+                                            商品库存：<span id="goods_inventory"></span>
+                                        </p>
+                                        <p class = "w_right">
+                                            上架时间：<span id="time"></span>
+                                        </p>
+                                    </li>
+                                    <li class="w_border_bottom">
+                                        <p class = "w_left">
+                                            商品人气：<span id="click_num"></span>
+                                        </p>
+                                        <p class = "w_right">
+                                            用户评价：<span class="star"><span class="rating"></span><span id="rating" class="rating_solid"></span></span>
+                                        </p>
+                                        <p class="clear">
+                                        </p>
+                                    </li>
+                                    <li class="w_border_bottom w_border_top">
+                                        <p class="w_left w_goods_num">
+                                            购买数量：
+                                        </p>
+                                        <div class="w_left">
+                                            <div data-role="button" class=" ui-btn-corner-all ui-btn ui-btn-limit ui-btn-a  ui-btn-inline ui-shadow goods_num" onclick="reduce()">
+                                                <span class="ui-btn-inner ui-btn-corner-all w_goods_padding"><span class="ui-btn-text">-</span></span>
+                                            </div>
+                                            <input placeholder="1" name="text-4" id="text-4" type="text" value="1" class="ui-input-text ui-body-null ui-btn-corner-all ui-shadow-inset ui-btn-d w_num"/>
+                                            <div data-role="button" class=" ui-btn-corner-all ui-btn ui-btn-limit ui-btn-a  ui-btn-inline ui-shadow goods_num" onclick="add()">
+                                                <span class="ui-btn-inner ui-btn-corner-all w_goods_padding"><span class="ui-btn-text">+</span></span>
+                                            </div>
+                                        </div>
+                                        <p class="clear">
+                                        </p>
+                                    </li>
+                                    <li class="w_border_bottom w_border_top">
+                                    <p style="vertical-align: middle">
+                                            市场价格：<span id="shichang_price"></span>
+                                        </p>
+                                        <p>
+                <span id="cx_">促销价格：</span><span id="members_price"></span>
+                                        </p>
+                                       <p id="p_">
+                 <!-- V I P价格：<span id="vip_price" class="w_color"></span> -->
+                                        </p>
+                                    </li>
+                                </ul>
+                                <!-- 商品颜色 -->
+                                 <!--<div class="w_border_top w_border_bottom" id="color_">
+                                    <h3>商品颜色</h3>
+                                    <div class="ui-select">
+                                        <div class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-d">
+                                            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">请选择</span>
+                                                <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+                                                    <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+                                                </div>
+                                            </span>
+                                            <select name="select-choice-0" selectedIndex="0" id="select-color" onchange="zy_slectmenu(this.id)">
+                                                <option value="item1"></option>
+                                                <option value="item2"></option>
+                                            </select>
+                                        </div>
+                                    </div> 
+                                </div>-->
+                                <!--配件-->
+                                <!--<div id="ddd" class="w_border_top w_border_bottom">
+                                   <h3>配件</h3> -->
+                                    <!--<fieldset id="accessories_list" data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+                                        <div class="ui-checkbox">
+                                            <input type="checkbox" value="" class="custom ui-hide" id="checkbox-1-1" name="checkbox-1-1">
+                                            <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-top">
+                                                <label class="ui-icon ui-icon-checkbox ui-icon-shadow">
+                                                </label>
+                                                <span class="ui-btn-inner"><span class="ui-btn-text">蓝牙耳机 20元</span></span>
+                                            </label>
+                                        </div>
+									</fieldset>
+									<fieldset id="accessories_list" data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+                                        <div class="ui-checkbox">
+                                            <input type="checkbox" value="" class="custom ui-hide" id="checkbox-1-2" name="checkbox-1-2">
+                                            <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-bottom ui-controlgroup-last">
+                                                <label class="ui-icon ui-icon-checkbox ui-icon-shadow">
+                                                </label>
+                                                <span class="ui-btn-inner"><span class="ui-btn-text">数据线 10元</span></span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset id="accessories_list" data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+                                        <div class="ui-checkbox">
+                                            <input type="checkbox" value="" class="custom ui-hide" id="checkbox-1-2" name="checkbox-1-2">
+                                            <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-bottom ui-controlgroup-last">
+                                                <label class="ui-icon ui-icon-checkbox ui-icon-shadow">
+                                                </label>
+                                                <span class="ui-btn-inner"><span class="ui-btn-text">数据线 10元</span></span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>-->
+                                <!-- 三个按钮 -->
+                                <div class="w_border_top w_details_submit" style="padding-top:0.5em;padding-bottom:0.5em;">
+                                    <div onclick="collection()" data-role="button" class=" ui-btn-corner-all ui-btn ui-btn-limit ui-btn-a  ui-btn-inline ui-shadow w_details_btn1" >
+                                        <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text w_fontsize" id="collection_span">&nbsp;加入收藏&nbsp;</span></span>
+                                    </div>
+                                    <div data-role="button" id="goods_comments" class=" ui-btn-corner-all ui-btn ui-btn-limit ui-btn-a  ui-btn-inline ui-shadow w_details_btn2">
+                                        <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text w_fontsize">&nbsp;评价商品&nbsp;</span></span>
+                                    </div>
+                                    <div onclick="getAccessories()" data-role="button" class=" ui-btn-corner-all ui-btn ui-btn-limit ui-btn-a  ui-btn-inline ui-shadow w_details_btn3">
+                                        <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text w_fontsize">加入购物车</span></span>
+                                    </div>
+                                </div>
+                                <div style="border-bottom:1px solid #fff;"></div>
+                                <!-- 详细介绍 -->
+                                <div class="w_intro">
+                                	<!-- <ul data-role="listview" id="sort_ul" class="ui-listview  ui-btn-corner-all  ui-shadow a"> 
+										<li class=" ui-btn-d  ui-btn-icon-right   ui-li ui-li-font-color" onclick="aa('1')">
+											<div class="ui-btn-text ui-li ui-btn-inner">
+												<div class="ui-link-inherit font-color ui-li-font">
+													<h3 class="ui-li-heading li-font-color">商品属性 </h3>
+												</div>
+												<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+											</div>
+										</li> 
+									</ul> -->
+                                    <h3 id="spsx" onclick="aa('1')" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" class="w_up_click"  >商品属性</h3>
+									<div  id="goods_attribute" style=" display:none;">
+                                    <!--<p>
+                                       	 屏幕大小：<span>2.4</span>
+                                    </p>-->
+									</div>
+									<div style="border-bottom:1px solid #fff;"></div>
+									<!-- <ul data-role="listview" id="sort_ul" class="ui-listview  ui-btn-corner-all  ui-shadow a"> 
+										<li class=" ui-btn-d  ui-btn-icon-right   ui-li ui-li-font-color" onclick="aa('2')">
+											<div class="ui-btn-text ui-li ui-btn-inner">
+												<div class="ui-link-inherit font-color ui-li-font">
+													<h3 class="ui-li-heading li-font-color">详细介绍 </h3>
+												</div>
+												<span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+											</div>
+										</li> 
+									</ul> -->
+                                     <h3 id="xxjs" onclick="aa('2')" class="w_up_click" >详细介绍</h3>
+                                    <p id="goods_details" style="display:none;" >
+                                        <!--&nbsp;&nbsp;&nbsp;&nbsp;在机身材质方面在机身材质方面在机身材质方面在机身材质方面在机身材质方面在机身材质方面-->
+                                    </p>
+                                    <div style="border-bottom:1px solid #fff;"></div>
+                                </div>
+                                <!-- 用户评价 -->
+								<h3 id="yhpj" onclick="openGoodsCommentsList(s_id,encodeURIComponent(name_))" class="w_up_click"  >用户评价</h3>
+                                <!--<ul id="comments_list" data-role="listview" class="ui-listview ui-listview-inset ui-corner-all  ui-shadow w_comment">
+                                    <li class=" ui-btn-d ui-corner-all ui-btn-icon-right ui-li w_comment_hover">
+                                        <div class="ui-btn-text ui-li ui-btn-inner ">
+                                            <div class="ui-link-inherit w_comment_color">
+                                                <h3 class="ui-li-heading">用户评论 </h3>
+                                                <p class="ui-li-desc w_comment_con">
+                                                    	用户评论 2011年12月8日  用的真不错，功能好 ...... 
+                                                </p>
+                                            </div>
+                                            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                                        </div>
+                                    </li>
+                                </ul>-->
+                                <div style="border-bottom:1px solid #fff;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script type="text/javascript" src="js/zy_json.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+       <script type="text/javascript">  
+            //获取参数
+           	//parseParam();
+            var id = 0;
+            var s_id = 0;
+			var name_ = "";
+			var desc = "";
+			var markePrice = "";	
+			var price = "";	
+			var imgurl = "";	
+			var num = $id("text-4").value;
+			var goods_id = '';
+			var browse = new Array();
+			var array_pic = [];//图片集合
+			var array_pic_big = [];//图片集合（大图）
+			var userName = '';//用户名
+			var password = '';//密码
+			var flag = "";
+			var tab = "默认";
+			var inventory = 0;
+			var len = 0;
+			var bar = null;
+			var state_ = '';
+			
+			//获取商品详情
+			function getGoodsDetails(){
+				var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=goodsDetail&goods_id='+id;
+				//alert(url);
+				uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('2', "GET", url, "");
+                uexXmlHttpMgr.send('2');
+			}
+			//获取相关配件
+			/* function getAccessories(){
+				var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=fittings&goods_id='+id;
+				//uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('3', "GET", url, "");
+                uexXmlHttpMgr.send('3');
+			} */
+			//获取颜色
+			function getColor(){
+				var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=spe&goods_id='+id;
+				//uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('4', "GET", url, "");
+                uexXmlHttpMgr.send('4');
+			}
+			//获取商品属性
+			function getAttribute(){
+				var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=properties&goods_id='+id;
+				//uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('5', "GET", url, "");
+                uexXmlHttpMgr.send('5');
+			}
+			//获取商品评论列表
+			function getCommentsList(){
+				var url = image_url + 'plugins/zywx/rpc/comment.php?jsoncallback=?&act=show_comment&goods_id='+id+'&page=1&page_size=10';
+				//uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('6', "GET", url, "");
+                uexXmlHttpMgr.send('6');
+			}
+			
+            //加入收藏
+            function collection(){
+                var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=collect&goods_id=' + id;
+                //uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('1', "GET", url, "");
+                uexXmlHttpMgr.send('1');
+            }
+			
+			//添加到购物车
+			function addShopingCart(){
+				uexWindow.evaluateScript('root','0','getSearchValue()');
+				if (state_ == "1") {
+					if (hasNum != 0) {
+						var number = $id("text-4").value;
+						//var colorId = $id("select-color").value;
+						//goods_id = isCheckState();//检查复选框状态
+						var url = image_url + 'plugins/zywx/rpc/flow.php?jsoncallback=?&step=add_to_cart&goods_id=' + id + '&buy_number=' + number + '&spec_str=';
+						uexWindow.toast("1", "5", "请稍后...", "0");
+						uexXmlHttpMgr.open('7', "GET", url, "");
+						uexXmlHttpMgr.send('7');
+					}
+					else {
+						uexWindow.alert('提示', '该商品库存不足！', '确定')
+					}
+				}else{
+					
+					var number = $id("text-4").value;
+					//colorId = colorId.substr(0, colorId.length - 1);
+					//goods_id = isCheckState();
+					var url = image_url + 'plugins/zywx/rpc/flow.php?jsoncallback=?&step=add_to_cart&goods_id=' + id + '&buy_number=' + number + '&spec_str=';
+					//alert(url);
+					uexWindow.toast("1", "5", "请稍后...", "0");
+					uexXmlHttpMgr.open('7', "GET", url, "");
+					uexXmlHttpMgr.send('7');
+				}				
+			}
+			//获取库存状态
+			function getKuCunState(){
+				var url = image_url + "plugins/zywx/rpc/config.php?jsoncallback=?&code=use_storage";
+				uexWindow.toast("1","5","请稍后...","0");
+		        uexXmlHttpMgr.open('10', "GET", url, "");
+		        uexXmlHttpMgr.send('10');
+			}
+            //获取商品图片
+			function getGoodsPic(){
+				var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=goods_gallery&goods_id='+id;
+				//uexWindow.toast("1","5","请稍后...","0");
+                uexXmlHttpMgr.open('8', "GET", url, "");
+                uexXmlHttpMgr.send('8');
+			}
+            var hasNum = 0;
+			var f = '';
+			zy_fix("header","","",function(){
+				//获取参数
+	           	parseParam();
+	            id = params.id;
+	            s_id = id;
+				name_ = decodeURIComponent(params.name);
+				desc = decodeURIComponent(params.desc);
+				markePrice = decodeURIComponent(params.markePrice);	
+				price = decodeURIComponent(params.price);	
+				imgurl = decodeURIComponent(params.imgurl);	
+				flag = params.flag;
+				//弹动效果
+				/*uexWindow.setBounce("1");
+				uexWindow.showBounceView("1","#E3E5E6","0");*/
+				
+				//bar = new zyFlip("ssww",'H');
+				//getGoodsPic();//获取商品图片	
+				//var s = name_;
+				//uexWindow.evaluateScript('','1','title(\''+changeStr(s)+'\')');
+                $id("title_").innerHTML = name_;
+                uexXmlHttpMgr.onData = function(opCode, type, result){
+                    if (type == 1) {
+						var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+						var o_ = JSON.parse(res);
+						if(o_.pluginstatus){
+							uexXmlHttpMgr.close(opCode);
+							uexWindow.closeToast();
+							uexWindow.alert("提示",o_.pluginstatus,"确定");
+							return;
+						}
+						if (opCode == 1) {
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);	
+							if (s.status == "未登录") {
+								openLogin(id,name_);
+							}
+							else if (s.status == "您成功收藏该商品") {
+								uexWindow.alert("提示",s.status,"确定");
+								$id("collection_span").innerHTML = "&nbsp;已收藏&nbsp;";
+							}else {
+								uexWindow.alert("提示",s.status,"确定");
+							}
+						}else if(opCode == 2){
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							if (res == "" || res.length == 0) {
+								$id("goods_details_").style.display = "block";
+								$id("goods_detail").style.display = "none";
+							}else {
+								$id("goods_detail").style.display = "block";
+								var s = JSON.parse(res);
+								uexWindow.closeToast();
+								uexXmlHttpMgr.close(opCode);
+								
+								$id("goods_num").innerHTML = s.goods_sn;
+								$id("goods_weight").innerHTML = s.goods_weight;
+								$id("goods_inventory").innerHTML = s.goods_number;
+								hasNum = s.goods_number;
+								inventory = s.goods_number;
+								$id("time").innerHTML = s.add_time;
+								$id("click_num").innerHTML = s.click_count;
+								$id("goods_details").innerHTML = s.goods_desc;
+								desc = s.goods_desc;//描述
+								markePrice = s.market_price;//市场价格
+								/*if (s.is_promote == false) {
+									price = s.shop_price_formated;//本店价格
+								}else{
+									price = s.promote_price_formated;//促销价格
+								}*/
+								if (s.promote_price != "") {
+									price = s.promote_price;//促销价格
+									$id("cx_").innerHTML = "促销价格：";
+								}else{
+									price = s.shop_price_formated;//本店价格
+									$id("cx_").innerHTML = "本店价格：";
+								}
+								imgurl = image_url + s.goods_thumb;	//图片
+								if (s.rank_prices == "") {
+									$id("shichang_price").innerHTML = s.market_price;
+									$id("members_price").innerHTML = s.shop_price_formated;
+								}
+								else {
+									for (var i in s.rank_prices) {
+										if (s.rank_prices[i].rank_name == "注册用户") {
+											$id("members_price").innerHTML = s.rank_prices[i].price;
+											price = s.rank_prices[i].price;//本店价格
+										}
+										else 
+											if (s.rank_prices[i].rank_name == "vip") {
+												$id("p_").innerHTML = 'V I P价格：<span id="vip_price" class="w_color">' + s.rank_prices[i].price + '</span>';
+											}
+											else {
+												$id("p_").style.display = "none";
+											}
+										//$id("price").innerHTML = s.shop_price_formated;
+										$id("shichang_price").innerHTML = s.market_price;
+										/*if (s.is_promote == false) {
+											$id("members_price").innerHTML = s.shop_price_formated;
+										}else{
+											$id("members_price").innerHTML = s.promote_price_formated;//促销价格
+										}*/
+										if (s.promote_price == "") {
+											$id("members_price").innerHTML = s.shop_price_formated;
+										}else{
+											$id("members_price").innerHTML = s.promote_price;//促销价格
+										}
+									}
+								}
+								var rating = s.comment_rank;
+								if (rating == 1) {
+									$id("rating").className = "rating_solid1_s";
+								}else if (rating == 2) {
+									$id("rating").className = "rating_solid2_s";
+								}else if (rating == 3) {
+									$id("rating").className = "rating_solid_s";
+								}else if (rating == 4) {
+									$id("rating").className = "rating_solid4_s";
+								}else if (rating == 5) {
+									$id("rating").className = "rating_solid5_s";
+								}
+								tab = "默认";
+								isFileExistByPath("wgt://data/browse/browse.txt");//判断文件是否存在
+							//	getAccessories();//获取相关配件
+								getColor();//获取颜色
+								getAttribute();//获取商品属性
+								getKuCunState();//获取库存状态
+							}
+						}else if(opCode == 3){
+							var accessories_list = '';
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							if (s.length != 0) {
+								for (var i = 0; i < s.length; i++) {
+									accessories_list += ' <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical ui-controlgroup-padding">' +
+									' <div class="ui-checkbox w_checkbox_height"><input type="checkbox" value="" class="custom ui-hide" id="pid_'+s[i].goods_id+'" name="checkbox-1-1">' +
+									'<label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-top">' +
+									'<label class="ui-icon ui-icon-checkbox ui-icon-shadow"></lable>' +
+									'<span class="ui-btn-inner ui-btn-text-width">' +
+									s[i].goods_name +
+									'(' +
+									s[i].fittings_price +
+									')</span></lable></div></fieldset>';
+								}
+								$id("ddd").innerHTML = "<h3>配件</h3>"+accessories_list;
+							}else {
+								//$id("ddd").innerHTML = "<h3>配件</h3>&nbsp;此商品无配件";
+								$id("ddd").style.display = "none";
+							}
+							//getColor();//获取颜色
+						}else if(opCode == 4){
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s1 = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							if(s1.lenght != 0){
+								for(var i in s1){
+									var obj = s1[i];
+									if(obj.name == "颜色" || obj.name == "颜色分类"){
+										var color_select = '';
+										var arr_obj = obj.values;
+										for (var n = 0; n < arr_obj.length; n++) {										
+											color_select += '<option value="' + arr_obj[n].id + '">' + arr_obj[n].label + '</option>';
+										}
+										$id("select-color").innerHTML = "<option value='0'>请选择</option>"+color_select;
+									}
+									if(obj.name == "配件"){
+										var accessories_list = '';
+										var s = obj.values;
+										for (var i = 0; i < s.length; i++) {
+											accessories_list += ' <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical ui-controlgroup-padding">' +
+											' <div class="ui-checkbox w_checkbox_height"><input type="checkbox" value="" class="custom ui-hide" id="pid_'+s[i].id+'" name="checkbox-1-1">' +
+											'<label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-top">' +
+											'<label class="ui-icon ui-icon-checkbox ui-icon-shadow"></lable>' +
+											'<span class="ui-btn-inner ui-btn-text-width">' +
+											s[i].label +
+											'(' +
+											s[i].format_price +
+											')</span></lable></div></fieldset>';
+										}
+										$id("ddd").innerHTML = "<h3>配件</h3>"+accessories_list;
+									}
+								}
+							}else{
+								$id("color_").style.display = "none";
+								$id("ddd").style.display = "none";
+							}
+						/* 	if (s1 == "") {
+								$id("color_").style.display = "none";
+							}
+							else {
+								for (var i in s1) {
+									var obj = s1[i];
+									var arr_obj = obj.values;
+									if (obj.name == "颜色") {
+										for (var n = 0; n < arr_obj.length; n++) {										
+											color_select += '<option value="' + arr_obj[n].id + '">' + arr_obj[n].label + '</option>';
+										}
+										alert(color_select)
+										$id("select-color").innerHTML = "<option value='0'>请选择</option>"+color_select;
+									}
+									if(obj.name == "配件"){
+										var accessories_list = '';
+										var s = arr_obj;
+										for (var i = 0; i < s.length; i++) {
+											accessories_list += ' <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical ui-controlgroup-padding">' +
+											' <div class="ui-checkbox w_checkbox_height"><input type="checkbox" value="" class="custom ui-hide" id="pid_'+s[i].id+'" name="checkbox-1-1">' +
+											'<label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-top">' +
+											'<label class="ui-icon ui-icon-checkbox ui-icon-shadow"></lable>' +
+											'<span class="ui-btn-inner ui-btn-text-width">' +
+											s[i].label +
+											'(' +
+											s[i].format_price +
+											')</span></lable></div></fieldset>';
+										}
+										$id("ddd").innerHTML = "<h3>配件</h3>"+accessories_list;
+									}
+								}
+							} */
+							
+							//getAttribute();//获取商品属性
+						}else if(opCode == 5){
+							var attribute_list = '';
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							if (s.length != 0) {
+								for (var i in s) {
+									attribute_list += '<p>' + s[i].name + '：<span>' + s[i].value + '</span></p>';
+								}
+								$id("goods_attribute").innerHTML = attribute_list;
+							}else{
+								$id("goods_attribute").innerHTML = '&nbsp;此商品没有属性';
+							}
+							getCommentsList();//获取商品评论列表
+						}else if(opCode == 6){
+							var comments_list = '';
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);							
+							for (var i in s.comments) {
+								comments_list = '<li class=" ui-btn-d ui-corner-all ui-btn-icon-right ui-li w_comment_hover" onclick="openGoodsCommentsList(' + id + ',\''+name_+'\')">' +
+								'<div class="ui-btn-text ui-li ui-btn-inner "><div class="ui-link-inherit w_comment_color">' +
+								'<h3 class="ui-li-heading">用户评论 </h3><p class="ui-li-desc w_comment_con">'+s.comments[i].username+','+s.comments[i].add_time	+','+s.comments[i].content+'</p>' +
+								'</div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></div></li>';
+							}
+							$id("comments_list").innerHTML = comments_list;
+							/*var img_Url_ = image_url+array_pic[0];
+							$id("pic_a_").innerHTML = '<span id="pic_" style="display:block;width:100%;height:100%;background:url(\''+img_Url_+'\')"></span>';
+							$id("pic_big_a_").innerHTML = '<span id="pic_big" style="width:100%;height:100%;background:url(\''+img_Url_+'\')" ></span>'*/
+							
+						}else if(opCode == 7){
+							var comments_list = '';
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							var goodsNum = $id("text-4").value;
+												
+							if(s.status == "商品成功添加到购物车"){
+								//uexWindow.toast("0","5","商品已添加到购物车","2000");
+                                setTimeout(function(){
+                                    var mycars = ["查看购物车","继续购物"];
+									uexWindow.confirm("提示","商品已添加到购物车",mycars);
+									uexWindow.close('-1');
+                                }, 100);
+							}else{
+								uexWindow.toast("0","5",s.status,"2000");
+							}							
+						}else if(opCode == 8){
+							var point_list = '';
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							var pic_list = '';
+							var pic_list_section = '';
+							len = s.length;
+							var count = 0;
+							var num = 0;
+							for(var i=0;i<s.length;i++){
+								count++;
+								array_pic[i] = s[i].thumb_url;
+								array_pic_big[i] = image_url + s[i].img_url;
+									//pic_list += '<section class="ui-flip-section ui-ad-bc" style="background:url(\''+image_url + s[i].thumb_url+'\')"></section>';// style="background:url(\''+image_url + s[i].thumb_url+'\')"
+									pic_list += '<div class="pic-margin-sy" onclick="bigPic_show_hide()" style="background:url(\'' + image_url + s[i].thumb_url + '\') no-repeat;background-size: 100% 100%; "></div>';
+								if(count == 2){
+									count = 0;
+									if(num == 0){
+										point_list += '<li class="w_order_show" id="point_'+(i-1)+'"><span></span></li>';
+									}else{
+										point_list += '<li class="" id="point_'+(i-2)+'"><span></span></li>';
+									}
+									num++;
+									pic_list_section += '<div class="ui-flip-section ui-details-img-height"  style=" width:100%;display: -webkit-box;">'+pic_list+'</div>';
+									pic_list = "";
+									if(s.length % 2 == 0){
+										len = s.length / 2;
+									}else{
+										len = s.length / 2 + 1;
+									}
+								}
+								if(s.length == 1){
+									pic_list_section += '<div class="ui-flip-section ui-details-img-height"  style="width:100%;display: -webkit-box; ">'+pic_list+'</div>';
+									point_list += '<li class="w_order_show" id="point_'+i+'"><span></span></li>'
+									len = 1;
+								}else if(s.length % 2 != 0){
+									/*if(s.length == 3){
+										uexLog.sendLog("length:" + s.length);
+										point_list += '<li class="" id="point_'+(i-1)+'"><span></span></li>'
+									}*/
+									if(i == s.length - 1){
+										if (s.length == 3) {
+											point_list += '<li class="" id="point_' + (i - 1) + '"><span></span></li>'
+										}else{
+											point_list += '<li class="" id="point_' + (i - 2) + '"><span></span></li>'
+										}
+										pic_list_section += '<div class="ui-flip-section ui-details-img-height"  style=" width:100%;display: -webkit-box;">' + pic_list + '</div>';
+										
+										len = num + 1;
+										
+									}
+								}
+								
+							}
+							$id("ssww").innerHTML = pic_list_section;
+							bar = new zyFlip("ssww",'H',calMovePoint);
+							$id("point").innerHTML = point_list + '<div class="clear"></div>';
+						}else if(opCode == 9){
+							var comments_list = '';
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							
+							if(s == ""){
+								addShopingCart();//添加到购物车
+							}else{
+								openAccessories();//跳转到配件页
+							}
+						}else if(opCode == 10){
+							var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+							var s = JSON.parse(res);
+							uexWindow.closeToast();
+							uexXmlHttpMgr.close(opCode);
+							
+							if(s.code == "1"){
+								state_ = "1";
+							}else if(s.code == "0"){
+								state_ = "0";
+							}else{
+								state_ = s.code;
+							}
+						}
+                    }
+                }
+                uexWindow.cbConfirm = function(opId, dataType, data){
+                    if (data == 0) {
+                        openNewWin_t("shoppingCar","shoppingCar.html",2);
+                    }else
+					{						
+						openNewWin_t("sort","sort.html",2);						
+					}
+                }
+                uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+					if (tab == "默认") {
+						if (data == 1) {
+							readFile(10, "wgt://data/browse/browse.txt", -1);//文件存在，直接读取
+						}else {
+							creatFile("wgt://data/browse/browse.txt");//创建文件并写入
+							var rs = {
+								"id": id,
+								//"name": encodeURIComponent(name_),
+								"name": name_,
+								//"desc": encodeURIComponent(desc),
+								"desc": desc,
+								"markePrice": markePrice,
+								"price": price,
+								//"image": encodeURIComponent(imgurl)
+								"image": imgurl
+							};
+							browse.push(rs);
+							writeFile("wgt://data/browse/browse.txt", JSON.stringify(browse));
+						}
+					}else if(tab == "评论"){
+						if (data == 1) {
+							openGoodsComments(id,name_);
+						}
+						else {
+							openLogin(id,name_);
+						}
+					}					
+                }
+				
+                uexFileMgr.cbReadFile = function(opCode, dataType, data){
+					if (opCode == 10) {						
+						if (data != "") {
+							var browse_content = JSON.parse(data);
+							for (var i = 0; i < browse_content.length; i++) {
+								if (id == browse_content[i].id) {
+									return;
+								}
+							}
+						 	var rs1 = {
+								"id": id,
+								//"name": encodeURIComponent(name_),
+								"name": name_,
+								//"desc": encodeURIComponent(desc),
+								"desc": desc,
+								"markePrice": markePrice,
+								"price": price,
+								//"image": encodeURIComponent(imgurl)
+								"image": imgurl
+							};
+							browse_content.push(rs1);
+							writeFile("wgt://data/browse/browse.txt", JSON.stringify(browse_content)); 
+						}
+					}
+                }
+				
+				uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+                    uexWindow.alert("提示","error:"+errorInfo+"---opCode:"+opCode+"---errorCode:"+errorCode,"确定");
+                }
+				getGoodsPic();//获取商品图片	
+				getGoodsDetails();//获取商品详情
+			});
+            
+			
+            //读取文件
+            function readFile(id,path, size){
+            	uexFileMgr.openFile(id, path, '1');
+            	uexFileMgr.readFile(id,size);
+                uexFileMgr.closeFile(id);
+            }
+            //创建文件
+            function creatFile(path){
+                uexFileMgr.createFile('1', path);
+                uexFileMgr.closeFile('1');
+            }
+            //写入文件
+            function writeFile(path, data){
+                uexFileMgr.openFile('2', path, '1');
+                uexFileMgr.writeFile('2', '0', data);
+                uexFileMgr.closeFile('2');
+            }
+            //判断文件是否存在
+            function isFileExistByPath(path){
+                uexFileMgr.isFileExistByPath(path);
+            }
+			
+			//跳转到登录页面
+			function openLogin(id,name){
+				var html_url = 'login.html?name=goodsDetails';
+				openNewWin("login",html_url,'2');
+			}
+			//回调函数
+            function loginSuccess(){
+                setTimeout(function(){
+                    //collection();//加入收藏
+                }, 500);
+            }
+
+			//减少
+			function reduce(){
+				if(num == 1){
+					num =1;
+					$id("text-4").value = num;
+				}else {
+					num--;
+					$id("text-4").value = num;
+				}
+			}
+            //添加
+            function add(){
+                num++;
+                $id("text-4").value = num;
+            }
+            
+			var acc_id = '';
+			//判断复选框状态
+			function isCheckState(){
+				var acc_id = '';
+				var array_check = document.getElementsByName("checkbox-1-1");
+				var s = "";
+				for(var i=0;i<array_check.length;i++){
+					if(array_check[i].checked == true){
+						s = array_check[i].id;
+						acc_id += s.substr(s.indexOf("_")+1,(s.length-s.indexOf("_")))+",";
+					}
+				}
+				return acc_id;
+			}
+            //打开商品评论页面
+            function openGoodsComments(id,name){
+                var html_url = 'goods_comments.html?id='+id+'&name_='+encodeURIComponent(name)+'&flag=goodsDetails';
+                openNewWin("goodsComments", html_url, 2);
+            }
+			$id("goods_comments").onclick = function(){
+				tab = "评论";
+				isFileExistByPath("wgt://data/uesrInfo.txt");
+			}
+			//打开商品评论列表页面
+            function openGoodsCommentsList(id,name){
+                var html_url = 'comments.html?id='+id+'&name='+name;
+                openNewWin("comments", html_url, 2);
+            }
+			//控制大图的隐藏显示
+			function bigPic_show_hide(){
+				/*if($id("pic_div").style.display == "none"){
+					$id("pic_div_").style.display = "block";
+					$id("pic_div").style.display = "block";
+					
+				}else{
+					$id("pic_div").style.display = "none";
+					$id("pic_div_").style.display = "none";
+				}*/
+				uexImageBrowser.open(array_pic_big);
+			}
+			//关闭本窗口
+			function close_(){
+				if(flag == "index"){
+					uexWindow.evaluateScript("root", '0','isFile_()');
+				}
+				uexWindow.close('-1');
+			}
+			/*var n = 0;
+			//上一张（图片切换）
+			function pic_prev(){
+				n--;
+				if(n < 0){
+					n = 0;
+				}
+				$id("pic_a_").innerHTML = '<span id="pic_" style="display:block;width:100%;height:100%;background:url(\''+image_url+array_pic[n]+'\')"></span>';
+				$id("pic_big_a_").innerHTML = '<span id="pic_big" style="width:100%;height:100%;background:url(\''+image_url+array_pic[n]+'\')" ></span>'
+				$id("point_"+n).className = "w_order_show";
+				$id("point_"+(n+1)).className = "";
+				
+			}
+			//下一张（图片切换）
+			function pic_next(){
+				n++;
+				if(n >= array_pic.length){
+					n = parseInt(array_pic.length)-1;
+				}
+				$id("pic_a_").innerHTML = '<span id="pic_" style="display:block;width:100%;height:100%;background:url(\''+image_url+array_pic[n]+'\')"></span>';
+				$id("pic_big_a_").innerHTML = '<span id="pic_big" style="width:100%;height:100%;background:url(\''+image_url+array_pic[n]+'\')" ></span>'
+				$id("point_"+n).className = "w_order_show";
+				$id("point_"+(n-1)).className = "";
+			}
+			
+		/*	$id("pic_li").addEventListener("touchstart",t_m_start,false);
+			$id("pic_li").addEventListener("touchmove",t_m_move,false);
+			$id("pic_li").addEventListener("touchend",t_m_end,false);
+            var t_m = false, t_start_x, t_end_x;
+            function t_m_start(e){
+                t_m = true;
+                t_start_x = e.touches[0].pageX;
+            }
+            
+            function t_m_move(e){
+                if (t_m) {
+                    t_end_x = e.touches[0].pageX;
+                    if (t_end_x - t_start_x > 200) 
+                        pic_prev();
+                    if (t_end_x - t_start_x < -200) 
+                        pic_next();
+                }
+            }
+            function t_m_end(event){
+                t_m = false;
+            }*/
+			//去购物车
+			function openNewWin_t(winName,htmlUrl,aid){
+				uexWindow.evaluateScript(winName, '0','getGoodsList()');
+				uexWindow.open(winName, '0', htmlUrl, '2', '', '', '0');
+			}
+            function calMovePoint(){
+                var cp = bar.currentPoint;
+                if (cp == 0) {
+                    $id("point_" + (cp + 1)).className = "";
+                }
+                else if (cp == (len - 1)) {
+                    $id("point_" + (cp - 1)).className = "";
+                }else {
+                    $id("point_" + (cp + 1)).className = "";
+                    $id("point_" + (cp - 1)).className = "";
+                }
+                $id("point_" + cp).className = "w_order_show";
+            }
+            function aa(t){
+            	var state = $id("goods_attribute").style.display;
+            	var state_details = $id("goods_details").style.display;
+            	if(t == '1'){
+	            	if(state == "none"){
+	            		$id("goods_attribute").style.display = "block";
+						$id("spsx").className = 'w_down_click';
+	            	}else{
+	            		$id("goods_attribute").style.display = "none";
+						$id("spsx").className = 'w_up_click';
+	            	}
+            	}else if(t == '2'){
+            		if(state_details == "none"){
+	            		$id("goods_details").style.display = "block";
+						$id("xxjs").className = 'w_down_click';
+	            	}else{
+	            		$id("goods_details").style.display = "none";
+						$id("xxjs").className = 'w_up_click';
+	            	}
+            	}
+            }
+			
+			//获取配件
+			function getAccessories(){
+				var url = image_url + 'plugins/zywx/rpc/goods.php?jsoncallback=?&act=spe&goods_id=' + id;
+				//alert(url);
+				uexWindow.toast("1","5","请稍后...","0");
+		        uexXmlHttpMgr.open('9', "GET", url, "");
+		        uexXmlHttpMgr.send('9');
+			}
+			
+            //打开配件页面
+			function openAccessories(){
+				var number = $id("text-4").value;
+				var html_url = 'accessories.html?id=' + id + '&number=' + number +"&hasNum=" + hasNum;
+				openNewWin("accessories",html_url,'2');
+			}
+        </script>
+		
+    </body>
+</html>

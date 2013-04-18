@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/h_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+    <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed  h_t_color ui_title" >
+<div onclick="uexWindow.evaluateScript('','0','closeTheWin()')" id="fh_return" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span id="btn_c" class="ui-btn-text">返回</span> </span></div> 
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+购物车
+</h1> 
+<!--<div  onclick="uexWindow.evaluateScript('','0','submit_order()')" id="tj" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">提交</span>  </span>  </div></div></div></div>--> 
+<div onclick="uexWindow.evaluateScript('','0','submit_order()')" id="tj" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span id="btn_c" class="ui-btn-text">提交</span> </span></div>
+</div>
+
+<div id="page_1" class="ui-page ui-body-a ui-page-active" tabindex="0" style="background:#fff;">
+<div class="ui-content ui-body-a ui-fixed-top h_cn_color">
+
+<div style="display:none;">
+<h3 style="color:#000;">订单状态</h3>
+<div class="ui-bar ui-bar-d ui-corner-all h-con-w">
+	订单号:<span></span> <br/>
+	订单状态：<span></span><br/>
+	付款状态：<span></span><br/>
+	配送状态：<span></span><br/>
+</div>
+</div>
+
+<h3 style="color:#000;">订单信息</h3> 
+
+<div class="ui-bar ui-bar-d ui-corner-all h_cu_color ui-body_h">
+<div id="list_id">
+  <!-- <li class=" ui-body-d   ui-li-has-thumb  ui-corner-all  ui-li-static  ui-li ui-corner-f ui-field-f" style="padding-left: 7.2em;">
+     <span  class="ui-li-thumb hx-im-w" style="background-image:url('css/res-apple/stor-pic.png');" >
+    	<img alt="" src="css/res-apple/hover_bg.png">
+    </span>
+	<h3 class="ui-li-heading">页面 </h3><br/><br/>
+	<div style="font-weight: normal;">2.4英寸1600万色QVGA分辨（240×320像素）液晶显示屏</div>
+	<div style="font-weight: normal;">数量：1</div>
+	<div class="ui-grid-b ui-li-hs">
+		<div class="ui-block-a">诺基亚:<span>E66</span></div>
+		<div class="ui-block-b">颜色:<span> 白色</span></div>
+		<div class="ui-block-c">￥:<span>2988</span></div>
+	</div> 
+</li> -->
+ 
+</div>
+<p id="psfs_p" style="color:#000;" class="title-hyc">配送方式：</p>
+<div id="psfs">
+<div class="ui-radio "><input type="radio" name="radio-0" class="ui-hide" checked="checked" id="radio-0-1" value=""><label onclick="zy_for(event);selectSend(1)" class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-btn-d-hyc"><label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">  <span class="ui-btn-text" id="psfs1">  </span></span></label></div>
+<div class="ui-radio "><input type="radio" name="radio-0" class="ui-hide" id="radio-0-2" value=""><label onclick="zy_for(event);selectSend(2)" class="ui-btn ui-btn-icon-right  ui-btn-d ui-btn-d-hyc"><label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">  <span class="ui-btn-text" id="psfs2"></span></span></label></div>
+<div class="ui-radio ui-radio-hyc"><input type="radio" name="radio-0" class="ui-hide" id="radio-0-3" value=""><label onclick="zy_for(event);selectSend(3)" class="ui-btn ui-btn-icon-right ui-controlgroup-last ui-corner-bottom ui-btn-d ui-btn-d-hyc"><label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">  <span class="ui-btn-text" id="psfs3"> </span></span></label></div>
+</div>
+
+<!-- 
+<li class=" ui-body-d     ui-corner-top  ui-li-static  ui-li  ui-corner-f ui-field-f">
+	<div class="ui-li-hs">
+		<div id="goodBox">商品包装 （免费额度 ￥800.00）</div><br/>
+		<div style="margin:0 0.2em; font-size: 0.9em;">
+			<span id="box_f" class="h-sp-c h-border-b" onclick="changStyle('box_f','box_s',false,0)">不要包装</span>￥0.0元
+			<span id="box_s" class="h-sp-c" onclick="changStyle('box_f','box_s',true,0)">精品包装</span><span id="boxMoney">￥5.0元</span>
+		</div><br/>
+		<div id="cardBox">祝福贺卡 （免费额度 ￥1000.00）</div><br/>
+		<div style="margin:0 0.2em; font-size: 0.9em;">
+			<span id="card_f" class="h-sp-c h-border-b" onclick="changStyle('card_f','card_s',false,1)">不要贺卡</span>￥0.0元
+			<span id="card_s" class="h-sp-c" onclick="changStyle('card_f','card_s',true,1)">精品贺卡</span><span id="cardMoney">￥5.0元</span>
+		</div><br/>
+		<textarea placeholder="贺卡祝福语..."  name="textarea-0" id="textareaCard" disabled=true class="ui-input-text ui-body-null ui-btn-corner-all ui-shadow-inset ui-btn-d"></textarea>
+	</div>	
+</li> -->
+<li class=" ui-body-d     ui-corner-bottom  ui-li-static  ui-li  ui-corner-f ui-field-f" style="border-bottom-width: 0px !important">
+	<div class="ui-li-hs" >
+		<div style="display:none;">该订单完成后，您将获得 <span id="integral_id">0</span> 积分</div><br/>
+		<div id="price_num"></div>
+		<div style="color:#f00;text-align: right;">应付款金额:&nbsp;&nbsp;  ￥<span id="all_price">0.00</span></div>
+	</div> 
+</li>
+
+</div><br />
+
+<div  class="ui-btn-center" tabindex="0"> 
+<h3 style="color:#000;margin-bottom: 0.5em;">收获地址</h3>
+<!-- <div onclick="modityAddress();" data-role="button" style="margin: -2em 0 -2em 15.1em;" class=" ui-corner-all ui-btn  ui-btn-c ui-shadow"> <span style="padding: .6em 0.4em;" class="ui-btn-inner ui-corner-all"> <span class="ui-btn-text">修改</span> </span></div> --> 
+
+
+<div onclick="modityAddress();" class="h-mod-st" style="visibility:hidden;">选择</div>
+<div class="ui-bar ui-bar-d ui-corner-all h-con-w" id="address_id" onclick="modityAddress()">
+</div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/h_main.js"></script>
+<script type="text/javascript">
+	var userId = "";
+	var oldAddreddId = "";
+	var all_money = 0;
+	/*选择是否包装和是否要贺卡*/
+	var box_flag = false;
+	var card_flag = false;
+	function changStyle(fid,sid,flag,st){
+		if(flag){
+			box_flag = true;
+			$id(fid).className = "h-sp-c h-border-a";
+			$id(sid).className = "h-sp-c h-border-b";
+			if(st == 1){
+				card_flag = true;
+				$id("textareaCard").disabled = false;
+			}
+		}else{
+			box_flag = false;
+			card_flag = false;
+			$id(fid).className = "h-sp-c h-border-b";
+			$id(sid).className = "h-sp-c h-border-a";
+			if(st == 1){
+				$id("textareaCard").disabled = true;
+			}
+		}
+	}
+	
+	/*选择邮寄方式*/
+	var sendMoney = 0;
+	var shipping = 5;
+	var money1 = 0;
+	var money2 = 0;
+	var money3 = 0;
+	var money4 = 0;
+	var money5 = 0;
+	var psfs_length = '';
+	function selectSend(flag,pid){
+		if(flag == 1){
+			shipping = pid;
+			sendMoney = money1;
+		}else if(flag == 2){
+			shipping = pid;
+			if(all_money >= 100000)
+				sendMoney = 0;
+			else 
+				sendMoney = money2;
+		}else if(flag == 3){
+			shipping = pid;
+			if(all_money >= 50000)
+				sendMoney = 0;
+			else 
+				sendMoney = money3;
+		}else if(flag == 4){
+			shipping = pid;
+			sendMoney = money4;
+		}else if(flag == 5){
+			shipping = pid;
+			sendMoney = money5;
+		}
+		
+		$id("send_id").innerHTML = "￥"+parseFloat(sendMoney).toFixed(2);
+		$id("all_price").innerHTML = (parseFloat(all_money) + parseFloat(sendMoney)).toFixed(2);
+		
+	}
+	
+	/*修改收货地址*/
+	function modityAddress(){
+		var htmlUrl = "mymall_address.html?userId="+userId+"&oldAddId="+oldAddreddId;
+		openNewWin('mymall_address','2',htmlUrl);
+	}
+	/*修改地址回调*/
+	function changeSuccess(){
+		setTimeout(function(){
+			var ac_url = httpUrl+"flow.php?jsoncallback=?&step=checkout";
+			/*根据结算接口获取商品信息*/
+			xmlHttp('1',ac_url);
+		},500);
+	}
+	/**提交订单*/
+	function submit_order(){
+		//http://ecshop.3g2win.com/plugins/zywx/rpc/flow.php?jsoncallback=?&step=done&pack=0&card=1&card_message=LOOK
+	/*	var isBox = box_flag ? 1 : 0;
+		var isCard = card_flag ? 1 : 0;
+		var card_text = "";
+		var order_url = "";
+		if(isCard == 1){
+			card_text = $id("textareaCard").value;
+			if(card_text == "" || card_text.length < 0){
+				alert("请输入贺卡祝福贺语！");
+				return;
+			}
+			order_url = httpUrl+"flow.php?jsoncallback=?&step=done&pack="+isBox+"&card=1&card_message="+card_text;
+		}else{
+			order_url = httpUrl+"flow.php?jsoncallback=?&step=done&pack="+isBox+"&card=0";
+		} */
+		var order_url = httpUrl+"flow.php?jsoncallback=?&step=done&pack=0&card=0&shipping="+shipping;
+		/*生成订单*/
+		xmlHttp('2',order_url);
+		
+	}
+	
+	/*取回数据并进行处理*/
+	function httpSuccess(opid,status,result){//status 状态 0 接收，1完成
+		if(status == 1){
+			uexWindow.closeToast();
+			if(opid == 1){
+				result = result.replace(/\n/g,'<br>');
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+				var o = JSON.parse(res);
+				if(o.pluginstatus){
+					uexXmlHttpMgr.close(opCode);
+					uexWindow.closeToast();
+					uexWindow.alert("提示",o.pluginstatus,"确定");
+					return;
+				}
+				if(o.status && o.status != '未登录'){
+					if(o.status == "收货人信息不完整"){
+						//uexWindow.alert("提示",o.status,"确定");
+						
+						var html_url = "mymall_alter_info.html";
+						uexWindow.open("mymall_alter_info", '0', html_url, '2', '', '', 0x0);
+						setTimeout(function (){
+						uexWindow.close('0');
+						return;},2000);
+					}
+					
+				}
+				if(o.status != '未登录'){
+					var gs_arr = o.cart_goods;
+					var gslist = "";
+					if(gs_arr && gs_arr.length > 0){
+						for(var i = 0; i < gs_arr.length; i++){
+							var go = gs_arr[i];
+							var chazhi = (go.market_price-go.goods_price).toFixed(2);
+							var pre = (chazhi/go.market_price).toFixed(2);
+							gslist += '<li class=" ui-body-d   ui-li-has-thumb  ui-corner-all  ui-li-static  ui-li ui-corner-f ui-field-f" style="padding-left: 1em;padding-top: 0;padding-bottom: 0;">'+
+									'<h3>'+go.goods_name+' </h3><br/><br/>'+
+									'<div style="font-weight: normal;">'+go.goods_attr+'</div>'+
+									'<div class="accounts-ui">'+
+									'<div class="ui-grid-b ui-li-hs" style="float:right;margin-right:0.5em;">'+
+									'<div class="" style="">价格：<span>'+go.formated_goods_price+'</span></div>'+
+									'</div><div style="font-weight: normal;float:right;margin-right:1.5em;">数量：'+go.goods_number+'</div></div>'+ 
+									'</li> ';
+						}
+						$id("list_id").innerHTML = gslist;
+						var tl = o.total;
+						$id("integral_id").innerHTML = tl.will_get_integral;
+						all_money = tl.goods_price;
+						//运费价格
+						if (o.shipping_list == "") {
+							//sendMoney = o.shipping_list[0].shipping_fee;
+							$id("psfs_p").style.display = "none";
+							$id("psfs").style.display = "none";
+							$id("price_num").innerHTML = "总价：" + tl.formated_goods_price;
+							$id("all_price").innerHTML = parseFloat(parseFloat(tl.goods_price)).toFixed(2);
+						}
+						else {
+							sendMoney = o.shipping_list[0].shipping_fee;
+							$id("price_num").innerHTML = "总价：" + tl.formated_goods_price + " + 运费：<span id='send_id'>￥" + parseFloat(sendMoney).toFixed(2) + "</span>";
+							$id("all_price").innerHTML = parseFloat(parseFloat(tl.goods_price) + 15).toFixed(2);
+						}
+								
+						var accept_address = o.consignee;
+						userId = accept_address.user_id;
+						oldAddreddId = accept_address.address_id;
+						$id("address_id").innerHTML = "收货人："+accept_address.consignee+"<br/>详细地址："+accept_address.address+"<br/>联系电话："+accept_address.mobile;
+						
+						/* 配送方式*/
+						/*$id("psfs1").innerHTML = o.shipping_list[0].shipping_name + ":" + o.shipping_list[0].format_shipping_fee;
+						money1 = o.shipping_list[0].shipping_fee;
+						
+						$id("psfs2").innerHTML = o.shipping_list[1].shipping_name+ ":" + o.shipping_list[1].format_shipping_fee;
+						money2 = o.shipping_list[1].shipping_fee;
+						$id("psfs3").innerHTML = o.shipping_list[2].shipping_name+ ":" + o.shipping_list[2].format_shipping_fee;
+						money3 = o.shipping_list[2].shipping_fee;*/
+						
+						if(o.shipping_list.length == 1){
+							money1 = o.shipping_list[0].shipping_fee;
+						}else if(o.shipping_list.length == 2){
+							money1 = o.shipping_list[0].shipping_fee;
+							money2 = o.shipping_list[1].shipping_fee;
+						}else if(o.shipping_list.length == 3){
+							money1 = o.shipping_list[0].shipping_fee;
+							money2 = o.shipping_list[1].shipping_fee;
+							money3 = o.shipping_list[2].shipping_fee;
+						}else if(o.shipping_list.length == 4){
+							money1 = o.shipping_list[0].shipping_fee;
+							money2 = o.shipping_list[1].shipping_fee;
+							money3 = o.shipping_list[2].shipping_fee;
+							money4 = o.shipping_list[3].shipping_fee;
+						}else{
+							money1 = o.shipping_list[0].shipping_fee;
+							money2 = o.shipping_list[1].shipping_fee;
+							money3 = o.shipping_list[2].shipping_fee;
+							money4 = o.shipping_list[3].shipping_fee;
+							money5 = o.shipping_list[4].shipping_fee;
+						}
+						var psfs_list = "";
+						psfs_length = o.shipping_list.length;
+						for(var i=0;i<o.shipping_list.length;i++){
+							if(i==0){
+								psfs_list += '<div class="ui-radio "><input type="radio" name="radio-0" class="ui-hide" checked="checked" id="_'+o.shipping_list[i].shipping_id+'" value="">'+
+								'<label onclick="zy_for(event);selectSend('+(i+1)+','+o.shipping_list[i].shipping_id+')" class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-btn-d-hyc">'+
+								'<label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">'+
+								'<span class="ui-btn-text" id="psfs'+(i+1)+'">'+o.shipping_list[i].shipping_name + ":" + o.shipping_list[i].format_shipping_fee+'</span></span></label></div>';
+							}else{
+								psfs_list += '<div class="ui-radio "><input type="radio" name="radio-0" class="ui-hide" id="_'+o.shipping_list[i].shipping_id+'" value="">'+
+								'<label onclick="zy_for(event);selectSend('+(i+1)+','+o.shipping_list[i].shipping_id+')" class="ui-btn ui-btn-icon-right ui-corner-top ui-btn-d ui-btn-d-hyc">'+
+								'<label class="ui-icon ui-icon-radio ui-icon-shadow ui-icon-hyc"></label><span class="ui-btn-inner ui-btn-inner-hyc">'+
+								'<span class="ui-btn-text" id="psfs'+(i+1)+'">'+o.shipping_list[i].shipping_name + ":" + o.shipping_list[i].format_shipping_fee+'</span></span></label></div>';
+							}
+						}
+						$id("psfs").innerHTML = psfs_list;
+					}else{
+						uexWindow.alert("提示","错误："+o.status,"确定");
+					}
+				}else{
+					var html_url = 'login.html?name=accounts';//在登录页判断
+					openNewWin('login','2',html_url);
+				}
+			}else if(opid == 2){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+				var orderObj = JSON.parse(res);
+				var html = 'accountsState.html?orderId='+orderObj.order_id+"&orderNo="+orderObj.order_number+"&price="+orderObj.price;
+				openNewWin('accountsState','2',html);
+				uexWindow.close('0');
+			}
+		}
+		uexXmlHttpMgr.close(opid);
+	}
+	function outTitle(str){
+		if(str.length > 15){
+			str = str.substr(0,15)+"...";
+		}
+		return str;
+	}
+	function closeTheWin(){
+		uexWindow.close('-1');
+	}
+	/*登录成功回调*/
+	function loginSuccess(){
+		setTimeout(function(){
+			var ac_url = httpUrl+"flow.php?jsoncallback=?&step=checkout";
+			/*根据结算接口获取商品信息*/
+			xmlHttp('1',ac_url);
+		},500);
+	}
+	zy_fix('header','','',function(){
+		uexXmlHttpMgr.onData = httpSuccess;
+		
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+		uexFileMgr.cbReadFile = function(opCode,dataType,data){
+			if(data && data != ""){
+				var userObj = JSON.parse(data);
+				login(userObj.userName,userObj.password);
+			}
+		}
+	/*	uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+			if(data == 1){			
+				var ac_url = httpUrl+"flow.php?jsoncallback=?&step=checkout";
+				xmlHttp(1,ac_url);
+			}else{
+				var html_url = 'login.html?name=accounts';
+				openNewWin('login',2,html_url);
+			}
+		}
+		uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");*/
+		var ac_url = httpUrl+"flow.php?jsoncallback=?&step=checkout";
+		//alert(ac_url)
+		xmlHttp('1',ac_url);
+	});	
+
+</script>
+</body>
+</html>

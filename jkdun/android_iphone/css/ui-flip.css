@@ -1,0 +1,40 @@
+.ui-flip-doc {
+/*   min-width: 100%; */
+    overflow: hidden;
+    margin: 0;
+    padding:0;
+    background:rgba(0,0,0,0);
+	
+}
+
+.ui-flip-section {
+    width: 100%;
+    height:100%;
+    margin: 0;
+    -webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+
+.ui-flip-order-section {
+    width: 100%;
+    height:50%;
+    margin: 0;
+    -webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+
+.ui-flip-hor {
+    display: -webkit-box;
+    cursor: move;
+   
+}
+
+.ui-flip-ver {
+    display: -webkit-box;
+    cursor: move;
+    -webkit-box-orient:vertical
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css"> 
+    <link rel="stylesheet" href="css/s_style.css">
+    <link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/zy_json.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onclick="uexWindow.evaluateScript('', '0','closeTheWin()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		我的收藏
+<!-- 		<div onclick="edit()" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" id="screening_id"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text" id="edit_">编辑</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1> 
+	<div onclick="uexWindow.evaluateScript('', '0','edit()');" id="screening_id" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text" id="edit_">编辑</span> </span></div> 
+	
+</div>
+
+<div id="page_9" class="ui-page ui-body-d ui-page-active ui_body_a_dwx" tabindex="0">
+	<div class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom cc">
+		<div id="">
+			<ul data-role="listview" id="sort_shop_list_ul" class="ui-listview  ui-corner-none  ui-shadow a"> 
+				<!--<li class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color ui-body-d-dwx" style="position: relative;">
+					<span class="ui-li-thumb ui-li-thumb3" style="background-image:url('css/res-apple/shop-pic.png');" >
+						<img class="ui-li-thumb1" src="css/res-apple/uers_img.png" align="absmiddle" />
+					</span>
+					<h3 class="ui-li-heading">motoE66</h3>
+					<p class="ui-li-desc w_fontsize">2.4英才1600万色分辨率(240*320)</p>
+					<p class="ui-li-desc w_fontsize">价格：<em>¥2757</em></p>
+					<div class="box_zt_del">
+						<span></span>
+					</div>
+				</li>-->
+			</ul>
+			<div class="div-center" id="shop_div" style="display:none;">
+				<p>对不起，您还没有收藏产品！</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var num = 0;
+    //获取我的收藏
+    function getMyCollection(){
+        var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=collection_list';
+        uexWindow.toast("1","5","请稍后...","0");
+        uexXmlHttpMgr.open('1', "GET", url, "");
+        uexXmlHttpMgr.send('1');
+    }
+	//删除收藏商品
+	function deleteCollection(id){
+		var url = image_url + 'plugins/zywx/rpc/user.php?jsoncallback=?&act=delete_collection&collection_id='+id;
+		//uexWindow.toast("1","5","请稍后...","0");
+        uexXmlHttpMgr.open('2', "GET", url, "");
+        uexXmlHttpMgr.send('2');
+	}
+    zy_fix("header","","",function(){
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示",errorInfo,"确定");
+        }
+        uexXmlHttpMgr.onData = function(opCode, type, result){
+			var collection_list = '';
+            if (type == 1) {
+                if (opCode == 1) {//获取用户信息
+                    var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                    var s = JSON.parse(res);
+                    uexWindow.closeToast();
+                    uexXmlHttpMgr.close(opCode);
+					
+					if (s.status == "还没有收藏商品") {
+						$id("shop_div").style.display = "block";
+					}
+					//else {
+						for (var i in s.orderlist) {
+							num++;
+							collection_list += '<li class=" ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color" style="position:relative;">' +
+							'<div onclick="openGoodsDetails(' +
+							s.orderlist[i].goods_id +
+							',\'' +
+							s.orderlist[i].goods_name +
+							'\')"><span class="ui-li-thumb ui-li-thumb3" style="background-image:url(\'' +
+							image_url +
+							s.orderlist[i].goods_thumb +
+							'\');" >' +
+							'</span><h3 class="ui-li-heading">' +
+							s.orderlist[i].goods_name +
+							'</h3><p class="ui-li-desc w_fontsize">市场价格：' +
+							s.orderlist[i].market_price +
+							'</p>' +
+							'<p class="ui-li-desc w_fontsize">本店价格：<em>' +
+							s.orderlist[i].shop_price +
+							'</em></p></div><div style="display:none;" id="del_' +
+							i +
+							'" class="box_zt_del" onclick="deleteCollection(' +
+							s.orderlist[i].rec_id +
+							')">' +
+							'<span></span></div></li>';
+						}
+						$id("sort_shop_list_ul").innerHTML = collection_list;
+					//}
+                }else if(opCode == 2){
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                    var s = JSON.parse(res);
+                   
+                    uexWindow.closeToast();
+                    uexXmlHttpMgr.close(opCode);
+					
+					if(s.status == "未登录"){
+						uexWindow.alert("提示","请登录","确定");
+						//跳转到登录页面
+					}else {
+						uexWindow.alert("提示",s.status,"确定");
+						
+					}
+					getMyCollection();//获取我的收藏
+					/* if(state){
+						$id("edit_").innerHTML = "完成";
+						state = false;
+					}else{
+						$id("edit_").innerHTML = "编辑";
+						state = true;
+					} */
+					edit();
+				}
+            }
+        }
+		getMyCollection();//获取我的收藏
+	})
+    /*window.uexOnload = function(){
+        uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示",errorInfo,"确定");
+        }
+        uexXmlHttpMgr.onData = function(opCode, type, result){
+			var collection_list = '';
+            if (type == 1) {
+                if (opCode == 1) {//获取用户信息
+                    var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                    var s = JSON.parse(res);
+                    uexWindow.closeToast();
+                    uexXmlHttpMgr.close(opCode);
+                    
+					for(var i in s.orderlist){
+						num++;
+						collection_list += '<li class=" ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color" style="position:relative;">'+
+						'<div onclick="openGoodsDetails(' + s.orderlist[i].goods_id + ',\'' + s.orderlist[i].goods_name + '\')"><span class="ui-li-thumb ui-li-thumb3" style="background-image:url(\''+image_url+s.orderlist[i].goods_thumb+'\');" >'+
+						'</span><h3 class="ui-li-heading">'+s.orderlist[i].goods_name+'</h3><p class="ui-li-desc w_fontsize">'+s.orderlist[i].goods_name+'</p>'+
+						'<p class="ui-li-desc w_fontsize">价格：<em>'+s.orderlist[i].shop_price+'</em></p></div><div style="display:none;" id="del_'+i+'" class="box_zt_del" onclick="deleteCollection('+s.orderlist[i].rec_id+')">'+
+						'<span></span></div></li>';
+					}
+					$id("sort_shop_list_ul").innerHTML = collection_list;
+                }else if(opCode == 2){
+					var res = (result.substr(result.indexOf("?(") + 2, result.length)).substr(0, result.length - 3);
+                    var s = JSON.parse(res);
+                    uexWindow.closeToast();
+                    uexXmlHttpMgr.close(opCode);
+					
+					if(s.status == "未登录"){
+						uexWindow.alert("提示","请登录","确定");
+						//跳转到登录页面
+					}else {
+						uexWindow.alert("提示",s.status,"确定");
+					}
+					getMyCollection();//获取我的收藏
+					if(state){
+						$id("edit_").innerHTML = "完成";
+						state = false;
+					}else{
+						$id("edit_").innerHTML = "编辑";
+						state = true;
+					}
+				}
+            }
+        }
+		getMyCollection();//获取我的收藏
+    }*/
+	var state = true;
+	//编辑
+	function edit(){
+		if(state){
+			uexWindow.evaluateScript('','1','$id("edit_").innerHTML = "完成"');
+			//uexWindow.evaluateScript('','1','$id("fh").style.display = "none"');
+			state = false;
+            for (var i = 0; i < num; i++) {
+                $id("del_" + i).style.display = "block";
+            }
+		}else{
+			uexWindow.evaluateScript('','1','$id("edit_").innerHTML = "编辑";');
+			state = true;
+			for (var i = 0; i < num; i++) {
+                $id("del_" + i).style.display = "none";
+            }
+		}
+	}
+	 //打开商品详情页
+    function openGoodsDetails(id, name){
+        var html_url = 'goods_details.html?id=' + id + "&name=" + encodeURIComponent(name);
+        openNewWin("goodsDetails", html_url, 2);
+    }
+	function closeTheWin(){
+		uexWindow.close(-1);
+	}
+	function outDesc(desc){
+		desc = desc.substr(0,10) + "...";
+		return desc;
+	}
+</script>
+</body>
+</html>

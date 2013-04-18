@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css"> 
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/ui-flip.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script> 
+	 <script type="text/javascript" src="js/config.js"></script>
+<style>
+ 	
+ /*	.flipsnap {
+    display: -webkit-box;
+    margin: .8em 0;
+	}
+	.flipbox {
+	-webkit-transition-property: -webkit-transform; 
+	-webkit-transition-timing-function: cubic-bezier(0, 0, 0.25, 1); 
+	-webkit-transition-duration: 500ms; 
+	-webkit-transform: translate3d(0px, 0px, 0px); 
+	}
+	.item {
+	width: 1380px;
+	text-align: center;
+	vertical-align: middle;
+	}*/
+	</style>
+</head>
+<body class="ui-mobile-viewport ui_body_d" style="position:relative;">
+<div class="w_opacity1" id="mengban" style="display:none;"></div>
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+	<!-- <div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">登陆</span>  </span>  </div></div></div></div> --> 
+	<h1 class="ui-title title_top" tabindex="0" role="heading" aria-level="1" id="title_name" style="margin: .5em 3em .5em !important;">
+		　
+	</h1>
+<!-- 	<div id="noLogin_id" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> -->
+<!-- 		<div class="ui-btn-apple-nl"> -->
+<!-- 			<div class="ui-btn-apple-nr"> -->
+<!-- 				<div class="ui-btn-apple-nc"> -->
+<!-- 					<span class="ui-btn-inner "> -->
+<!-- 						<span class="ui-btn-text" onclick="goLo();">登录</span> -->
+<!-- 					</span> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	<!-- <div data-role="button" id="dl" ontouchstart="t_m_start_login(this.id)" ontouchmove="t_m_move_login(this.id)" ontouchend="t_m_end_login(this.id)" onclick="goLo();" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">登录</span> </span></div> --> 
+
+	<div id="login_id"  style="display:none;" class="username_box"><span class="username_dwx" id="userName_id_" onclick="uexWindow.open('mymall_userinfo', '0', 'mymall_userinfo.html', '2', '', '','0');"></span></div>
+	
+	<div class="search_dwx">
+			<div class="ui-input-search ui-shadow-inset ui-corner-all ui-btn-shadow ui-icon-searchfield ui-body-d ui-corner-all-d float_d ui_input_search">
+				<input placeholder="搜索商品" type="text" name="search-3" id="search-3" value="" class="ui-input-text ui-body-null ui-search-width-sy" style="width:82%;background:transparent"/>
+			</div>
+<!-- 			<div data-role="button" onclick="var v = $id('search-3').value;uexWindow.evaluateScript('','0','search(\''+v+'\')')" class="ui-btn-corner-all ui-btn ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx ui_shadow_dwx float_d"> -->
+<!-- 				<span class="ui-btn-inner ui-corner-all ui-btn-inner-dwx"> -->
+<!-- 					<span class="ui-btn-text">搜索</span> -->
+<!-- 				</span> -->
+<!-- 			</div> -->
+			<div data-role="button" id="ss" ontouchstart="t_m_start2(this.id)" ontouchmove="t_m_move2(this.id)" ontouchend="t_m_end2(this.id)" onclick=" var v = $id('search-3').value;uexWindow.evaluateScript('','0','search(\''+v+'\')')" class=" ui-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_search_btn111 w_head_btn ui-btn-search"> <span class="ui-btn-inner ui-corner-all www_padding"> <span class="ui-btn-text">搜索</span> </span></div> 
+
+			<div style="clear:both;"></div>
+		</div>
+		<div style="clear:both;"></div>
+</div>
+
+<div id="page_0" class="ui-page ui-page-active" tabindex="0">
+	<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom ui-content-dwx">
+	<div style="">
+	<div class="ui-flip-doc" >
+		<div id="fliphor1" class="ui-flip-hor ui-new-flip-height">			
+		</div>
+	</div>
+	</div>
+		<div class="banner_box_dwx">
+		    <div style="clear:both;"></div>
+            <ul class="w_order" id="point" style="margin-top:0;">
+               <!--  <li class="w_order_show w_order_show_dwx"><span></span></li>
+                <li ><span></span></li>
+                <li ><span></span></li>
+                <li ><span></span></li>
+                <li ><span></span></li>
+                <div class="clear"></div> -->
+            </ul>
+
+		</div>
+	
+		<div class="ui-collapsible-set ui_collapsible_set_dwx">
+		<div class="ui-collapsible-contain ui_collapsible_contain_dwx position_dwx" id="type_best">
+				<input type="checkbox" class="custom ui-hide">
+				<label onclick="zy_for(event,zy_fold)" class="ui-collapsible-heading ui-btn ui-btn-icon-right ui-shadow ui-corner-top ui_collapsible_heading ui_shadow_d title_bg_dwx">
+					<span class="ui-icon ui-icon-shadow ui-collapsible-icon abc_home"></span>
+					<span class="ui-btn-inner ui-corner-top ui_btn_inner jp_tit666">
+					<span class="ui-btn-text">精品推荐  <em>Best Item　</em></span>
+					</span>
+				</label>
+				<div class="ui-collapsible-content " aria-hidden="false">
+					<div id="best_prev" style="visibility:hidden;" onClick="pre_('best')" class="gt_dwx_left"></div>
+					<div class="w_recommend_area" style="margin: 0 0.8em;">
+                  	<div class="ui-flip-doc">
+								<div id="best" class="ui-flip-hor ui-div-hei">
+								</div>
+							</div>
+					</div>
+					<div id="best_next" onClick="next_('best')" class="gt_dwx"></div>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="list_bottom_bg"></div>
+			</div>
+			<div class="ui-collapsible-contain ui_collapsible_contain_dwx position_dwx" id="type_new">
+				<input type="checkbox" class="custom ui-hide" >
+				<label onclick="zy_for(event,zy_fold)" class="ui-collapsible-heading ui-btn ui-btn-icon-right ui-shadow ui-corner-top [ui-btn-up-c] ui_collapsible_heading ui_shadow_d title_bg_dwx">
+					<span class="ui-icon ui-icon-shadow ui-collapsible-icon abc_home"></span>
+					<span class="ui-btn-inner ui_btn_inner">
+						<span class="ui-btn-text">新品上市  <em>New Item　</em></span>
+					</span>
+				</label>
+                <div class="ui-collapsible-content " aria-hidden="false">
+					<div id="new_prev" style="visibility:hidden;" onClick="pre_('new')" class="gt_dwx_left"></div>
+                    <div class="w_recommend_area" style="margin: 0 0.8em;">
+                  	<div class="ui-flip-doc">
+                        <div id="new" class="ui-flip-hor ui-div-hei">
+                        </div>
+                    </div>
+					</div>                    
+					<div id="new_next" onClick="next_('new')" class="gt_dwx"></div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="list_bottom_bg"></div>
+			</div>
+			<div class="ui-collapsible-contain ui_collapsible_contain_dwx position_dwx" id="type_hot">
+				<input type="checkbox" class="custom ui-hide" >
+				<label onclick="zy_for(event,zy_fold)" class="ui-collapsible-heading ui-btn ui-btn-icon-right ui-shadow ui-corner-top [ui-btn-up-c] ui_collapsible_heading ui_shadow_d title_bg_dwx">
+					<span class="ui-icon ui-icon-shadow ui-collapsible-icon abc_home"></span>
+					<span style="padding-right:6.5em;" class="ui-btn-inner ui_btn_inner">
+						<span class="ui-btn-text" >热卖商品  <em>Hot Izzues</em></span>
+					</span>
+				</label>
+				<div class="ui-collapsible-content" aria-hidden="false">
+					<div id="hot_prev" style="visibility:hidden;" onClick="pre_('hot')" class="gt_dwx_left"></div>
+                    <div class="w_recommend_area" style="margin: 0 0.8em;">
+                  	<div class="ui-flip-doc">
+                        <div id="hot" class="ui-flip-hor ui-div-hei">
+                        </div>
+                    </div>
+					</div>                   
+					<div id="hot_next" onClick="next_('hot')" class="gt_dwx"></div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="list_bottom_bg"></div>
+			</div>
+			 <div class="ui-collapsible-contain ui_collapsible_contain_dwx position_dwx" id="type_brand">
+				<input type="checkbox" class="custom ui-hide" >
+				<label onclick="zy_for(event,zy_fold)" class="ui-collapsible-heading ui-btn ui-btn-icon-right ui-shadow ui-corner-top [ui-btn-up-c] ui_collapsible_heading ui_shadow_d title_bg_dwx">
+					<span class="ui-icon ui-icon-shadow ui-collapsible-icon abc_home"></span>
+					<span class="ui-btn-inner ui-corner-bottom ui_btn_inner">
+						<span class="ui-btn-text">品牌专区  <em>Brands　　</em></span>
+					</span>
+				</label>
+				<div class="ui-collapsible-content" aria-hidden="false">
+					<div id="brands_prev" style="visibility:hidden;top: 3.8em;" onClick="pre_('brands')" class="gt_dwx_left_pinpai1" ></div>
+					<div class="w_recommend_area_pinpai">
+	                  	<div class="ui-flip-doc">
+	                        <div id="brand" class="ui-flip-hor">                     
+	                        </div>
+	                    </div>
+					</div>
+					<div id="brands_next" onClick="next_('brands')" class="gt_dwx_pinpai1" style="top: 3.8em;"></div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="list_bottom_bg"></div>
+			</div>
+	</div>
+	 </div>
+</div>
+
+<div id="footer" data-role="footer" class="ui-footer ui-bar-a ui-footer-fixed">
+	<div class="ui-navbar ui-bar-a ui-nav-iphone ui_nav_iphone title_top ui_grid_a">
+		<!--<ul class="ui-grid-a">
+			<li class="ui-block-a ui_block_a" onclick="uexWindow.evaluateScript('', '0','window.location.reload()');"><input type="radio" checked="checked" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+			<li class="ui-block-b ui_block_a" onclick="uexWindow.open('sort', '0', 'sort.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">分类</span></span></label></li>
+			<li class="ui-block-c ui_block_a" onclick="uexWindow.evaluateScript('', '0','openNewWin_t(\'shoppingCar\',\'shoppingCar.html\',1,\'4\')');"><input type="radio" name="radiof1" id="radio-f1c" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-shop" style="margin-top: 0.2em;"></span><span class="ui-btn-inner"><span class="ui-btn-text">购物车</span></span></label></li>
+			<li class="ui-block-d ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToMymall()')"><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的</span></span></label></li>
+			<li class="ui-block-e ui_block_a" onclick="uexWindow.open('w_more', '0', 'w_more.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1e" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">更多</span></span></label></li>
+		</ul>-->
+		<ul class="ui-grid-a">
+			<li class="ui-block-a ui_block_a" onclick="uexWindow.evaluateScript('', '0','window.location.reload()');"><input type="radio" checked="checked" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+			<li class="ui-block-b ui_block_a" onclick="uexWindow.open('sort', '0', 'sort.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">分类</span></span></label></li>
+			<li class="ui-block-c ui_block_a" onclick="uexWindow.evaluateScript('', '0','openNewWin_t(\'shoppingCar\',\'shoppingCar.html\',0,\'4\')');"><input type="radio" name="radiof1" id="radio-f1c" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-shop"></span><span class="ui-btn-inner"><span class="ui-btn-text">购物车</span></span></label></li>
+			<li class="ui-block-d ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToMymall()');"><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的</span></span></label></li>
+			<li class="ui-block-e ui_block_a" onclick="uexWindow.open('w_more', '0', 'w_more.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1e" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">更多</span></span></label></li>
+		</ul>
+	</div>
+</div>
+</body>
+<script src="js/main.js"></script>
+<script src="js/zy_json.js"></script>
+<script src="js/flipsnap.js"></script>
+<script type="text/javascript" src="js/zyflip.js"></script>
+<script>
+	var addImgFlip = null;
+	var bestNum = 0;
+	var bestFlip = null;
+	var newNum = 0;
+	var newFlip = null;
+	var hotNum = 0;
+	var hotFlip = null;
+	var brandsNum = 0;
+	var brandsFlip = null;
+	var titleName = "";
+	var isDel = 0;//The flag of file
+	var check_flag = '';
+	function goToMymall(){
+		isDel = 2;
+		uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+	}
+	
+	function openNewWin_t(winName,htmlUrl,aid,isRe){
+		uexWindow.evaluateScript(winName, '0','getGoodsList()');
+		uexWindow.open(winName, '0', htmlUrl, '0', '', '', '0');
+	}
+	
+	var best_page = '';//精品推荐当前页
+	var best_pagesize = '';//精品推荐总页数
+	var new_page = '';//新品当前页
+	var new_pagesize = '';//新品总页数
+	var hot_page = '';//热卖当前页
+	var hot_pagesize = '';//热卖总页数
+	//获取精品推荐
+	function getBest(page){
+		var url = image_url + 'plugins/zywx/rpc/goods_list.php?jsoncallback=?&act=homeShow&type=best&orderStr=last_update&orderVal=1&page='+page;
+		//uexWindow.toast("1","5","请稍后...","0");
+		//alert(url)
+		uexXmlHttpMgr.open('1', "GET", url, ""); 
+		uexXmlHttpMgr.send('1');
+	}
+	//获取品牌
+	function getBrand(){
+		var url = image_url + 'plugins/zywx/rpc/goods_list.php?jsoncallback=?&act=brand';
+		//alert(url)
+		//uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('2', "GET", url, ""); 
+		uexXmlHttpMgr.send('2');
+	}
+	//获取新品
+	function getNew(page){
+		var url = image_url + 'plugins/zywx/rpc/goods_list.php?jsoncallback=?&act=homeShow&type=new&orderStr=last_update&orderVal=1&page='+page;
+		//alert(url)
+		//uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('3', "GET", url, ""); 
+		uexXmlHttpMgr.send('3');
+	}
+	//获取热卖
+	function getHot(page){
+		var url = image_url + 'plugins/zywx/rpc/goods_list.php?jsoncallback=?&act=homeShow&type=hot&orderStr=last_update&orderVal=1&page='+page;
+		//alert(url)
+		//uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('4', "GET", url, ""); 
+		uexXmlHttpMgr.send('4');
+	}
+	//获取广告图片
+	function getBanner(){
+		var url = image_url + 'plugins/zywx/rpc/ad.php?jsoncallback=?&act=adList';
+		//alert(url);
+		uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('5', "GET", url, "6000"); 
+		uexXmlHttpMgr.send('5');
+	}	
+	
+	/*登录成功后读取文件*/
+	function loginSuccess(){
+		setTimeout(function(){
+			uexFileMgr.openFile('1', "wgt://data/uesrInfo.txt", '1');
+			uexFileMgr.readFile('1','-1');
+			uexFileMgr.closeFile('1');
+		},500);
+	}
+	var allUrl = '';
+	function openWapUrl(url){
+		check_flag = "1";//点击
+		allUrl = url;
+		uexWidgetOne.getPlatform();
+	}
+	function platform(opId,dataType, data){
+		if(data == 0){//ios
+			uexWidget.loadApp(allUrl,"",allUrl);
+		}else if(data == 1){//and
+			uexWidget.loadApp("android.intent.action.VIEW", "text/html", allUrl);
+		}
+	}
+	
+	
+	zy_fix('header','footer','',function(){	
+		/*uexWindow.setReportKey('0', '1');
+		uexWindow.onKeyPressed = function(keyCode){
+			uexWidget.finishWidget('');
+		}*/
+		//弹动效果
+		/*uexWindow.setBounce("1");
+		uexWindow.showBounceView("0","#585858","0");
+		uexWindow.showBounceView("1","#262626","0");*/
+		
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示",errorCode+"--"+errorInfo,"确定");
+		}
+		//uexWidgetOne.cbGetPlatform = platform;
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			if(type == -1){
+				uexWindow.closeToast();
+				$id("mengban").style.display = "block";
+				uexWindow.alert("数据加载失败","网络错误或请求超时","确定");
+				return;
+			}
+			if(type == 1){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var o_ = JSON.parse(res);
+				if(o_.pluginstatus){
+					uexXmlHttpMgr.close(opCode);
+					uexWindow.closeToast();
+					uexWindow.alert("提示",o_.pluginstatus,"确定");
+					return;
+				}
+				if(opCode == 1){
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var s = JSON.parse(res);
+				//	uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					var best_list = '';
+					var con = 0;
+					var tmpStr = '';
+					if(s.goods == ""){
+						$id("type_best").style.display = "none";
+					}else{
+						$id("type_best").style.display = "block";
+					}
+					for(var i in s.goods){
+						var tname = s.goods[i].goods_name;
+						//alert(tname);
+						 if(tname == "" || tname == null){
+							//alert("44444")
+						}else{
+							con++;
+							if(tname.length>5) tname = tname.substr(0,5)+'...';
+							var imgurl = image_url+s.goods[i].goods_thumb;
+							tmpStr += str_textCon(s.goods[i].promote_price,s.goods[i].goods_id,s.goods[i].goods_name,imgurl,tname,s.goods[i].shop_price,s.goods[i].promote_price);
+							if(con%3 == 0){
+								bestNum++;
+							//	con = 0;
+								best_list += str_outCon(tmpStr);
+								tmpStr = '';
+							}
+						}
+					}
+					if(con<3){
+						best_list = tmpStr;
+						$id("best").innerHTML = best_list;
+					}else{
+						$id("best").innerHTML = best_list;
+						bestFlip= new zyFlip("best","H",bestCallback);
+					}
+					
+					/*$id("best").innerHTML = best_list;
+					bestFlip= new zyFlip("best","H",bestCallback);*/
+					getBrand();//获取品牌
+					//getNew("1");//获取新品
+				}else if(opCode == 2){
+					var brand_list = '';
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var s = JSON.parse(res);
+					//uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					var count = 0;
+					var tmpStr = '';
+					if(s == ""){
+						$id("type_brand").style.display = "none";
+						getNew("1");//获取新品
+					}else{
+						$id("type_brand").style.display = "block";
+					}
+					for(var i=0;i<s.brands.length;i++){
+						count++;
+						if (s.brands[i].brand_logo == "") {
+							continue;
+						
+						}
+						else {
+								/* tmpStr += '<div onclick="openBrandList('+s.brands[i].brand_id+',\''+s.brands[i].brand_name+'\')" data-role="button" class="ui-btn ui-btn-thumb ui-corner-all ui-shadow ui-btn-a logo_dwx ui_btn ui_btn_a_d w_pinpai_section" style="overflow:hidden;">'+
+								'<span class="ui_span_sy" style="background:url(\''+image_url+s.brands[i].brand_logo+'\');display:block;width:119px;height:45px;" ></span></div>'; */
+								
+							tmpStr += '<div onclick="openBrandList(' + s.brands[i].brand_id + ',\'' + s.brands[i].brand_name + '\')" style="position:relative;-webkit-box-flex: 1; box-flex: 1; margin:0 15px;">' +
+							'<div style="position:absolute;width:100%;height:100%">' +
+							'<div class="w_brand_list" style="background:url(\'' +
+							image_url +
+							s.brands[i].brand_logo +
+							'\') center center;"></div>' +
+							'</div></div>';
+							if (count == 2) {
+								brandsNum++;
+								count = 0;
+								//brand_list += '<section class="section2">'+tmpStr+'</section>';
+								//brand_list += '<section class="ui-flip-section">'+
+								//			'<div style="display:-webkit-box;display:box;height:100%; webkit-box-orient:vertical;">'+
+								//			'<div style="position:relative;-webkit-box-flex: 1;box-flex: 1;">'+
+								//		tmpStr+'</div></div></section>';
+								brand_list += '<div class="ui-flip-section">' +
+								'<div style="display: -webkit-box; display: box; height: 3.4375em; webkit-box-orient: horizontal;">' +
+								tmpStr +
+								'</div></div>';
+								tmpStr = '';
+							}
+						}
+					}
+					if(brand_list == ""){
+						$id("type_brand").style.display = "none";
+					}else{
+						$id("type_brand").style.display = "block";
+					}
+					$id("brand").innerHTML = brand_list;
+					brandsFlip= new zyFlip("brand","H",brandsCallback);
+					getNew("1");//获取新品
+				}else if(opCode == 3){
+					var new_list = '';
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var s = JSON.parse(res);
+					//uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					var con = 0;
+					var tmpStr = '';
+					
+					if(s == ""){
+						$id("type_new").style.display = "none";
+					}else{
+						$id("type_new").style.display = "block";
+					}
+					
+					for(var i in s.goods){
+						
+						var tname = s.goods[i].goods_name;
+						
+						if (tname == "" || tname == null) {
+						
+						}
+						else {
+							con++;
+							if (tname.length > 5) 
+								tname = tname.substr(0, 5) + '...';
+							var imgurl = image_url + s.goods[i].goods_thumb;
+							tmpStr += str_textCon(s.goods[i].promote_price,s.goods[i].goods_id, s.goods[i].goods_name, imgurl, tname, s.goods[i].shop_price,s.goods[i].promote_price);
+							if (con % 3 == 0) {
+								newNum++;
+								//	con = 0;
+								new_list += str_outCon(tmpStr);
+								tmpStr = '';
+							}
+						}
+					}
+					if(con<3){
+						new_list = tmpStr;
+						$id("new").innerHTML = new_list;
+					}else{
+						$id("new").innerHTML = new_list;
+						//alert("*****" + new_list)
+						newFlip= new zyFlip("new","H",newCallback);
+					}
+					/*$id("new").innerHTML = new_list;
+					newFlip= new zyFlip("new","H",newCallback);*/
+					getHot("1");//获取热卖
+				}else if(opCode == 4){
+					var hot_list = '';
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var s = JSON.parse(res);
+					uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					var con = 0;
+					var tmpStr = '';
+					
+					if(s == ""){
+						$id("type_hot").style.display = "none";
+					}else{
+						$id("type_hot").style.display = "block";
+					}
+					for(var i in s.goods){						
+						con++;
+						var tname = s.goods[i].goods_name;
+						if (tname == "" || tname == null) {
+						
+						}
+						else {
+							if (tname.length > 5) 
+								tname = tname.substr(0, 5) + '...';
+							var imgurl = image_url + s.goods[i].goods_thumb;
+							tmpStr += str_textCon(s.goods[i].promote_price,s.goods[i].goods_id, s.goods[i].goods_name, imgurl, tname, s.goods[i].shop_price,s.goods[i].promote_price);
+							if (con % 3 == 0) {
+								hotNum++;
+								//	con = 0;
+								hot_list += str_outCon(tmpStr);
+								tmpStr = '';
+							}
+						}
+					}
+					
+					if(con<3){
+						hot_list = tmpStr;
+						$id("hot").innerHTML = hot_list;
+					}else{
+						$id("hot").innerHTML = hot_list;
+						hotFlip= new zyFlip("hot","H",hotCallback);
+					}
+					
+				}else if(opCode == 5){
+					var point_list = '';
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var s = JSON.parse(res);
+					//uexWindow.closeToast();
+					uexXmlHttpMgr.close(opCode);
+					var section_list = '';
+					len = s.length;
+					for(var i=0;i<s.length;i++){
+                    	//section_list +=	'<div onclick="openWapUrl(\''+s[i].url+'\')" class="item"><section style="background:url(\''+image_url+s[i].src+'\') no-repeat; border-radius: .5em !important;"></section></div>'
+						section_list += '<div onclick="openWapUrl(\''+s[i].url+'\')" style="background:url(\''+image_url+s[i].src+'\');" class="ui-flip-section ui-ad-bc"></div>';
+						if(i == 0){
+							point_list += '<li class="w_order_show" id="point_'+i+'"><span></span></li>';
+						}else{
+							point_list += '<li class="" id="point_'+i+'"><span></span></li>';
+						}
+						
+					}
+					$id("fliphor1").innerHTML = section_list;
+					$id("point").innerHTML = point_list + '<div class="clear"></div>';
+					addImgFlip = new zyFlip("fliphor1",'H',calMovePoint);
+					getBest("1");
+				}
+			}
+		}
+		
+		uexFileMgr.cbReadFile = function(opCode,dataType,data){
+			if(data && data != ""){
+				var userObj = JSON.parse(data);
+				uexWindow.evaluateScript('','1','loginOk(\''+userObj.userName+'\')');
+			}
+		}
+		uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+			if(isDel == 1){
+				if(data == 1){
+					uexFileMgr.openFile('1', "wgt://data/uesrInfo.txt", '1');
+					uexFileMgr.readFile('1','-1');
+					uexFileMgr.closeFile('1');
+				}else{
+					uexWindow.evaluateScript('','1','loginOut()');
+				}
+			}else if(isDel == 2){
+				if(data == 1){
+					uexWindow.open('mymall', '0', 'mymall.html', '0', '', '','0');
+				}else{
+					uexWindow.open('login', '0', 'login.html?name=root', '0', '', '','0');
+				}
+			}else{
+				if(data == 1){					
+					uexFileMgr.deleteFileByPath("wgt://data/uesrInfo.txt");
+				}else{
+					getBanner();//获取广告图片
+				}
+			}
+		}
+		uexFileMgr.cbDeleteFileByPath = function(opCode,dataType,data){
+		//	if(data == 0){
+				getBanner();//获取广告图片
+		//	}
+		}
+		uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+		uexWidgetOne.getCurrentWidgetInfo();//读取config文件的name
+		
+		setInterval(bofang,3000);
+		/*setTimeout(function(){
+			bestFlip = new zyFlip("fliphor1",'H',calMovePoint);
+			setTime1 = setTimeout(bofang,4000);
+		},1000);*/
+		uexWidgetOne.cbGetCurrentWidgetInfo = function(opId,dataType,data){
+			if(dataType==1){
+				var obj = JSON.parse(data);
+				titleName = obj.name;
+				uexWindow.evaluateScript('','1','getTitleName(\''+titleName+'\')');
+			}
+		}
+		/* uexWidget.cbCheckUpdate = function(opId,dataType,data){
+			var obj  = JSON.parse(data);
+			if(obj.result == 1){
+				
+			}
+		}
+		uexWidget.checkUpdate();//检查当前widget是否有更新 */
+		checkWidgetUpdate();
+	});
+	
+	/*window.uexOnload = function(type){
+		if(!type){
+			uexWindow.setReportKey('0', '1');
+			uexWindow.onKeyPressed = function(keyCode){
+				uexWidget.finishWidget('');
+			}
+			uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+				uexWindow.alert("提示",errorCode+"--"+errorInfo,"确定");
+			}
+			uexWidgetOne.cbGetPlatform = platform;
+			uexXmlHttpMgr.onData = function(opCode,type,result){
+				if(type == -1){
+					uexWindow.closeToast();
+					$id("mengban").style.display = "block";
+					uexWindow.alert("数据加载失败","网络错误或请求超时","确定");
+					return;
+				}
+				if(type == 1){
+					var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+					var o_ = JSON.parse(res);
+					if(o_.pluginstatus){
+						uexXmlHttpMgr.close(opCode);
+						uexWindow.closeToast();
+						uexWindow.alert("提示",o_.pluginstatus,"确定");
+						return;
+					}
+					if(opCode == 1){
+						var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+						var s = JSON.parse(res);
+					//	uexWindow.closeToast();
+						uexXmlHttpMgr.close(opCode);
+						var best_list = '';
+						var con = 0;
+						var tmpStr = '';
+						for(var i in s.goods){
+							con++;
+							var tname = s.goods[i].goods_name;
+							if(tname.length>5) tname = tname.substr(0,5)+'...';
+							var imgurl = image_url+s.goods[i].goods_thumb;
+							tmpStr += str_textCon(s.goods[i].goods_id,s.goods[i].goods_name,imgurl,tname,s.goods[i].shop_price);
+							if(con == 3){
+								bestNum++;
+								con = 0;
+								best_list += str_outCon(tmpStr);
+								tmpStr = '';
+							}
+						}
+						$id("best").innerHTML = best_list;
+						bestFlip= new zyFlip("best","H",bestCallback);
+						getBrand();//获取品牌
+					}else if(opCode == 2){
+						var brand_list = '';
+						var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+						var s = JSON.parse(res);
+						//uexWindow.closeToast();
+						uexXmlHttpMgr.close(opCode);
+						var count = 0;
+						var tmpStr = '';
+						
+						for(var i=0;i<s.brands.length;i++){
+							count++;
+						//	tmpStr += '<div onclick="openBrandList('+s.brands[i].brand_id+',\''+s.brands[i].brand_name+'\')" data-role="button" class="ui-btn ui-btn-thumb ui-corner-all ui-shadow ui-btn-a logo_dwx ui_btn ui_btn_a_d w_pinpai_section" style="overflow:hidden;">'+
+						//	'<span class="ui_span_sy" style="background:url(\''+image_url+s.brands[i].brand_logo+'\');display:block;width:119px;height:45px;" ></span></div>';
+						//	
+							tmpStr += '<div onclick="openBrandList('+s.brands[i].brand_id+',\''+s.brands[i].brand_name+'\')" style="position:relative;-webkit-box-flex: 1; box-flex: 1; margin: 5px 15px">'+
+								'<div style="position:absolute;width:100%;height:100%">'+
+								'<div class="w_brand_list" style="background:url(\''+image_url+s.brands[i].brand_logo+'\');"></div>'+
+								'</div></div>';
+							if(count == 2){
+								brandsNum++;
+								count = 0;
+								//brand_list += '<section class="section2">'+tmpStr+'</section>';
+								//brand_list += '<section class="ui-flip-section">'+
+								//			'<div style="display:-webkit-box;display:box;height:100%; webkit-box-orient:vertical;">'+
+								//			'<div style="position:relative;-webkit-box-flex: 1;box-flex: 1;margin:5px">'+
+									//		tmpStr+'</div></div></section>';
+								brand_list += '<section class="ui-flip-section">'+
+		                        	'<div style="display: -webkit-box; display: box; height: 3.4375em; webkit-box-orient: horizontal;">'+
+		                        	tmpStr+
+									'</div></section>';
+								tmpStr = '';
+							}
+						}
+						$id("brand").innerHTML = brand_list;
+						brandsFlip= new zyFlip("brand","H",brandsCallback);
+						getNew("1");//获取新品
+					}else if(opCode == 3){
+						var new_list = '';
+						var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+						var s = JSON.parse(res);
+						//uexWindow.closeToast();
+						uexXmlHttpMgr.close(opCode);
+						var con = 0;
+						var tmpStr = '';
+						for(var i in s.goods){
+							con++;
+							var tname = s.goods[i].goods_name;
+							if(tname.length>5) tname = tname.substr(0,5)+'...';
+							var imgurl = image_url+s.goods[i].goods_thumb;
+							tmpStr += str_textCon(s.goods[i].goods_id,s.goods[i].goods_name,imgurl,tname,s.goods[i].shop_price);
+							if(con == 3){
+								newNum++;
+								con = 0;
+								new_list += str_outCon(tmpStr);
+								tmpStr = '';
+							}
+						}
+						
+						$id("new").innerHTML = new_list;
+						newFlip= new zyFlip("new","H",newCallback);
+						getHot("1");//获取热卖
+					}else if(opCode == 4){
+						var hot_list = '';
+						var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+						var s = JSON.parse(res);
+						uexWindow.closeToast();
+						uexXmlHttpMgr.close(opCode);
+						var con = 0;
+						var tmpStr = '';
+						for(var i in s.goods){
+							con++;
+							var tname = s.goods[i].goods_name;
+							if(tname.length>5) tname = tname.substr(0,5)+'...';
+							var imgurl = image_url+s.goods[i].goods_thumb;
+							tmpStr += str_textCon(s.goods[i].goods_id,s.goods[i].goods_name,imgurl,tname,s.goods[i].shop_price);
+							if(con == 3){
+								hotNum++;
+								con = 0;
+								hot_list += str_outCon(tmpStr);
+								tmpStr = '';
+							}
+						}
+						$id("hot").innerHTML = hot_list;
+						hotFlip= new zyFlip("hot","H",hotCallback);
+					}else if(opCode == 5){
+						var point_list = '';
+						var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+						var s = JSON.parse(res);
+						//uexWindow.closeToast();
+						uexXmlHttpMgr.close(opCode);
+						var section_list = '';
+						len = s.length;
+						for(var i=0;i<s.length;i++){
+	                    	//section_list +=	'<div onclick="openWapUrl(\''+s[i].url+'\')" class="item"><section style="background:url(\''+image_url+s[i].src+'\') no-repeat; border-radius: .5em !important;"></section></div>'
+							section_list += '<section onclick="openWapUrl(\''+s[i].url+'\')" style="background:url(\''+image_url+s[i].src+'\');" class="ui-flip-section ui-ad-bc"></section>';
+							if(i == 0){
+								point_list += '<li class="w_order_show" id="point_'+i+'"><span></span></li>';
+							}else{
+								point_list += '<li class="" id="point_'+i+'"><span></span></li>';
+							}
+							
+						}
+						$id("fliphor1").innerHTML = section_list;
+						$id("point").innerHTML = point_list + '<div class="clear"></div>';
+						addImgFlip = new zyFlip("fliphor1",'H',calMovePoint);
+						getBest("1");
+					}
+				}
+			}
+			
+			uexFileMgr.cbReadFile = function(opCode,dataType,data){
+				if(data && data != ""){
+					var userObj = JSON.parse(data);
+					uexWindow.evaluateScript('','1','loginOk(\''+userObj.userName+'\')');
+				}
+			}
+			uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+				if(isDel == 1){
+					if(data == 1){
+						uexFileMgr.openFile('1', "wgt://data/uesrInfo.txt", '1');
+						uexFileMgr.readFile('1','-1');
+						uexFileMgr.closeFile('1');
+					}else{
+						uexWindow.evaluateScript('','1','loginOut()');
+					}
+				}else if(isDel == 2){
+					if(data == 1){
+						uexWindow.open('mymall', '0', 'mymall.html', '0', '', '','0');
+					}else{
+						uexWindow.open('login', '0', 'login.html?name=root', '0', '', '','0');
+					}
+				}else{
+					if(data == 1){					
+						uexFileMgr.deleteFileByPath("wgt://data/uesrInfo.txt");
+					}else{
+						getBanner();//获取广告图片
+					}
+				}
+			}
+			uexFileMgr.cbDeleteFileByPath = function(opCode,dataType,data){
+			//	if(data == 0){
+					getBanner();//获取广告图片
+			//	}
+			}
+			uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+		}
+	}*/
+	
+	//打开品牌列表页面
+	function openBrandList(id,names_){
+		var html_url = 'w_brand_list.html?id='+id+"&name="+encodeURIComponent(names_);
+		//alert(html_url);
+		uexWindow.open("brandList", '0', html_url, "2", '', '', 0x0);
+		//openNewWin("brandList",html_url,"2");
+	}
+	//打开商品详情页
+    function openGoodsDetails(id, name,desc,markePrice,price,imgurl){
+        var html_url = 'goods_details.html?id=' + id + "&name=" + encodeURIComponent(name)+"&desc="+encodeURIComponent(desc)+"&markePrice="+markePrice+"&price="+price+"&imgurl="+encodeURIComponent(imgurl)+"&flag=index";
+        openNewWin("goodsDetails", html_url, "2");
+    }
+    /*传递搜索框内容*/
+    function search(val){
+		if (val == "") {
+			uexWindow.alert("提示", "请输入搜索内容", "确定");
+			return;
+		}
+		else {
+			var html_url = "w_result.html?search_value=" + encodeURIComponent(val);
+			openNewWin('w_result', html_url, "2");
+		}
+	}
+	
+	//判断文件是否存在
+	function isFile_(){
+		isDel = 1;
+		setTimeout(function(){
+			uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+        }, 500);
+	}	
+    var len = 0;
+	function pre_(f){
+		switch(f){
+			case 'best':
+				var currentLoc = bestFlip.currentPoint;
+				$id('best_prev').style.visibility = 'visible'; 
+				$id('best_next').style.visibility = 'visible';
+				if(currentLoc == 1) {$id('best_prev').style.visibility = 'hidden';}
+				bestFlip.toPrev();
+			break;
+			case 'new':
+				var currentLoc = newFlip.currentPoint;
+				$id('new_prev').style.visibility = 'visible'; 
+				$id('new_next').style.visibility = 'visible';
+				if(currentLoc == 1) {$id('new_prev').style.visibility = 'hidden';}
+				newFlip.toPrev();
+			break;
+			case 'hot':
+				var currentLoc = hotFlip.currentPoint;
+				$id('hot_prev').style.visibility = 'visible'; 
+				$id('hot_next').style.visibility = 'visible';
+				if(currentLoc == 1) {$id('hot_prev').style.visibility = 'hidden';}
+				hotFlip.toPrev();
+			break;
+			case 'brands':
+				var currentLoc = brandsFlip.currentPoint;
+				$id('brands_prev').style.visibility = 'visible'; 
+				$id('brands_next').style.visibility = 'visible';
+				if(currentLoc == 1) {$id('brands_prev').style.visibility = 'hidden';}
+				brandsFlip.toPrev();
+			break;
+			default:break;
+		}
+	}
+	function next_(f){
+		switch(f){
+			case 'best':
+				var currentLoc = bestFlip.currentPoint;
+				$id('best_prev').style.visibility = 'visible'; 
+				$id('best_next').style.visibility = 'visible';
+				if(currentLoc == (bestNum -2)) {$id('best_next').style.visibility = 'hidden';}
+				bestFlip.toNext();
+			break;
+			case 'new':
+				var currentLoc = newFlip.currentPoint;
+				$id('new_prev').style.visibility = 'visible'; 
+				$id('new_next').style.visibility = 'visible';
+				if(currentLoc == (newNum -2)) {$id('new_next').style.visibility = 'hidden';}
+				newFlip.toNext();
+			break;
+			case 'hot':
+				var currentLoc = hotFlip.currentPoint;
+				$id('hot_prev').style.visibility = 'visible'; 
+				$id('hot_next').style.visibility = 'visible';
+				if(currentLoc == (hotNum -2)) {$id('hot_next').style.visibility = 'hidden';}
+				hotFlip.toNext();
+			break;
+			case 'brands':
+				var currentLoc = brandsFlip.currentPoint;
+				$id('brands_prev').style.visibility = 'visible'; 
+				$id('brands_next').style.visibility = 'visible';
+				if(currentLoc == (hotNum -2)) {$id('brands_next').style.visibility = 'hidden';}
+				brandsFlip.toNext();
+			break;
+			default:break;
+		}
+	}
+	function calMovePoint(){
+		var cp = addImgFlip.currentPoint;
+		 /*if(cp == 0){
+			$id("point_"+(cp+1)).className = "";
+		}else if(cp == (len-1)){
+			$id("point_"+(cp-1)).className = "";
+		}else{
+			$id("point_"+(cp+1)).className = "";
+			$id("point_"+(cp-1)).className = "";
+		}*/
+		for(var i = 0; i < len; i++){
+	    	if(cp == i){
+	    		  document.getElementById("point_" + i).className = "w_order_show";
+	    	}else{
+	    		document.getElementById("point_" + i).className = "";
+	    	}
+	    }
+		//$id("point_"+cp).className = "w_order_show";
+	}
+	function bestCallback(){
+		var currentLoc = bestFlip.currentPoint;
+		var maxPoint = bestFlip.maxPoint;
+		$id('best_prev').style.visibility = 'visible'; 
+		$id('best_next').style.visibility = 'visible';
+		if(currentLoc == 0) {$id('best_prev').style.visibility = 'hidden';}
+		if(currentLoc == maxPoint) {$id('best_next').style.visibility = 'hidden';}
+		
+	}
+	function newCallback(){
+		var currentLoc = newFlip.currentPoint;
+		var maxPoint = newFlip.maxPoint;
+		$id('new_prev').style.visibility = 'visible'; 
+		$id('new_next').style.visibility = 'visible';
+		if(currentLoc == 0) {$id('new_prev').style.visibility = 'hidden';}
+		if(currentLoc == maxPoint) {$id('new_next').style.visibility = 'hidden';}
+		
+	}
+	function hotCallback(){
+		var currentLoc = hotFlip.currentPoint;
+		var maxPoint = hotFlip.maxPoint;
+		$id('hot_prev').style.visibility = 'visible'; 
+		$id('hot_next').style.visibility = 'visible';
+		if(currentLoc == 0) {$id('hot_prev').style.visibility = 'hidden';}
+		if(currentLoc == maxPoint) {$id('hot_next').style.visibility = 'hidden';}
+		
+	}
+	function brandsCallback(){
+		var currentLoc = brandsFlip.currentPoint;
+		var maxPoint = brandsFlip.maxPoint;
+		$id('brands_prev').style.visibility = 'visible'; 
+		$id('brands_next').style.visibility = 'visible';
+		if(currentLoc == 0) {$id('brands_prev').style.visibility = 'hidden';}
+		if(currentLoc == maxPoint) {$id('brands_next').style.visibility = 'hidden';}
+	}
+	function getSearchValue(){
+		uexWindow.evaluateScript('','1','document.getElementById("search-3").value = "";');
+	}
+	
+	function str_textCon(flag,goodId,goodname,imgurl,tname,goodPrice,goodPrice1){
+		if (flag == "") {
+			var tmpStr = '<div onclick="openGoodsDetails(' + goodId + ',\'' + goodname + '\')" style="position:relative;-webkit-box-flex: 1; box-flex: 1; margin: 5px">' +
+			'<div class="ui-con-text">' +
+			'<div class="ui-div-text" style="background:url(\'' +
+			imgurl +
+			'\') no-repeat center center;"></div>' +
+			'<div class="ui-text-content">' +
+			'<span class="ui-btn-text-dwx-font t-color">' +
+			tname +
+			'</span>' +
+			'<em class="many_color">' +
+			goodPrice +
+			'</em></div></div></div>';
+		}else{
+			var tmpStr = '<div onclick="openGoodsDetails(' + goodId + ',\'' + goodname + '\')" style="position:relative;-webkit-box-flex: 1; box-flex: 1; margin: 5px">' +
+			'<div class="ui-con-text">' +
+			'<div class="ui-div-text" style="background:url(\'' +
+			imgurl +
+			'\') no-repeat center center;"></div>' +
+			'<div class="ui-text-content">' +
+			'<span class="ui-btn-text-dwx-font t-color">' +
+			tname +
+			'</span>' +
+			'<em class="many_color">' +
+			goodPrice1 +
+			'</em></div></div></div>';
+		}
+		return tmpStr;
+	}
+	function str_outCon(textStr){
+		var str = '<div class="ui-flip-section">'+
+			'<div class="ui-sec-sty">'+
+			textStr+
+			'</div></div>';
+		return str;
+	}
+	
+	var flag = 1;
+	function bofang(){
+		if(flag > len){
+			flag = 1;
+		}
+		if(flag != len){
+			addImgFlip.toNext();
+			calMovePoint()
+			flag++;
+		}else{
+			addImgFlip.moveToPoint(0);
+			calMovePoint();
+			//document.getElementById("point_"+len).className = "";
+			flag++;
+		}
+	}
+	//检查更新
+	function checkWidgetUpdate(){
+		  var platform = 0;
+		  var updateurl = '';
+		  var savePath = '';
+		  var filepath2 = "/sdcard/android.apk";
+		  uexDownloaderMgr.onStatus = function(opId,fileSize, percent, status){
+			  if(status == 0){
+				  var str = '下载进度：'+percent+'%';
+				  if(fileSize==-1) str = '下载中，请稍候...';
+				  uexWindow.toast('1','5', str,'');
+			  }else if (status == 1){
+				  uexWindow.closeToast();
+				  uexDownloaderMgr.closeDownloader('14');
+				  uexWidget.installApp(filepath2);
+			  }
+			  else{
+				  uexWindow.closeToast();
+				  uexWindow.toast('0','5','下载失败','2000');
+				  uexDownloaderMgr.closeDownloader('14');
+			  }
+		  }
+		  uexDownloaderMgr.cbCreateDownloader = function(opId,dataType,data){
+				if(data == 0){
+					//log('updateurl='+updateurl);
+					  uexDownloaderMgr.download('14', updateurl, filepath2, '0');
+				  }
+				  else{
+					  uexWindow.toast('0','5','下载失败','2000');
+				  }
+			}
+		  uexWindow.cbConfirm = function ConfirmSuccess(opId, dataType, data){
+				if (data == 1) {
+					if(platform==0){
+						uexWidget.loadApp("", "", updateurl);
+					}
+					else if(platform==1) {
+						uexDownloaderMgr.createDownloader("14");	
+					}
+				}
+		  }
+		  uexWidget.cbCheckUpdate = function (opCode, dataType, jsonData){
+			    var obj = eval('('+jsonData+')');
+				if(obj.result == 0){
+					updateurl = obj.url;
+					savePath = obj.name;
+					var value = "稍后;更新";
+					var mycars=value.split(";");
+					uexWindow.confirm('', '当前有新版本，是否更新?', mycars);		
+				}else if(obj.result == 1){
+					;//tips = "当前版本是最新的";alert(tips);
+				}else if(obj.result == 2){
+					;//tips = "未知错误";alert(tips);
+				}else if(obj.result == 3){
+					;//tips = "参数错误";alert(tips);
+				}
+			}
+		  uexWidgetOne.cbGetPlatform = function(opId,dataType,data){
+				platform = data;
+				if(data==0){ //iphone
+					if(check_flag == "2"){
+						uexWidget.checkUpdate();
+					}else{
+						uexWidget.loadApp(allUrl,"",allUrl);
+					}
+				}else if(data==1){ //android
+					if(check_flag == "2"){
+						uexWidget.checkUpdate();
+					}else{
+						uexWidget.loadApp("android.intent.action.VIEW", "text/html", allUrl);
+					}
+				}
+				else{
+				}
+			}
+		  check_flag = "2";//更新
+		  uexWidgetOne.getPlatform();
+	  }
+	
+	
+</script>
+<script>
+	zy_init();
+</script>
+</html>

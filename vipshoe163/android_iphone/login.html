@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css"> 
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/h_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+</head>
+<body class="ui-mobile-viewport ui_body_d_sy" >
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+<div onclick="uexWindow.evaluateScript('', '0','closeTheWin()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text" style="font-size: .8125em;">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<strong>登录</strong>
+	</h1>
+</div>
+
+<div id="page_1" class="ui-page ui-body-d ui-page-active ui_body_d_sy" tabindex="0">
+	<div class="ui-content ui-body-d ui-fixed-top ui_body_dd ui_body_font">
+<!-- 		<div class="img_box"><img src="css/res-apple/uers_img.png" width="85" height="85" align="absmiddle"/></div> -->
+		
+		<ul data-role="listview" class="ui-listview ui-listview-inset ui-corner-all  ui-shadow" style="opacity: 0.6;margin-top: 2em;"> 
+			<li class=" ui-body-d     ui-corner-top  ui-li-static  ui-li">
+				<div class="ui-has-label ui_has_label_dwx ">
+					<label for="text-0" class="ui-input-text ui-label-staticwidth" style="width:6em;max-width: 6em;vertical-align: sub;" >用户名：</label>
+					<input placeholder="请输入用户名" style="vertical-align: sub;" name="text-0" id="text_0"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui-sy-input"/>
+				</div>
+			</li> 
+			<li class=" ui-body-d     ui-corner-bottom  ui-li-static  ui-li">
+				<div class="ui-has-label ui_has_label_dwx">
+					<label for="text-0" class="ui-input-text ui-label-staticwidth" style="width:6em;max-width: 6em;vertical-align: sub;">密　码：</label>
+					<input placeholder="请输入密码" name="text-0" style="vertical-align: sub;" id="text_1"  type="password" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui-sy-input"/>
+				</div>
+			</li> 
+		</ul>
+        <fieldset id="accessories_list" data-role="controlgroup" style="margin:0;" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+            <div class="ui-checkbox">
+                <input type="checkbox" value="" class="custom ui-hide" id="checkbox-1-2" name="checkbox-1-2">
+                <label onclick="zy_for(event)" class="ui-btn ui-btn-icon-left ui-corner-bottom ui-controlgroup-last ">
+                    <label class="ui-icon ui-icon-checkbox ui-icon-shadow ui-icon-checkbox-sy" style="border: 1px solid #CCC;">
+                    </label>
+                    <span class="ui-btn-inner"><span class="ui-btn-text">记住用户信息</span></span>
+                </label>
+            </div>
+        </fieldset>
+        <div style=" display: -webkit-box;-webkit-box-orient: horizontal;">
+        	<div data-role="button" style="margin: 1.5em 2em 1.5em 0;-webkit-box-flex: 1;" class=" ui-btn-corner-all ui-btn  ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx" onclick="login()">
+				<span class="ui-btn-inner ui-corner-all" style="padding: .6em 2em;">
+					<span class="ui-btn-text">登录</span>
+				</span>
+			</div>
+			<div data-role="button" style="margin: 1.5em 0em 1.5em 0;-webkit-box-flex: 1;" class=" ui-btn-corner-all ui-btn  ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx" onclick="openRegister()">
+				<span class="ui-btn-inner ui-corner-all" style="padding: .6em 2em;" >
+					<span class="ui-btn-text">注册</span>
+				</span>
+			</div>
+        </div>
+	</div>
+</div>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+//获取参数
+//parseParam();
+var id = 0;
+var winName = "";
+var flag = "";
+var obj= null;
+var userObj = {};
+var uName = '';
+var uPassword = '';
+function httpSuccess(opid,statu,result){
+	if(statu==1){
+		if(opid == 1){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			obj = JSON.parse(res);
+			if(obj.pluginstatus){
+				uexXmlHttpMgr.close(opid);
+				uexWindow.closeToast();
+				uexWindow.alert("提示",obj.pluginstatus,"确定");
+				return;
+			}
+			var st = obj.status;
+			if(st == "登陆成功"){
+				userObj.userName = uName;
+				userObj.password = uPassword;
+				userObj.userId = obj.user_id;
+				userObj.flag = $id("checkbox-1-2").checked;
+				uexFileMgr.createFile('1',"wgt://data/uesrInfo.txt");
+				uexFileMgr.closeFile('1');
+			}
+			else{
+				uexWindow.closeToast();
+				uexWindow.alert("提示",st,"确定");
+				;
+			}
+		}       
+		uexXmlHttpMgr.close(opid);
+	}
+}
+/*写文件*/
+function writeFile(){
+	uexFileMgr.openFile('2','wgt://data/uesrInfo.txt','2');
+	uexFileMgr.writeFile('2','0',JSON.stringify(userObj));
+	uexFileMgr.closeFile('2');
+	
+	uexFileMgr.openFile('3','wgt://data/userInfoPassword.txt','2');
+	uexFileMgr.writeFile('3','0',JSON.stringify(userObj));
+	uexFileMgr.closeFile('3');
+	uexWindow.evaluateScript(winName, '0','loginSuccess()');
+	uexWindow.close('-1');
+}
+//读取文件
+function readFile(id,path, size){
+    uexFileMgr.openFile(id, path, '1');
+    uexFileMgr.readFile(id,size);
+    uexFileMgr.closeFile(id);
+}
+//创建文件
+function creatFile(path){
+    uexFileMgr.createFile('3', path);
+    uexFileMgr.closeFile('3');
+}
+zy_fix("header","","",function(){
+	//获取参数
+	parseParam();
+	id = params.id;
+	winName = params.name;
+	flag = params.flag;
+	uexXmlHttpMgr.onData = httpSuccess;
+	uexFileMgr.cbCreateFile = function(opCode,dataType,data){
+		if(data == 0){
+			if (opCode == 1) {
+				creatFile("wgt://data/userInfoPassword.txt");
+			}else{
+				writeFile();
+			}
+		}else{
+			uexWindow.alert("提示","创建文件失败","确定");
+		}
+	}
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示",opCode+":"+errorCode+";"+errorInfo,"确定");
+	}
+    uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+    	if (data == 1) {
+			readFile('3', "wgt://data/userInfoPassword.txt", '-1');//文件存在，直接读取
+        }
+    }
+	 uexFileMgr.cbReadFile = function(opCode, dataType, data){
+	 	if(opCode == 3){
+			if(data != ""){
+                var userContent = JSON.parse(data);
+				var f = userContent.flag;
+				if(f == true){
+					$id("text_0").value = userContent.userName;
+					$id("text_1").value = userContent.password;
+					$id("checkbox-1-2").checked = true;
+				}
+			}
+		}
+	 }
+	 uexFileMgr.isFileExistByPath("wgt://data/userInfoPassword.txt");
+})
+/*window.uexOnload = function(){
+	
+	uexXmlHttpMgr.onData = httpSuccess;
+	uexFileMgr.cbCreateFile = function(opCode,dataType,data){
+		if(data == 0){
+			if (opCode == 1) {
+				creatFile("wgt://data/userInfoPassword.txt");
+			}else{
+				writeFile();
+			}
+		}else{
+			uexWindow.alert("提示","创建文件失败","确定");
+		}
+	}
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示",opCode+":"+errorCode+";"+errorInfo,"确定");
+	}
+    uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+    	if (data == 1) {
+			readFile('3', "wgt://data/userInfoPassword.txt", '-1');//文件存在，直接读取
+        }
+    }
+	 uexFileMgr.cbReadFile = function(opCode, dataType, data){
+	 	if(opCode == 3){
+			if(data != ""){
+                var userContent = JSON.parse(data);
+				var f = userContent.flag;
+				if(f == true){
+					$id("text_0").value = userContent.userName;
+					$id("text_1").value = userContent.password;
+					$id("checkbox-1-2").checked = true;
+				}
+			}
+		}
+	 }
+	 uexFileMgr.isFileExistByPath("wgt://data/userInfoPassword.txt");
+ }*/
+ function xmlHttp(rid,_url){
+	//uexWindow.toast('1','5','正在登录...','0');
+	uexXmlHttpMgr.open(rid, "GET",_url,"");
+	uexXmlHttpMgr.send(rid);
+ }
+function login(){
+	var uname = document.getElementById("text_0").value;
+	var pswd = document.getElementById("text_1").value;
+	uName = uname;
+	uPassword = pswd;
+	if(uname == "" || pswd == ""){
+		uexWindow.alert("提示","请输入用户名和密码！","确定");
+		return;
+	}
+	uname = encodeURIComponent(uname);
+	pswd = encodeURIComponent(pswd);
+	/*var dd = /[a-zA-Z]\w+$/;
+	if(!dd.test(uname)){
+		uexWindow.alert("提示","请输入字符","确定");
+		return;
+	}*/
+	var url = image_url + "plugins/zywx/rpc/user.php?jsoncallback=?&act=login&username="+uname+"&pwd="+pswd;
+	//alert(url);
+	xmlHttp(1,url);	
+}
+//打开商品详情页
+function openGoodsDetails(id, name){
+    var html_url = 'goods_details.html?id=' + id + "&name=" + name;
+    openNewWin("goodsDetails", html_url, 2);
+}
+//打开首页
+function openIndex(){
+	var html_url = 'index.html';
+    openNewWin("index", html_url, 2);
+}
+//打开注册
+function openRegister(){
+	var html_url = 'register.html';
+    openNewWin("register", html_url, 2);
+}
+function closeTheWin(){
+	uexWindow.close(-1);
+}
+</script>
+</body>
+<script>
+	zy_init();
+</script>
+</html>

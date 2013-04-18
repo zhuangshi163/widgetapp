@@ -1,0 +1,607 @@
+/*footer*/
+.ui-grid-a .ui_block_a{
+	width: 20%;
+}
+
+.ui_nav_iphone input[type="radio"]:checked + label {
+	background: url("res-apple/hover_bg.png") no-repeat !important;
+	border-radius: 0;
+	border: 0px;
+	-webkit-background-size: 100% auto;
+}
+
+body,p,div,ul,ol,li,dl,dt,dd,span,var,em,a,img,strong,table,td,tr,h2,h3,h4,h5,input{
+	font-family: Arial, Helvetica, sans-serif;
+	font-family:微软雅黑;
+	margin:0;
+	padding:0;
+}
+a,img{border:none;text-decoration:none;}
+ul,ol{list-style-type:none; margin:0; padding:0;}
+
+#wrapper {width:100%; overflow:auto; z-index:4; top:2.7em;  bottom:0px; position:absolute;  }
+#wrapper2 {width:100%; overflow:auto; z-index:4; top:2.7em;  bottom:4em; position:absolute;  }
+#wrapper3 { width:100%;overflow:auto; z-index:4; top:5.2em;  bottom:0px; position:absolute;  }
+.w_content_padding{
+	padding-bottom:0;
+	padding-left:0;
+	padding-right:0;
+	background:none;
+}
+.ui-content .wa{margin:0;}
+.ui-content .sy_sy{margin-left:36%;}
+.w_li_a{
+	display:block;
+	text-decoration:none;
+}
+.clear {
+	overflow: hidden;
+	height: 0;
+	clear: both;
+	font-size: 0;
+}
+.w_left{float:left;}
+.w_right{float:right;}
+.w_cursor{
+	cursor:pointer;
+}
+/* .ui_title {
+	border: none;
+	border-top:1px #B0B0B0 solid;
+	border-bottom:1px #000 solid;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#929292), to(#151515), color-stop(50%, #565656),color-stop(51%, #2b2b2b));
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px black;
+ } */
+.ui_grid_a {
+	border: 1px solid #424242;
+	background: #020202;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px black;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#2d2d2e), to(#000000), color-stop(50%, #171717),color-stop(51%, #020202));
+
+}
+.ui_body_d {
+	border: none;
+	color: #fff;
+	text-shadow: 0 0 0 0;
+	background: url("res-apple/my_bg.png") repeat !important;
+}
+  .ui_body_a_dwx {
+	border: none;
+	background: none;
+	color: white;
+	text-shadow: 0 1px 0 black;
+	font-weight: normal;
+	background-image: none;
+}
+
+.w_result{
+	line-height:2em;
+	margin-left:0.8em; 
+	color:#000;
+	text-shadow:none;
+}
+.ui-li.sort-li{padding-left:5.8em; padding: 0.2em 15px 1em 5.8em;}
+.ui-btn-up-a, .ui-li-font-color {
+border: 1px solid #8C8C8C;
+background: #fff;
+font-weight: bold;
+color: black;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#F0F1F1), to(#D1D3D5) );
+ }
+ /*搜索结果点击效果*/
+.w_detils_click{
+	border: 1px solid #A50316;
+	background: #E3717B;
+	font-weight: normal;
+	color: #fff;
+	text-shadow: 1px 0 0 #000 ;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E3717B), to(#AF0B18), color-stop(50%, #D12936),color-stop(51%, #BE0210));	
+}
+.ui-li-thumb3{
+	width: 5em;
+	height:5em;
+	top:50%;
+	margin-top:-2.5em;
+	-webkit-border-radius:0.6em;
+	-webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, .8),0px 2px 3px rgba(255, 255, 255, .8);
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, .6),0px 2px 3px rgba(255, 255, 255, .8);
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	border-image: initial;
+	-webkit-box-orient:horizontal;
+	margin-left: 0.3em;
+}
+.ui-li-thumb1{
+	top:0.6em; 
+	left: 0.4em;
+	width:63px;
+	height:63px;
+}
+
+.w_fontsize{font-size:0.875em;}
+.w_color{color:#F10117;}
+.w_color2{color:#fff;}
+
+.w_brand_details{margin: 0 1.5%;}
+.w_goods {
+margin:0.625em 0;
+text-align: center;
+display: box;
+display: -webkit-box;
+-webkit-box-orient:vertical;
+box-orient:vertical;
+
+}
+.w_goods_img {
+margin:0 auto;
+width:8.5em;
+height:8.375em;
+display: -webkit-box;
+-webkit-box-align: center;
+-webkit-box-pack: center;
+border-image: initial;
+}
+
+.w_goods_img li a {
+display: block;
+width:8em;
+height:7.9375em;
+background: white;
+border: 1px solid #C0B399;
+-webkit-border-radius: 6px;
+display: -webkit-box;
+-webkit-box-align: center;
+-webkit-box-pack: center;
+border-image: initial;
+font-size:0;
+}
+
+.w_goods_img li a:hover,.w_goods_img li a:active{
+background:url("res-apple/w_details.png") no-repeat ;
+width:8.5em;
+height:8.375em;
+border: 1px solid #f00;
+-webkit-background-size:100% 100%;
+}
+.w_goods_img li a span {
+display:block;
+width: 7.375em;
+height: 7.3125em;
+border:none;
+-webkit-background-size: 100% 100%;
+}
+
+.w_order{margin:0.4em 10% 0 10%; height:0.375em; display:-webkit-box; -webkit-box-algin:center; -webkit-box-pack:center;}
+.w_order li{margin:0 0.3em;}
+.w_order li span{width:0.375em;height:0.375em;-webkit-border-radius:0.375em;  background:#000; display:block;}
+.w_order li.w_order_show span{background:#660000;}
+.w_opacity222{
+	position:absolute;
+	left:0;
+	top:0;
+	background:#fff; 
+	opacity:0.7; 
+	z-index:-99;
+	width:100%;
+	height:100%;
+}
+.goods_details{
+	border-top:1px solid #666;
+	padding-bottom:1em;
+	position:relative;
+}
+.w_goods_con{
+	color:#000;
+	text-shadow: 0 1px 0 #fff;
+}
+.w_border_bottom{border-bottom:1px solid #D4D4D4;}
+.w_border_top{border-top:1px solid #fff;}
+.w_goods_padding{padding:0.3em;}
+.goods_details h3{margin:0 0.4em; padding-top:0.5em;padding-bottom:0.6em;}
+.goods_details ul.details_con li{clear:both;padding:0 0.4em;}
+.goods_details ul.details_con li p{line-height:1.7em; }
+.goods_details ul.details_con li p.w_goods_num{line-height:3.4em;}
+input.w_num{width:2em;padding:0.35em 0.4em; text-align:center;margin: 0.7em 0 0.7em 0;}
+.goods_num{min-width:1.8em;}
+/* .w_details_font{font-size:0.875em;} */
+.w_details_btn1{
+	max-width:7em;
+	margin: .5em 7px;
+	border: 1px solid #003366;
+	background: #393A80;
+	font-weight: normal;
+	color: white;
+	text-shadow: none;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#7A7DBB), to(#393A80), color-stop(50%, #4F529A),color-stop(51%, #494C8C));
+	-webkit-box-flex:1;
+	box-flex:1px;
+	-webkit-box-pack:center;
+	box-pack:center;
+	-webkit-box-align:center;
+	box-align:center;
+	display:block;
+}
+.w_details_btn2{
+	max-width:7em;
+	margin: .5em 7px;
+	border: 1px solid #315101;
+	background: #537A1E;
+	font-weight: normal;
+	color: white;
+	text-shadow: none;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#A8BD71), to(#537A1E), color-stop(50%, #698C39),color-stop(51%, #527A1E));
+	-webkit-box-flex:1;
+	box-flex:1px;
+	-webkit-box-pack:center;
+	box-pack:center;
+	-webkit-box-align:center;
+	box-align:center;
+	display:block;
+}
+.w_details_btn3{
+	max-width:7em;
+	margin: .5em 7px;
+	border: 1px solid #843A07;
+	background: #C9500A;
+	font-weight: normal;
+	color: white;
+	text-shadow: none;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#FFA432), to(#C9500A), color-stop(50%, #DD690A),color-stop(51%, #CD5609));
+	-webkit-box-flex:1;
+	box-flex:1px;
+	-webkit-box-pack:center;
+	box-pack:center;
+	-webkit-box-align:center;
+	box-align:center;
+	display:block;
+}
+.w_intro p{margin-left:0.4em;line-height:1.7em;}
+.ui-content .w_comment{margin:1em 0.4em;}
+.ui-body-a .w_comment_color{color:#000;}
+.ui-li .ui-btn-inner div.ui-link-inherit{ padding:0.2em 15px;}
+.w_comment_hover{
+	border: 1px solid #C69684;
+	background: #E2B1B1;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#EED1D1), to(#E2B1B1));
+}
+.w_comment_con{font-size:0.875em;line-height:2em;}
+
+
+.star {
+float: right;
+position: relative;
+width: 5.3em;
+height: 1em;
+display: block;
+overflow: hidden;
+margin-top:0.3em;
+}
+.rating {
+position: absolute;
+left: 0;
+top: 0;
+display: block;
+background: url(res-apple/rating2.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 5.2em;
+height: 1em;
+}
+.rating_solid {
+position: absolute;
+left: -40%;
+top: 0;
+display: block;
+background: url(res-apple/rating.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 5.2em;
+height: 1em;
+}
+
+.w_set{
+	margin:0 0;
+	position: relative;
+	height:100%;
+	background:none;
+}
+.ui-content .w_more_ul{
+	margin:1em 0 0 0;
+	border:1px solid #A9A9A9;
+	/*border-top:none;*/
+	-webkit-box-shadow: 0 0px 0px #fff !important;
+	box-shadow: 0 0px 0px  #fff !important;
+	padding:.3em 0 .3em 0;
+	}
+.w_more_li{
+	/*border:1px solid #A9A9A9;*/
+	color:#000;
+	background:#EDEDED;
+	text-shadow: none;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#EDEDED) );
+	background-image: -webkit-linear-gradient(top, #EDEDED, #EDEDED);
+	background-image: linear-gradient(top, #EDEDED, #EDEDED);
+	border-radius: 0em;
+	padding-left:.5em;
+}
+.ui-nobottombr {
+	border-bottom:1px solid #A9A9A9;	
+}
+.w_more_li.ui-notopbr {
+	border-top:none;	
+}
+.w_express_title{
+	text-align:center;
+	font-size:1em;
+	line-height:1.7em;
+}
+.w_express_con{line-height:1.7em;}
+
+#pullDown, #pullUp {
+	background:#fff;
+	height:40px;
+	line-height:40px;
+	padding:5px 10px;
+	border-bottom:1px solid #ccc;
+	font-weight:bold;
+	font-size:14px;
+	color:#888;
+}
+#pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	display:block; float:left;
+	width:40px; height:40px;
+	background:url(res-apple/pull-icon@2x.png) 0 0 no-repeat;
+	background-size:40px 80px;
+	-webkit-background-size:40px 80px; 
+	-webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:250ms;	
+}
+#pullDown .pullDownIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+}
+#pullUp .pullUpIcon  {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullDown.flip .pullDownIcon {
+	-webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+#pullUp.flip .pullUpIcon {
+	-webkit-transform:rotate(0deg) translateZ(0);
+}
+
+#pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+	background-position:0 100%;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+
+/*sy*/
+@media screen and (max-width:320px) {
+	.star1 {
+		width: 5em;
+	}
+}
+@media screen and (min-width:480px) and (max-width:800px) {
+	.star1 {
+		width: 5.2em;
+	}
+}
+.star1 {
+float: left;
+position: relative;
+height: 1em;
+display: block;
+overflow: hidden;
+margin-top:0.3em;
+}
+.rating1 {
+position: absolute;
+left: 0;
+top: 0;
+display: block;
+background: url(res-apple/rating2.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 4.9em;
+height: 1em;
+}
+.rating_solid_s {
+position: absolute;
+left: -38%;
+top: 0;
+display: block;
+background: url(res-apple/rating.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 6em;
+height: 1em;
+}
+.rating_solid1_s {
+position: absolute;
+left: -79%;
+top: 0;
+display: block;
+background: url(res-apple/rating.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 6.2em;
+height: 1em;
+}
+.rating_solid2_s {
+position: absolute;
+left: -57%;
+top: 0;
+display: block;
+background: url(res-apple/rating.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 6em;
+height: 1em;
+}
+.rating_solid4_s {
+position: absolute;
+left: -20%;
+top: 0;
+display: block;
+background: url(res-apple/rating.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 6em;
+height: 1em;
+}
+.rating_solid5_s {
+position: absolute;
+left: 0%;
+top: 0;
+display: block;
+background: url(res-apple/rating.png) repeat-x !important;
+-webkit-background-size: auto 100%;
+width: 6em;
+height: 1em;
+}
+
+.pic_opacity{
+	position:fixed;
+	left:0;
+	top:0;
+	background:#000; 
+	opacity:0.5; 
+	z-index:99;
+	width:100%;
+	height:100%;
+}
+.pic_big{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:2.7em;
+	z-index:999;
+}
+.pic_con{
+	padding:1.4em 0.4em;
+}
+.pic_con li{float:left;}
+.pic_before, .pic_next{
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	border-image: initial;
+	padding-top:9.7em;
+}
+.pic_before a{
+	background:url(res-apple/left_dian.png) no-repeat ;
+	display:block;
+	width:20px;
+	height:30px;
+}
+.pic_before a.pic_left{
+	background:url(res-apple/left_dian_hover.png) no-repeat ;
+	display:block;
+	width:20px;
+	height:30px;
+}
+.pic_details{
+	margin:0 0.6em;
+}
+.pic_details a{
+	width:15em;
+	height:21.25em;
+	border:1px #f00 solid;
+}
+.pic_con li.pic_details a span{
+	display:block;
+	width:15em;
+	height:21.25em;
+	background : #f00;
+	-webkit-background-size: 100% 100%;
+}
+.pic_next a{
+	background:url(res-apple/right_dian.png) no-repeat ;
+	display:block;
+	width:20px;
+	height:30px;
+}
+.pic_next a.pic_left{
+	background:url(res-apple/right_dian_hover.png) no-repeat ;
+	display:block;
+	width:20px;
+	height:30px;
+}
+.ui-controlgroup-vertical .w_checkbox_height {
+	height: 2em;
+	margin-top: -1em;
+}
+/*03-09*/
+.ui-ad-bc{
+	-webkit-background-size: 100% 100% !important;
+	background-size: 100% 100% !important;
+/* 	-webkit-border-radius: 0.6em; */
+/* -webkit-box-shadow: inset 0px 0px 8px rgba(0, 0, 0, .8),0px 2px 5px rgba(255, 255, 255, .5); */
+/* box-shadow: inset 0px 0px 8px rgba(0, 0, 0, .8),0px 2px 5px rgba(255, 255, 255, .5); */
+	
+}
+.w_icon{
+background:transparent;
+background-image: url(res-apple/right_dian.png) ;
+background-repeat: no-repeat;
+-webkit-border-radius: 0.5em;
+border-radius: 0.5em;
+-webkit-background-size: contain;
+background-size: contain;
+
+}
+.ui-btn-iphone .ui-btn-sy_{padding-top: 0.4em !important;}
+.w_up_click{background:url('res-apple/right_dian.png') no-repeat right 17px;-webkit-background-size:4% auto;}
+.w_down_click{background:url('res-apple/down.png') no-repeat right 17px;-webkit-background-size:6% auto;}
+.w_details_submit{
+	display:box;
+	display:-webkit-box;
+	-webkit-box-orient:horizontal;
+	box-orient:horizontal;
+
+}
+.ui-header .w_search_btn111{float:right;margin-right:10px;}
+.ui-header .w_head_btn {
+border: 1px solid #454545;
+background: #333;
+font-weight: bold;
+color: white;
+text-shadow: 0 -1px 1px #666;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#858585), to(#161616));	
+-webkit-box-shadow: inset 0px -1px 1px rgba(0, 0, 0, .5),0px 1px 1px rgba(255, 255, 255, .5);
+box-shadow: inset 0px -1px 1px rgba(0, 0, 2, .5),0px 1px 1px rgba(255, 255, 255, .5);
+-webkit-border-radius:0.5em;
+top: 0.4em !important;
+}
+.ui-header .w_head_btn_click {
+border: 1px solid #810102;
+background: #333;
+font-weight: bold;
+color: white;
+text-shadow: 0 -1px 1px #666;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E0656E), to(#B0020F), color-stop(50%, #D3333F),color-stop(51%, #BC020F));	
+-webkit-box-shadow: inset 0px -1px 0px rgba(129, 1, 2, .5),0px 1px 1px rgba(255, 255, 255, .5);
+box-shadow: inset 0px -1px 0px rgba(129, 1, 2, .5),0px 1px 1px rgba(255, 255, 255, .5);
+-webkit-border-radius:0.5em;
+top: 0.4em !important;
+}
+.ui-header .www_padding{padding:0.4em 0.7em;}
+.www_details_img{
+display: box;
+display: -webkit-box;
+-webkit-box-orient: horizontal;
+box-orient: horizontal;
+}
+.ui-li.ui-li-brbtm-sy{border-top-width: 0px !important;
+border-bottom-width: 1px !important;}

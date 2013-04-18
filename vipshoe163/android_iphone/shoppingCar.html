@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css"> 
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/ui-new.css">
+	<link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/h_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+</head>
+<body class="ui-mobile-viewport ui_body_d">
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed  h_t_color ui_title" >
+<!-- <div id="bianjie" style="display:none;"  onclick="uexWindow.evaluateScript('', '0','changeStyle()');" class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone      "> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span  id="btn_c" class="ui-btn-text">编辑</span>  </span>  </div></div></div></div> -->
+<div id="bianjie" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" onclick="uexWindow.evaluateScript('', '0','changeStyle()');" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text" id="btn_c">编辑</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+购物车
+</h1> 
+<!-- <div id="jiesuanId" style="display:none;" onclick="uexWindow.evaluateScript('','0','goAccount()');" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">结算</span>  </span>  </div></div></div></div>  -->
+<div id="jiesuanId" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" onclick="uexWindow.evaluateScript('','0','goAccount()');" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">结算</span> </span></div> 
+	
+</div>
+
+
+
+<div id="page_0" class="ui-body-a ui-page-active h_cn_color ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom h_c_color ">
+
+<ul id="goodList_id" data-role="listview" class="ui-listview ui-listview-inset ui-corner-none  h-listview">
+</ul>
+ <div id="emptyId" class="div-center" style="display:none;">
+	<div style="background:url('css/res-apple/empty.png') no-repeat center center;height:15em; -webkit-box-shadow:none;"></div>
+	<p style="text-shadow:none;">您的购物车是空的，还不快去选购！</p>
+</div>
+</div>
+</div>
+ 
+<div id="footer" data-role="footer" class="ui-footer ui-bar-a ui-footer-fixed ">
+	<div class="ui-navbar ui-bar-a ui-nav-iphone ui_grid_a  ui_nav_iphone">
+		<!--<ul class="ui-grid-a">
+			<li class="ui-block-a ui_block_a" onClick="uexWindow.evaluateScript('', '0','goToIndex()');"><input type="radio" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+			<li class="ui-block-b ui_block_a" onClick="uexWindow.open('sort', '0', 'sort.html', '0', '', '','0');" ><input type="radio"  name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">分类</span></span></label></li>
+			<li class="ui-block-c ui_block_a" onclick="uexWindow.evaluateScript('', '0','window.location.reload()');"><input type="radio" name="radiof1" checked="checked" id="radio-f1c" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-shop"></span><span class="ui-btn-inner"><span class="ui-btn-text">购物车</span></span></label></li>
+			<li class="ui-block-d ui_block_a" onClick="uexWindow.evaluateScript('', '0','goToMymall()');""><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的</span></span></label></li>
+			<li class="ui-block-e ui_block_a" onClick="uexWindow.open('w_more', '0', 'w_more.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1e" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">更多</span></span></label></li>
+		</ul>-->
+		<ul class="ui-grid-a">
+			<li class="ui-block-a ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToIndex()');"><input type="radio" name="radiof1" id="radio-f1a" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-home"></span><span class="ui-btn-inner"><span class="ui-btn-text">首页</span></span></label></li>
+			<li class="ui-block-b ui_block_a" onclick="uexWindow.open('sort', '0', 'sort.html', '0', '', '','0');"><input type="radio"  name="radiof1" id="radio-f1b" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-menu"></span><span class="ui-btn-inner"><span class="ui-btn-text">分类</span></span></label></li>
+			<li class="ui-block-c ui_block_a" onclick="uexWindow.evaluateScript('', '0','window.location.reload()');"><input type="radio" checked="checked" name="radiof1" id="radio-f1c" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-shop"></span><span class="ui-btn-inner"><span class="ui-btn-text">购物车</span></span></label></li>
+			<li class="ui-block-d ui_block_a" onclick="uexWindow.evaluateScript('', '0','goToMymall()');"><input type="radio" name="radiof1" id="radio-f1d" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-info"></span><span class="ui-btn-inner"><span class="ui-btn-text">我的</span></span></label></li>
+			<li class="ui-block-e ui_block_a" onclick="uexWindow.open('w_more', '0', 'w_more.html', '0', '', '','0');"><input type="radio" name="radiof1" id="radio-f1e" class="ui-hide"><label onclick="" class="ui-btn ui-btn-icon-top"><span class="ui-icon ui-pic-set"></span><span class="ui-btn-inner"><span class="ui-btn-text">更多</span></span></label></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="js/h_main.js"></script>
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript">
+var fn = '';
+function goToMymall(){
+	fn = 'mall';
+	uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+}
+var goods_num = 0;
+var type_state = false;
+var goodInfo_obj = {};
+var isChan = false;
+function goToIndex(){
+	uexWindow.evaluateScript("root", '0','isFile_()');
+	openNewWin('root','0','index.html');
+}
+
+/*编辑功能*/
+function changeStyle(){
+	type_state = type_state ? false : true;
+	if(type_state){
+		uexWindow.evaluateScript('','1','changeShopVal(0)');
+		ergodic_goods();
+	}else{
+		ergodic_goods();
+		if(isChan){
+			var updateGoodsUrl = httpUrl + 'flow.php?jsoncallback=?&step=update_cart&paramStr='+encodeURI(JSON.stringify(goodInfo_obj));
+		//	var updateGoodsUrl_ = httpUrl + 'flow.php?jsoncallback=?&step=update_cart&paramStr='+JSON.stringify(goodInfo_obj);
+		//	alert(updateGoodsUrl_);
+			xmlHttp('3',updateGoodsUrl);
+		}
+		uexWindow.evaluateScript('','1','changeShopVal(1)');
+	}
+}
+
+function ergodic_goods(){
+	var display_state = type_state ? "block" : "none";
+	for(var i = 0; i < goods_num; i++){
+		var m = i+1;
+		$id("edit_"+m).style.display = display_state;
+	}
+}
+/*点击结算*/
+function goAccount(){
+	fn = 'account';
+	uexFileMgr.isFileExistByPath("wgt://data/uesrInfo.txt");
+	
+}
+/*修改商品数量*/
+function changeNum(type,id,gid){
+	isChan = true
+	var oldNum = parseInt($id(id).value);
+	if(type == 0){//减少
+		if(oldNum <= 1){
+			return;
+		}else{
+			$id(id).value = oldNum - 1;
+		}
+	}else{
+		$id(id).value = oldNum + 1;
+	}
+	goodInfo_obj[gid] = $id(id).value;
+}
+/*删除商品*/
+var delGoodId = 0;
+function delGood(delId){
+	delGoodId = delId;
+	var mycars = ["确定","取消"];
+	uexWindow.confirm("警告","您确定要删除该商品？",mycars);
+}
+
+/*返回数据并进行处理*/
+function httpSuccess(opid,status,result){//status 状态 0 接收，1完成
+	if(status == 1){
+		uexXmlHttpMgr.close(opid);
+		uexWindow.closeToast();
+		if(opid == 1){
+			$id('goodList_id').innerHTML = "";
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			res = res.replace(/\n/g,'<br>');
+			var goods_obj = JSON.parse(res);
+			if(goods_obj.status){
+				uexWindow.evaluateScript('','1','showBtn_()');
+				//uexWindow.alert("提示",goods_obj.status,"确定");
+				$id("goodList_id").innerHTML = '<div id="emptyId" class="div-center" style="display:block;">'+
+												'<div style="background:url(\'css/res-apple/empty.png\') no-repeat center center;height:15em; -webkit-box-shadow:none;"></div>'+
+												'<p style="text-shadow:none;">您的购物车是空的，还不快去选购！</p></div>';
+				return;
+			}
+			var cartGood = goods_obj.cart_goods;
+			var goodsList = cartGood.goods_list;
+			var str_goods = "";
+			if(goodsList && goodsList.length>0){
+				uexWindow.evaluateScript('','1','showBtn()');
+				$id('emptyId').style.display = "none"
+				goods_num = goodsList.length;
+				for(var i = 0; i < goodsList.length; i++){
+					var goodObj = goodsList[i];
+					goodInfo_obj[goodObj.rec_id] = goodObj.goods_number;
+					str_goods += ' <li  class=" ui-body-d ui-li-has-count  ui-li-has-thumb    ui-li-static  ui-li ui-body-lib ui-li-font-color" style="padding-left: 5.5em;">'+
+						'<div onclick="goDetail('+goodObj.goods_id+',\''+goodObj.goods_name+'\')"><span  class="ui-li-thumb ui-li-thumb3" style="background-image:url(\''+url_+goodObj.goods_thumb+'\'); left: 0;">'+
+						'</span>'+
+						'<h3 class="ui-li-heading">'+goodObj.goods_name+'</h3>'+  
+						'<p class="ui-li-desc"></p>'+
+						'<p class="ui-li-desc">数量：<span>'+goodObj.goods_number+'</span><br/>本店价格：<span>'+goodObj.goods_price+'</span></p></div>'+
+						
+						'<div id="edit_'+(i+1)+'" class="h_btn_h" style="display:none;">'+
+						'<div onclick="changeNum(0,\'goodNum'+(i+1)+'\','+goodObj.rec_id+')" class="ui-btn  ui-corner-all  ui-btn-c h_ui_btn ui-btn-hyc">  <div class="ui-btn-inner ui-corner-all" ><div style="widht:100%;" class="ui-btn-text">-</div> </div> <input type="button" value="" data-icon="arrow-r" class="ui-btn-hidden"> </div>'+ 
+						'<div style=" width: 33%;float: left;"><input style="width:86%;text-align:center;" placeholder="'+goodObj.goods_number+'" name="" id="goodNum'+(i+1)+'"  type="text" value="'+goodObj.goods_number+'" class="ui-input-text ui-body-null  ui-btn-d "/></div>'+
+						'<div onclick="changeNum(1,\'goodNum'+(i+1)+'\','+goodObj.rec_id+')" class="ui-btn  ui-corner-all  ui-btn-c h_ui_btn  ui-btn-hyc">  <div class="ui-btn-inner ui-corner-all"><div class="ui-btn-text">+</div> </div> <input type="button" value="" data-icon="arrow-r" class="ui-btn-hidden"> </div>'+
+						//'<a href="javascript:delGood('+goodObj.rec_id+');" ><img style="margin-top:0.5em;" src="css/res-apple/del.png"/></a>'+
+						'<a class="box_zt_del_a_d" onclick="delGood('+goodObj.rec_id+');"><span></span></a>'+
+						'</div></li> ';
+				}			
+				$id('goodList_id').innerHTML = str_goods;	
+			}else{
+				uexWindow.evaluateScript('','1','hideBtn()');
+				$id('emptyId').style.display = "block"
+			}
+		}else if(opid == 2){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			if(res == 1){
+				goodInfo_obj = {};
+				uexWindow.alert("提示","商品删除成功！","确定");
+				type_state = false;
+				uexWindow.evaluateScript('','1','changeShopVal(1)');
+				ergodic_goods();
+				var getGoodUrl = httpUrl + "flow.php?jsoncallback=?&step=cart";
+				xmlHttp(1,getGoodUrl);
+			}else{
+				uexWindow.alert("提示","商品删除失败！","确定");
+			}
+			
+		}else if(opid == 3){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var obj = JSON.parse(res);
+			if(obj.status == 1){
+			//	goodInfo_obj = null;
+				var getGoodUrl = httpUrl + "flow.php?jsoncallback=?&step=cart";
+				xmlHttp(1,getGoodUrl);
+			}else{
+				uexWindow.alert("提示",obj.status,"确定");
+			}
+		}
+		
+	}
+	
+}
+/*删除确认*/
+function ConfirmSuccess(opId, dataType, data){
+	if(data == 0){
+		var delGoodUrl  = httpUrl + "flow.php?jsoncallback=?&step=drop_cart_goods&id="+delGoodId
+		xmlHttp(2,delGoodUrl);
+	}
+}
+
+function getGoodsList(){	
+	getLis();
+}
+function getLis(){
+	uexWindow.evaluateScript('','1','changeShopVal(1)');
+	var getGoodUrl = httpUrl + "flow.php?jsoncallback=?&step=cart";
+	//alert(getGoodUrl);
+	xmlHttp(1,getGoodUrl);
+}
+zy_fix('header','footer','',function(){
+	if (!window.chrome) {
+		uexWindow.setReportKey('0', '1');
+		uexWindow.onKeyPressed = function(keyCode){
+			uexWidget.finishWidget('');
+		}
+	}
+	//弹动效果
+	/*uexWindow.setBounce("1");
+	uexWindow.showBounceView("0","#F2F2F2","0");
+	uexWindow.showBounceView("1","#F2F2F2","0");*/
+	
+	uexXmlHttpMgr.onData = httpSuccess;
+	uexWindow.cbConfirm = ConfirmSuccess;
+	uexFileMgr.cbIsFileExistByPath = function(opCode,dataType,data){
+		if(fn == 'mall'){
+			if(data == 1){
+				uexWindow.open('mymall', '0', 'mymall.html', '0', '', '','0');
+			}else{
+				uexWindow.open('login', '0', 'login.html?name=root', '0', '', '','0');
+			}
+		}else if(fn == 'account'){
+			if(data == 1){
+				uexWindow.open('accounts', '0', 'accounts.html', '2', '', '','0');
+				//setTimeout(function(){uexWindow.close('0');},1000);
+				//$id("goodList_id").innerHTML = "";
+			}else{
+				uexWindow.open('login', '0', 'login.html?name=root', '2', '', '','0');
+			}
+		}
+	}
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+	}
+	getLis();
+});
+function goDetail(id,name){
+	 var html_url = 'goods_details.html?id=' + id + "&name=" + encodeURIComponent(name);
+	openNewWin('goods_details',2,html_url);
+}
+
+</script> 
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css"> 
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/w_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<!-- <div onclick="uexWindow.close('-1');"  class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">返回</span>  </span>  </div></div></div></div>  -->
+<div onclick="uexWindow.evaluateScript('','0','close_()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1" id="w_title">
+
+</h1> 
+</div>
+
+<div id="page_0" class="ui-page ui-body-a ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom w_set">
+<div class="w_opacity"></div>
+<div class="w_goods_con">
+	<h2 class="w_express_title" id="express_short_title"></h2><p class="w_express_title" id="express_author"></p>
+	<p class="w_express_con" id="express_details"></p>
+</div>
+</div>
+</div>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+	/*获取参数*/
+	//parseParam();
+	var express_id = 0;
+	function express_con(){
+    	var w_url=image_url + "plugins/zywx/rpc/article.php?jsoncallback=?&act=info&id="+express_id;
+		uexWindow.toast("1","5","请稍后...","0");
+    	uexXmlHttpMgr.open('1', "GET",w_url,"");
+    	uexXmlHttpMgr.send('1');
+     } 
+	 zy_fix("header","","",function(){
+	 	/*获取参数*/
+		parseParam();
+		express_id = params.id;
+		 uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+	    		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+	    	}
+	    	uexXmlHttpMgr.onData = function(opCode,status,result){
+	    		if(status == 1){
+		    		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);//截取字符串：去掉？（）
+		    		var express_content = JSON.parse(res);//把result的结果转化为json对象
+		    		uexXmlHttpMgr.close(opCode);
+					uexWindow.closeToast();
+		    		
+		    		$id("express_short_title").innerHTML = express_content.title;
+		    		$id("express_author").innerHTML = express_content.author+"/"+express_content.add_time;
+		    		$id("express_details").innerHTML = express_content.content;
+		    		//$id("w_title").innerHTML = express_content.title;
+					uexWindow.evaluateScript('','0','$id("w_title").innerHTML = express_content.title');
+	    		}
+	    	}
+	    	express_con();
+	 })
+	/*window.uexOnload = function(){
+    	uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+    		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+    	}
+    	uexXmlHttpMgr.onData = function(opCode,status,result){
+    		if(status == 1){
+	    		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);//截取字符串：去掉？（）
+	    		var express_content = JSON.parse(res);//把result的结果转化为json对象
+	    		uexXmlHttpMgr.close(opCode);
+	    		
+	    		$id("express_short_title").innerHTML = express_content.title;
+	    		$id("express_author").innerHTML = express_content.author+"/"+express_content.add_time;
+	    		$id("express_details").innerHTML = express_content.content;
+	    		$id("w_title").innerHTML = express_content.title;
+    		}
+    	}
+    	express_con();
+}*/
+function close_(){
+	uexWindow.close('-1');
+}
+</script>
+</body>
+</html>

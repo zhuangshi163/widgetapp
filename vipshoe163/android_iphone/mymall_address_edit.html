@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/ui-media.css">
+	<link rel="stylesheet" href="css/ui-base.css">
+	<link rel="stylesheet" href="css/ui-apple.css">
+	<link rel="stylesheet" href="css/h_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js"></script>
+	<script src="js/zy_control.js"></script>
+	<script src="js/zy_tmpl.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+	<script>
+		function openage(page,url){
+			//uexWindow.open('windowname','0','uexFunction.html','2','','',0x0);
+			 uexWindow.open(page, '0', url, '2', '', '', '0x0');
+		}		
+	</script>
+</head>
+<body class="ui-mobile-viewport ui_body_d" >
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title">
+<div onClick="uexWindow.evaluateScript('','0','uexWindow.close(\'-1\')')" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onclick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		<strong>地址管理</strong>
+<!-- 		<div onClick="delAddress();" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">删除</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1>
+	<div onClick="uexWindow.evaluateScript('','0','delAddress()');" id="sc" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">删除</span> </span></div> 
+	
+</div>
+
+<div id="page_8" class="ui-page-active ui_page_ddd" tabindex="0">
+	<div class="w_set">
+    	<div class="ui_body_dwx"></div>
+		<ul class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom  ui_body_dd ui_fixed_top ui_fixed_bottom ui_fixed_bottom_dwx">
+	        <li class="li_title"><em id="user_id"></em></li>
+			<li class=" ui-body-b ui-corner-top ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >配送区域:</label>
+					<div class="quyu_select">
+		                <div class="ui-select">
+		                    <div  class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-c">
+		                        <span class="ui-btn-inner ui-btn-corner-all hi-btn-inner ui-btn-inner-ddddwx" > 
+		                            <span id="country_id" class="ui-btn-text"></span>
+		                            <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+		                         	   <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+		                            </div>
+		                        </span>
+		                        <select name="select-choice-0" selectedIndex="0" id="select-choice-1" onchange="zy_slectmenu(this.id);getCitys(10,1,this.value);">
+		                            <option id="conSel_1" value="-1">请选择</option>
+		                            <option id="con_1" value="1">中国</option>
+		                        </select>
+		                    </div>
+						</div>
+		                <div class="ui-select">
+		                    <div  class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-c">
+		                        <span class="ui-btn-inner ui-btn-corner-all hi-btn-inner ui-btn-inner-ddddwx" > 
+		                            <span id="provnce_id" class="ui-btn-text"></span>
+		                            <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+		                         	   <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+		                            </div>
+		                        </span>
+		                        <select name="select-choice-0" selectedIndex="0" id="select-choice-2" onchange="zy_slectmenu(this.id);getCitys(11,2,this.value);">
+		                           
+		                        </select>
+		                    </div>
+						</div>
+		                <div class="ui-select" id="chengshi" style="display:none;">
+		                    <div  class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-c">
+		                        <span class="ui-btn-inner ui-btn-corner-all hi-btn-inner ui-btn-inner-ddddwx" > 
+		                            <span id="city_id" class="ui-btn-text"></span>
+		                            <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+		                         	   <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+		                            </div>
+		                        </span>
+		                        <select name="select-choice-0" selectedIndex="0" id="select-choice-3" onchange="zy_slectmenu(this.id);getCitys(12,3,this.value);">
+		                           
+		                        </select>
+		                    </div>
+						</div>
+		                <div class="ui-select" id="diqu" style="display:none;">
+		                    <div  class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-c">
+		                        <span class="ui-btn-inner ui-btn-corner-all hi-btn-inner ui-btn-inner-ddddwx" > 
+		                            <span id="district_id" class="ui-btn-text"></span>
+		                            <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+		                         	   <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+		                            </div>
+		                        </span>
+		                        <select name="select-choice-0" selectedIndex="0" id="select-choice-4" onchange="zy_slectmenu(this.id);">
+		                           
+		                        </select>
+		                    </div>
+						</div>
+	                </div>
+	            </div>
+				<div class="ui—clear"></div>
+			</li> 
+			<li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >收货人姓名:</label>
+					<input placeholder="" name="text-0" id="textName"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />
+				</div>
+			</li>
+			<li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >电子邮件:</label>
+					<input placeholder="" name="text-0" id="textEmail"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />
+				</div>
+			</li> 
+			<li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >详细地址:</label>
+					<input placeholder="" name="text-0" id="textAddress"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />
+				</div>
+			</li> 
+			<li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >邮编:</label>
+					<input placeholder="" name="text-0" id="textZip"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />
+				</div>
+			</li> 
+			<li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >电话:</label>
+					<input placeholder="" name="text-0" id="textTell"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />
+				</div>
+			</li> 
+			<li class=" ui-body-b ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >手机:</label>
+					<input placeholder="" name="text-0" id="textMobile"  type="text" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />
+				</div>
+			</li>
+	        <li class=" ui-body-b ui-corner-bottom ui-li-static ui-li ui_body_b_dwx ui_li_dwx_bj ui_li_ddwx">
+				<div class="ui-has-label">
+					<label for="text-0" class="ui-input-text ui_input_text" >送货时间:</label>
+					<!--  <input placeholder="" name="text-0" id="textTime"  type="text" value="1856975520" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-d ui_input_text_left" />-->
+					<div class="ui-select">
+	                    <div style="margin: .5em -0.9em .5em 0.3em" class="ui-btn ui-btn-icon-right ui-btn-corner-all ui-btn-c">
+	                        <span class="ui-btn-inner ui-btn-corner-all hi-btn-inner ui-btn-inner-ddddwx" > 
+	                            <span id="time_id" class="ui-btn-text">任意时间</span>
+	                            <div class="ui-li-link-alt ui-btn ui-btn-corner-right ui-shadow">
+	                         	   <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+	                            </div>
+	                        </span>
+	                        <select name="select-choice-0" selectedIndex="0" id="textTime" onchange="zy_slectmenu(this.id);">
+	                            <option id="allTime" value="任意时间">任意时间</option>
+	                            <option id="workTime" value="工作日">工作日</option>
+	                            <option id="weekendTime" value="周末">周末</option>
+	                        </select>
+	                    </div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="btn-style-sy">
+			<div class="li_button btn-style-sy-" >
+                <div onClick="modityAddress();" class="ui-btn-center" tabindex="0"> 
+					<div data-role="button" style="margin:0 1em" class=" ui-btn-corner-all ui-btn ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+						<span class="ui-btn-inner ui-btn-corner-all"> 
+							<span class="ui-btn-text">确认修改</span> 
+						</span>
+					</div> 
+				</div>
+            </div>
+            <div class="li_button btn-style-sy-" >
+                <div onClick="modity_address()" class="ui-btn-center" tabindex="0"> 
+					<div data-role="button"  style="margin:0 1em"  class=" ui-btn-corner-all ui-btn ui-btn-a  ui-btn-inline ui-shadow ui_btn_b_dwx ui_btn_dwx">
+						<span class="ui-btn-inner ui-btn-corner-all"> 
+							<span class="ui-btn-text">默认地址</span> 
+						</span>
+					</div> 
+				</div>
+            </div>
+            <div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/zy_json.js"></script>
+<script type="text/javascript" src="js/h_main.js"></script>
+<script type="text/javascript">
+//parseParam();
+var addid = 0;
+/*下拉框获取城市*/
+function getCitys(requestId,typeId,preId){
+	if(typeId == 1){
+		if(preId == -1){
+			$id("provnce_id").innerHTML = '请选择';
+			$id("select-choice-2").innerHTML = '<option value="-1">请选择</option>';
+			$id("city_id").innerHTML = '请选择';
+			$id("select-choice-3").innerHTML = '<option value="-1">请选择</option>';
+			$id("district_id").innerHTML = '请选择';
+			$id("select-choice-4").innerHTML = '<option value="-1">请选择</option>';
+		}
+	}
+	if(typeId == 2){
+		if(preId == -1){			
+			$id("city_id").innerHTML = '请选择';
+			$id("select-choice-3").innerHTML = '<option value="-1">请选择</option>';
+			$id("district_id").innerHTML = '请选择';
+			$id("select-choice-4").innerHTML = '<option value="-1">请选择</option>';
+		}
+	}
+	if(typeId == 3){
+		if(preId == -1){			
+			$id("district_id").innerHTML = '请选择';
+			$id("select-choice-4").innerHTML = '<option value="-1">请选择</option>';
+		}
+	}
+	var get_url = httpUrl + "user.php?jsoncallback=?&act=get_regions&type="+typeId+"&parent="+preId;
+	xmlHttp(requestId,get_url);
+}
+
+/*删除地址*/
+function delAddress(){
+	var mycars = ["确定","取消"];
+	uexWindow.confirm("警告","您确定要删除该地址？",mycars);
+	
+}
+/*删除确认*/
+function ConfirmSuccess(opId, dataType, data){
+	if(data == 0){
+		var delUrl = httpUrl + "user.php?jsoncallback=?&act=drop_consignee&address_id="+addid;
+		xmlHttp(2,delUrl);
+	}
+}
+
+/*修改地址*/
+function modityAddress(){
+	//http://52jiatuan.com/plugins/zywx/rpc/user.php?jsoncallback=?&act=act_edit_address&address_id=3&country=1&province=2&city=52&district=510&address=不告诉你&consignee=gaofengfeng&email=llx@126.com&tel=13293366920&mobile=13293366919&best_time=0&zipcode=055250
+	var conval = $id("select-choice-1").value;
+	var proval = $id("select-choice-2").value;
+	var cityval = $id("select-choice-3").value;
+	var disval = $id("select-choice-4").value;
+	if(conval == -1 || proval == -1 /*|| cityval == -1 || disval == -1*/){
+		uexWindow.alert("提示","请选择配送区域！","确定");
+		return;//验证
+	}
+	
+	var newName = $id("textName").value;
+	if(newName == ""){uexWindow.alert("提示","请填写收货人姓名！","确定");return;}
+	if(/\d/.test(newName)){
+		uexWindow.alert("提示","请输入真实的收货人姓名！","确定");return;
+	}
+	var newEmail = $id("textEmail").value;
+	var emailres = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	if(!emailres.test(newEmail)){
+		uexWindow.alert("提示","请填写正确的邮箱！","确定");return;
+	}
+	var newAddress = $id("textAddress").value;
+	if(newAddress == ""){
+		uexWindow.alert("提示","请填写详细地址！","确定");return;
+	}
+	var newZip = $id("textZip").value;
+	if(!(/\d/.test(newZip))){
+		uexWindow.alert("提示","请填写正确的邮编！","确定");return;
+	}
+	var newTel = $id("textTell").value;
+	if(!(/^(\d{3,4}[-|/])*\d{6,8}$/.test(newTel))){
+		uexWindow.alert("提示","请填写正确的电话号码！","确定");
+		return;
+	}
+	var newMob = $id("textMobile").value;
+	if(!(/^1[3|5|8]\d{4,9}$/.test(newMob))){
+		uexWindow.alert("提示","请填写正确的手机号码！","确定");return;
+	}
+	var newTime = $id("textTime").value;
+	if(newTime == ""){
+		uexWindow.alert("提示","请填写配送时间！","确定");
+		return;
+	}
+	var modityUrl = httpUrl + 'user.php?jsoncallback=?&act=act_edit_address&address_id='+addid+'&country='+encodeURI(conval)+'&province='+encodeURI(proval)+'&city='+encodeURI(cityval)+'&district='+encodeURI(disval)+'&address='+encodeURI(newAddress)+'&consignee='+encodeURI(newName)+'&email='+encodeURI(newEmail)+'&tel='+encodeURI(newTel)+'&mobile='+encodeURI(newMob)+'&best_time='+encodeURI(newTime)+'&zipcode='+encodeURI(newZip);
+	xmlHttp(33,modityUrl);
+}
+
+/*取回数据并进行处理*/
+var countryId = "";
+var provinceId = "";
+var cityId = "";
+var districtId = "";
+function httpSuccess(opid,status,result){//status 状态 0 接收，1完成;
+	if(status == 1){
+		uexWindow.closeToast();
+		if(opid == 1){
+		//	result = '?({"address_id":"6","address_name":"","user_id":"11","consignee":"\u970d\u6c38\u660c","email":"850656025@qq.com","country":"1","province":"2","city":"52","district":"502","address":"\u4e2d\u5173\u6751\u5927\u885719\u53f7\u65b0\u4e2d\u5173\u5927\u53a6A\u5ea711\u5c42","zipcode":"10001","tel":"13691372267","mobile":"13691372267","sign_building":"\u65b0\u4e2d\u5173\u5927\u53a6","best_time":"12:00---13:00","country_name":"\u4e2d\u56fd","province_name":"\u5317\u4eac","city_name":"\u5317\u4eac","district_name":"\u6d77\u6dc0\u533a","user_name":"hyc0204"})';
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var address_obj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if(address_obj && address_obj != null){
+				var useName = address_obj.user_name;
+				$id("user_id").innerHTML = useName;
+				countryId = address_obj.country;
+				var countryName = address_obj.country_name;
+				$id("country_id").innerHTML = countryName
+			//	$id("con_1").selected = true;
+				
+				provinceId = address_obj.province;
+				cityId = address_obj.city;
+				districtId = address_obj.district;
+				getCitys(15,0,0);
+				//getCitys(10,1,countryId);
+				
+				$id("textName").value = address_obj.consignee;
+				$id("textEmail").value = address_obj.email;
+				$id("textAddress").value = address_obj.address;
+				$id("textZip").value = address_obj.zipcode;
+				$id("textTell").value = address_obj.tel;
+				$id("textMobile").value = address_obj.mobile;
+				var timeBest = address_obj.best_time;
+				if(timeBest == "工作日"){
+					$id("workTime").selected = true;
+					$id("time_id").innerHTML = '工作日';
+				}else if(timeBest == "周末"){
+					$id("weekendTime").selected = true;
+					$id("time_id").innerHTML = '周末';
+				}
+			}
+		}else if(opid == 2){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var staObj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if(staObj.status="收货地址删除成功"){
+				uexWindow.evaluateScript('mymall_address_list', '0','getList_()');
+				uexWindow.close(-1);
+			}else{
+				uexWindow.alert("提示",staObj.status,"确定");
+			}
+		}else if(opid == 33){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var staObj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if(staObj.status =='收获地址更新成功'){
+				uexWindow.evaluateScript('mymall_address_list', '0','getList_()');
+				uexWindow.close(-1);
+			}else{
+				uexWindow.alert("提示",staObj.status,"确定");
+			}
+		}else if(opid == 10){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);			
+			var pro_arr = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			var pro_str = '<option value="-1">请选择</option>';
+			for(var i = 0; i < pro_arr.length; i++){
+				var pro_obj = pro_arr[i];
+				if(provinceId != "" && provinceId == pro_obj.region_id){
+					getCitys(11,2,provinceId);
+					provinceId = "";
+					$id("provnce_id").innerHTML = pro_obj.region_name;
+					pro_str += '<option value="'+pro_obj.region_id+'" selected=true>'+pro_obj.region_name+'</option>';
+				}else{
+					pro_str += '<option value="'+pro_obj.region_id+'">'+pro_obj.region_name+'</option>';
+				}
+			}
+			$id("select-choice-2").innerHTML = pro_str;
+		}else if(opid == 11){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var city_arr = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if (city_arr.status == "获取省市区信息失败") {
+				$id("chengshi").style.display = "none";
+			}
+			else {
+				$id("chengshi").style.display = "inline-block";
+				var city_str = '<option value="-1">请选择</option>';
+				for (var i = 0; i < city_arr.length; i++) {
+					var city_obj = city_arr[i];
+					if (cityId != "" && cityId == city_obj.region_id) {
+						getCitys(12, 3, cityId);
+						cityId = "";
+						$id("city_id").innerHTML = city_obj.region_name;
+						city_str += '<option value="' + city_obj.region_id + '" selected=true>' + city_obj.region_name + '</option>';
+					}
+					else {
+						city_str += '<option value="' + city_obj.region_id + '">' + city_obj.region_name + '</option>';
+					}
+				}
+				$id("select-choice-3").innerHTML = city_str;
+			}
+		}else if(opid == 12){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var dis_arr = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if (dis_arr.status == "获取省市区信息失败") {
+				$id("diqu").style.display = "none";
+			}
+			else {
+				$id("diqu").style.display = "inline-block";
+				var dis_str = '<option value="-1">请选择</option>';
+				for (var i = 0; i < dis_arr.length; i++) {
+					;
+					var dis_obj = dis_arr[i];
+					if (districtId != "" && districtId == dis_obj.region_id) {
+						districtId = "";
+						$id("district_id").innerHTML = dis_obj.region_name;
+						dis_str += '<option value="' + dis_obj.region_id + '" selected=true>' + dis_obj.region_name + '</option>';
+					}
+					else {
+						dis_str += '<option value="' + dis_obj.region_id + '">' + dis_obj.region_name + '</option>';
+					}
+				}
+				$id("select-choice-4").innerHTML = dis_str;
+			}
+		}else if(opid == 3){
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);
+			var staObj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			if(staObj.status == '修改用户默认收获地址成功'){				
+				uexWindow.evaluateScript('accounts','0','changeSuccess()');
+				uexWindow.close(-1);
+			}
+			else
+				uexWindow.alert("提示",staObj.status,"确定");
+		}else{
+			var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);			
+			var counObj = JSON.parse(res);
+			uexXmlHttpMgr.close(opid);
+			
+			var coun_str = '<option value="-1">请选择</option>';
+			for(var i = 0; i < counObj.length; i++){
+				var coun_obj = counObj[i];
+				if(countryId != "" && countryId == coun_obj.region_id){
+					//districtId = "";
+					$id("country_id").innerHTML = coun_obj.region_name;
+					coun_str += '<option value="'+coun_obj.region_id+'" selected=true>'+coun_obj.region_name+'</option>';
+				}else{
+					coun_str += '<option value="'+coun_obj.region_id+'">'+coun_obj.region_name+'</option>';
+				}
+			}
+			$id("select-choice-1").innerHTML = coun_str;
+			getCitys(10,1,countryId);
+		}
+	}
+	//uexXmlHttpMgr.close(opid);
+}
+//设为默认地址
+function modity_address(){
+	var moAdUrl = httpUrl +'user.php?jsoncallback=?&act=update_user_default_address&address_id='+addid;
+	xmlHttp(3,moAdUrl);
+}
+
+/*window.uexOnload = function(){
+	uexXmlHttpMgr.onData = httpSuccess;
+	uexWindow.cbConfirm = ConfirmSuccess;
+	var addressInfo_url = httpUrl+"user.php?jsoncallback=?&act=get_address_info&address_id="+addid;
+	
+ 	xmlHttp(1,addressInfo_url);
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+	}
+}*/
+zy_fix("header","","",function(){
+	//获取参数
+	parseParam();
+	addid = params.addId;
+	
+	uexXmlHttpMgr.onData = httpSuccess;
+	uexWindow.cbConfirm = ConfirmSuccess;
+	var addressInfo_url = httpUrl+"user.php?jsoncallback=?&act=get_address_info&address_id="+addid;
+	
+ 	xmlHttp(1,addressInfo_url);
+	uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+	}
+});
+//点击列表事件
+var t_m = false, t_start_x, t_end_x;
+function t_m_start(id){
+	document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+    t_m = true;
+    t_start_x = e.touches[0].pageX;
+}
+function t_m_move(id){
+	document.getElementByIdid(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+}
+
+function t_m_end(id){
+	document.getElementById(id).className = 'ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+    t_m = false;
+}
+//点击列表事件
+var t_m3 = false, t_start_x3, t_end_x3;
+function t_m_start_right(id){
+	document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn w_head_btn_click';
+    t_m3 = true;
+    t_start_x3 = e.touches[0].pageX;
+}
+function t_m_move_right(id){
+	document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+}
+
+
+function t_m_end_right(id){
+	document.getElementById(id).className = 'ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a ui-shadow w_head_btn';
+    t_m3 = false;
+}
+</script>
+</body>
+<script>
+	zy_init();
+</script>
+</html>

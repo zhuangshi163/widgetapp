@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onclick="uexWindow.evaluateScript('','0','uexWindow.close(\'-1\')');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<!-- <div onClick="uexWindow.close('-1');" class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">返回</span>  </span>  </div></div></div></div>  -->
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+搜索记录
+</h1> 
+<!-- <div onclick="clearBrowse()" class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone      "> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">清空</span>  </span>  </div></div></div></div>  -->
+<div onclick="uexWindow.evaluateScript('','0','clearBrowse()')" id="qk" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">清空</span> </span></div> 
+	
+</div>
+
+<div id="page_0" class="ui-page ui-body-a ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-a ui-fixed-top ui-fixed-bottom w_content_padding w_set">
+<div class="w_opacity"></div>
+<div class="w_goods_con">
+<div class="sy_sy" id="browse_list_"></div>
+<ul data-role="listview" id="show_search_list" class="ui-listview  ui-corner-none  ui-shadow wa"> 
+
+<!--   <h3 class="ui-li-heading">关键词：E66 </h3>       </div>       <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>     </div>    </li>  -->
+</ul>
+</div>
+</div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+	//zy_init();
+	 /*页面切换*/
+	function openage(page,page_name){
+			var html_url=page;
+			openNewWin(page_name,html_url,"2");
+		}
+	 //读取文件
+	function readFile(path,size){
+		uexFileMgr.openFile("3",path,1);
+		uexFileMgr.readFile("3",size);
+		uexFileMgr.closeFile("3");
+	}
+	//判断文件是否存在
+	function isFileExistByPath(path){
+	    uexFileMgr.isFileExistByPath(path);
+	}
+	zy_fix("header","","",function(){
+		uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){//判断文件是否存在回调函数
+            if (data == 1) {
+            	if (flag == 1) {
+					readFile("wgt://data/search/search_result.txt",-1);//文件存在，直接读取
+				}else if(flag == 2){
+					deleteFileByPath("wgt://data/search/search_result.txt");
+				}
+            }
+            else {
+            	//无搜索结果显示
+            	$id("browse_list_").innerHTML = "无搜索记录！";
+				$id("show_search_list").innerHTML = "";
+            }
+		}
+		uexFileMgr.cbDeleteFileByPath = function(opCode,dataType,data){
+			if(data == 0){
+				uexWindow.alert("提示","清除成功","确定");
+				flag = "1";
+	    		isFileExistByPath("wgt://data/search/search_result.txt");
+			}
+		}
+		uexFileMgr.cbReadFile = function(opCode,dataType,data){//读取文件回调函数
+			var show_search = "";
+			if(data != ""){
+				var search_con = JSON.parse(data);
+				for(var i=0; i<search_con.length; i++){
+					show_search += '<li class=" ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li ui-li-brbtm-sy" onclick="openage(\'w_result.html?search_value='+encodeURIComponent(search_con[i].search_name)+'\',\'page_1\');"><div class="ui-btn-inner ui-li ui-btn-text">'+
+					'<div class="ui-link-inherit w_comment_color" style="padding: 0.2em 0;"><span class="ui-li-heading">关键词：'+search_con[i].search_name+'</span></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow boutique1"></span></div></li> '
+				}
+				$id("show_search_list").innerHTML = show_search;
+			}
+		}
+		flag = "1";
+		isFileExistByPath("wgt://data/search/search_result.txt");
+		uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+		}
+	})
+	/*window.uexOnload = function(){
+		uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){//判断文件是否存在回调函数
+            if (data == 1) {
+            	if (flag == 1) {
+					readFile("wgt://data/search/search_result.txt",-1);//文件存在，直接读取
+				}else if(flag == 2){
+					deleteFileByPath("wgt://data/search/search_result.txt");
+				}
+            }
+            else {
+            	//无搜索结果显示
+            	$id("browse_list_").innerHTML = "无搜索记录！";
+            }
+		}
+		uexFileMgr.cbDeleteFileByPath = function(opCode,dataType,data){
+			if(data == 0){
+				uexWindow.alert("提示","清除成功","确定");
+				flag = "1";
+	    		isFileExistByPath("wgt://data/search/search_result.txt");
+			}
+		}
+		uexFileMgr.cbReadFile = function(opCode,dataType,data){//读取文件回调函数
+			var show_search = "";
+			if(data != ""){
+				var search_con = JSON.parse(data);
+				for(var i=0; i<search_con.length; i++){
+					show_search += '<li class=" ui-bar-a ui-btn-icon-right ui-li w_cursor w_more_li" onclick="openage(\'w_result.html?search_value='+search_con[i].search_name+'\',\'page_1\');"><div class="ui-btn-inner ui-li ui-btn-text">'+
+					'<div class="ui-link-inherit w_comment_color"><h3 class="ui-li-heading">关键词：'+search_con[i].search_name+'</h3></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span></div></li> '
+				}
+				$id("show_search_list").innerHTML = show_search;
+			}
+		}
+		flag = "1";
+		isFileExistByPath("wgt://data/search/search_result.txt");
+		uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+		}
+	}*/
+	//清空
+	function clearBrowse(){
+		flag = "2";
+		isFileExistByPath("wgt://data/search/search_result.txt");
+	}
+	//删除本地文件
+	function deleteFileByPath(path){
+		uexFileMgr.deleteFileByPath(path);
+	}
+   
+  </script>
+  </body>
+</html>

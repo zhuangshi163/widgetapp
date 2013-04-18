@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+  </head>
+  <body class="ui-mobile-viewport" >
+   
+<div id="page2" class="ui-page ui-body-d ui-page-active" tabindex="0">
+<div data-role="header" class="ui-header ui-bar-iphone" >
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">TCP baidu</h1> 
+</div>
+<div id="msgid" class="ui-content ui-body-d">
+
+</div>
+
+<div data-role="footer" class="ui-footer ui-bar-b ui-footer-fixed">
+<div class="ui-bar ui-bar-b ">
+<div class="ui-has-label">
+<label for="text-0" class="ui-input-text " >ip或网址</label>
+<input  name="text-0" id="ipid"  type="text" value="http://www.baidu.com" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-c"/>
+</div>
+<div class="ui-has-label">
+<label for="text-0" class="ui-input-text " >端口</label>
+<input name="text-0" id="portid"  type="text" value="80" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-c"/>
+</div>
+<textarea placeholder=""  name="textarea-1" id="cont_id" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-btn-c">
+GET / HTTP/1.1\r\nAccept: */*\r\nAccept-Language: zh-cn\r\nAccept-Encoding: gzip, deflate\r\nUser-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727; 360SE)\r\nHost: 119.75.218.45\r\nConnection: Keep-Alive\r\n\r\n
+</textarea>
+<div onclick="sendata();" class="ui-btn   ui-corner-all ui-shadow  ui-btn-e  ">  <span class="ui-btn-inner ui-corner-all"> <span class="ui-btn-text">发送请求</span>  </span> <button class="ui-btn-hidden">按钮</button> </div> 
+</div>
+</div>
+
+</div>
+<script>
+var inOpCode="1";
+function sendata(){
+	uexSocketMgr.createTCPSocket(inOpCode);
+}
+window.uexOnload=function(){
+	uexSocketMgr.cbCreateTCPSocket=function(opId,dataType,data){
+		if(data==0){
+			var ipstr = document.getElementById("ipid").value;
+			var port = document.getElementById("portid").value;
+			uexSocketMgr.setInetAddressAndPort(inOpCode,ipstr,port);
+			var cont = document.getElementById("cont_id").value;
+			uexSocketMgr.sendData(inOpCode,cont);
+		}
+	}
+	uexSocketMgr.onData = function(data){
+		document.getElementById("msgid").innerHTML = data;
+	}
+}
+</script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css"> 
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/s_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/zy_json.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onClick="uexWindow.close('-1');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+	<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onClick="uexWindow.close('-1');"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc">  -->
+<!-- 						<span class="ui-btn-inner "> -->
+<!-- 							<span class="ui-btn-text">返回</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+		新品上市
+<!-- 		<div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" id="screening_id"> -->
+<!-- 			<div class="ui-btn-apple-nl"> -->
+<!-- 				<div class="ui-btn-apple-nr"> -->
+<!-- 					<div class="ui-btn-apple-nc"> -->
+<!-- 						<span class="ui-btn-inner"> -->
+<!-- 							<span class="ui-btn-text">筛选</span> -->
+<!-- 						</span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</h1>
+	<div id="screening_id" ontouchstart="t_m_start_right(this.id)" ontouchmove="t_m_move_right(this.id)" ontouchend="t_m_end_right(this.id)" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">筛选</span> </span></div> 
+	
+</div>
+
+<div id="page_15" class="ui-page ui-body-d ui-page-active ui_body_a_dwx" tabindex="0">
+	<div class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom cc">
+		<div data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal bb1 tort_box">
+	         <div data-role="button" id="price_" onclick="getSortShopList('shop_price'),button_style('price')" class=" ui-btn-corner-left ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 aa_click w_radius_left">
+	             <span class="ui-btn-inner ui-btn-corner-left w_sort_name"><span class="ui-btn-text">&nbsp;&nbsp;价格</span><span id="price_span" class="ui-icon w_sort w_sort2"></span></span>
+	         </div>
+	         <div data-role="button" id="time_" onclick="getSortShopList('goods_id'),button_style('time')" class="  ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 ">
+	             <span class="ui-btn-inner w_sort_name"><span class="ui-btn-text ">上架时间</span><span id="time_span" class="ui-icon w_sort"></span></span>
+	         </div>
+	         <div data-role="button" id="update_time_" onclick="getSortShopList('last_update'),button_style('update_time')" class=" ui-btn-corner-right ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 w_radius_right">
+	             <span class="ui-btn-inner ui-btn-corner-right w_sort_name"><span class="ui-btn-text">更新时间</span><span id="update_time_span" class="ui-icon w_sort"></span></span>
+	         </div>
+	     </div>
+		 <div id="wrapper">
+			<ul data-role="listview" id="sort_shop_list_ul" class="ui-listview  ui-corner-none  ui-shadow a1"> 
+				<li class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color">
+					<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url('css/res-apple/shop-pic.png');" >
+						<img class="ui-li-thumb1" src="css/res-apple/pic.png" align="absmiddle" />
+					</span>
+					<h3 class="ui-li-heading">motoE66</h3>
+					<p class="ui-li-desc">2.4英才1600万色分辨率(240*320)</p>
+					<p class="ui-li-desc">市场价格：2757</p>
+					<p class="ui-li-desc">本店价格：2525</p>
+				</li>
+				<li class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color">
+					<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url('css/res-apple/shop-pic.png');" >
+						<img class="ui-li-thumb1" src="css/res-apple/pic.png" align="absmiddle" />
+					</span>
+					<h3 class="ui-li-heading">motoE66</h3>
+					<p class="ui-li-desc">2.4英才1600万色分辨率(240*320)</p>
+					<p class="ui-li-desc">市场价格：2757</p>
+					<p class="ui-li-desc">本店价格：2525</p>
+				</li>
+				<li class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color">
+					<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url('css/res-apple/shop-pic.png');" >
+						<img class="ui-li-thumb1" src="css/res-apple/pic.png" align="absmiddle" />
+					</span>
+					<h3 class="ui-li-heading">motoE66</h3>
+					<p class="ui-li-desc">2.4英才1600万色分辨率(240*320)</p>
+					<p class="ui-li-desc">市场价格：2757</p>
+					<p class="ui-li-desc">本店价格：2525</p>
+				</li>
+			</ul>
+			<!-- <div class="div-center" id="shop_div" style="display:block;">
+				<img src="css/res-apple/empty.png"/>
+				<p>对不起，此分类没有可供选择的商品</p>
+			</div> -->
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+/*//获取参数
+	parseParam();
+	var id = params.id;
+	
+	//获取该分类下的商品列表
+	function getSortShopList(sort){
+		var url = "http://52jiatuan.com/plugins/zywx/rpc/category.php?jsoncallback=?&act=search&id="+id+"&page=1&order=desc&sort="+sort;
+		//uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open(1, "GET", url, ""); 
+		uexXmlHttpMgr.send(1);
+	}
+	window.uexOnload = function(){
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			alert(errorInfo);
+		}
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			var sort_shop_list = '';
+			if(type == 1){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var s = JSON.parse(res);
+				uexWindow.closeToast();
+				uexXmlHttpMgr.close(opCode);
+				
+				for(var i in s.goods_list){
+					if (s.goods_list != "查询分类列表详细为空") {
+						//$id("shop_div").style.display = "none";
+						//$id("sort_shop_list_ul").style.display = "block";
+						sort_shop_list += '<li onclick="openGoodsDetails('+s.goods_list[i].goods_id +')" class=" ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color">' +
+						'<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url(\'css/res-apple/shop-pic.png\');" >' +
+						'<img class="ui-li-thumb1" src="' +
+						image_url +
+						s.goods_list[i].goods_thumb +
+						'" align="absmiddle" /></span><h3 class="ui-li-heading">' +
+						s.goods_list[i].goods_name +
+						'</h3>' +
+						'<p class="ui-li-desc w_fontsize">' +
+						s.goods_list[i].goods_brief +
+						'</p><p class="ui-li-desc w_fontsize">市场价格：' +
+						s.goods_list[i].market_price +
+						'</p><p class="ui-li-desc w_fontsize w_color">本店价格：' +
+						s.goods_list[i].shop_price +
+						'</p></li>';
+					}else{
+						$id("shop_div").style.display = "block";
+						$id("sort_shop_list_ul").style.display = "none";
+					}
+				}
+				$id("sort_shop_list_ul").innerHTML = sort_shop_list;
+			}
+		}
+		getSortShopList("shop_price");//获取该分类下的商品列表
+	}
+	//替换按钮样式
+	function button_style(that){
+		if(that == "price"){
+			$id("price_").className = "ui-btn-corner-left ui-btn ui-bar-a ui-btn-icon-right  ui-shadow aa1 aa_click w_radius_left";
+			$id("price_span").className = "ui-icon w_sort w_sort2";
+			
+			$id("time_").className = "ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1";
+			$id("time_span").className = "ui-icon w_sort";
+			
+			$id("update_time_").className = "ui-btn-corner-right ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 w_radius_right";
+			$id("update_time_span").className = "ui-icon w_sort";
+			
+		}else if(that == "time"){
+			$id("price_").className = "ui-btn-corner-left ui-btn ui-bar-a ui-btn-icon-right  ui-shadow aa1  w_radius_left";
+			$id("price_span").className = "ui-icon w_sort";
+			
+			$id("time_").className = "ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 aa_click";
+			$id("time_span").className = "ui-icon w_sort w_sort2";
+			
+			$id("update_time_").className = "ui-btn-corner-right ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 w_radius_right";
+			$id("update_time_span").className = "ui-icon w_sort";
+		}else if(that == "update_time"){
+			$id("price_").className = "ui-btn-corner-left ui-btn ui-bar-a ui-btn-icon-right  ui-shadow aa1  w_radius_left";
+			$id("price_span").className = "ui-icon w_sort";
+			
+			$id("time_").className = "ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1";
+			$id("time_span").className = "ui-icon w_sort ";
+			
+			$id("update_time_").className = "ui-btn-corner-right ui-btn  ui-bar-a ui-btn-icon-right  ui-shadow aa1 w_radius_right aa_click";
+			$id("update_time_span").className = "ui-icon w_sort w_sort2";
+		}
+	}
+	//打开商品分类列表页面
+	function openScreening(id){
+		var html_url = "screening.html?id="+id;
+		openNewWin("screening",html_url,2);
+	}
+	$id("screening_id").onclick = function(){
+		openScreening(id);
+	}
+	//打开商品详情页
+	function openGoodsDetails(id){
+		var html_url = 'goods_details.html?id='+id;
+		openNewWin("goodsDetails",html_url,2);
+	}*/
+</script>	
+</body>
+</html>

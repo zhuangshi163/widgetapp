@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css"> 
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/s_style.css">
+	<link rel="stylesheet" href="css/w_style.css">
+	<link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/zy_json.js"></script>
+	 <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onClick="uexWindow.evaluateScript('', '0','closeTheWin()');" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">
+<!--  <div class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone" onClick="uexWindow.evaluateScript('', '0','closeTheWin()');"> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">返回</span>  </span>  </div></div></div></div>  -->
+筛选结果
+<!--<div class="ui-btn ui-btn-limit ui-btn-right ui-btn-iphone" onclick="uexWindow.evaluateScript('', '0','closeTheWin()');" > <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">筛选</span>  </span>  </div></div></div></div>-->
+
+
+</h1> 
+</div>
+
+<div id="page_0" class="ui-page ui-body-d ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom cc">
+
+<div id="">
+<ul data-role="listview" id="sort_shop_list_ul" class="ui-listview  ui-corner-none  ui-shadow a"> 
+<!-- 	<li class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color"> -->
+<!--     	<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url('css/res-apple/shop-pic.png');" ><img class="ui-li-thumb1" src="css/res-apple/pic.png" align="absmiddle" /></span>    <h3 class="ui-li-heading">motoE66</h3>    <p class="ui-li-desc">2.4英才1600万色分辨率(240*320)</p> <p class="ui-li-desc">市场价格：2757</p> <p class="ui-li-desc">本店价格：2525</p>       </li> -->
+
+</ul>
+<div class="div-center" id="shop_div" style="display:none;">
+	<img src="css/res-apple/empty.png"/>
+	<p>对不起，此分类没有可供选择的商品</p>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	//获取参数
+	//parseParam();
+	var id = "";//分类id
+	var brand = "";//品牌
+	var price = "";//价格
+	/*var time = "";//上市时间
+	var color = "";//颜色
+	var app_style = "";//外观样式*/
+	var str = '';//属性
+	//获取筛选结果商品列表
+	function getScreeningList(){
+		if(brand == 0){
+			brand = "";
+		}
+		var price_min = "";
+		var price_max = "";
+		if (price == "全部") {
+			price_min = "";
+			price_max = "";
+		}
+		else {
+			price_min = price.substr(0, price.indexOf("-"));
+			price_max = price.substr((price.indexOf("-") + 1), (price.length - price.indexOf("-")));
+		}
+		var url = image_url + "plugins/zywx/rpc/category.php?jsoncallback=?&act=search&id="+id+"&page=1&brand="+brand+"&price_min="+price_min+"&price_max="+price_max+"&order=desc&sort=last_update&filter_attr="+str;
+		uexWindow.toast("1","5","请稍后...","0");
+		uexXmlHttpMgr.open('1', "GET", url, ""); 
+		uexXmlHttpMgr.send('1');
+	}
+	zy_fix("header","","",function(){
+		//获取参数
+		parseParam();
+		id = params.id;//分类id
+		brand = decodeURIComponent(params.brand);//品牌
+		price = decodeURIComponent(params.price);//价格
+		//time = decodeURIComponent(params.time);//上市时间
+		//color = decodeURIComponent(params.color);//颜色
+		//app_style = decodeURIComponent(params.app_style);//外观样式
+		str = decodeURIComponent(params.str);
+		
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			var sort_shop_list = '';
+			if(type == 1){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 				
+				var s = JSON.parse(res);
+				uexWindow.closeToast();
+				uexXmlHttpMgr.close(opCode);
+				if(s && s.goods_list.length > 0){
+					for(var i in s.goods_list){
+						if (s.goods_list != "查询分类列表详细为空") {
+							$id("shop_div").style.display = "none";
+							$id("sort_shop_list_ul").style.display = "block";
+							sort_shop_list += '<li id="goods_list_'+i+'" ontouchstart="t_m_start(this.id,\'price_'+i+'\')" ontouchmove="t_m_move(this.id,\'price_'+i+'\')" ontouchend="t_m_end(this.id,\'price_'+i+'\')" onclick="openGoodsDetails(' + s.goods_list[i].goods_id + ',\'' + s.goods_list[i].goods_name + '\',\'' + s.goods_list[i].goods_brief + '\',\'' + s.goods_list[i].market_price + '\',\'' + s.goods_list[i].shop_price + '\',\'' + image_url+s.goods_list[i].goods_thumb + '\')" class=" ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color">' +
+							'<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url(\''+image_url +s.goods_list[i].goods_thumb+'\');" >' +
+							'</span><h3 class="ui-li-heading">' +
+							s.goods_list[i].goods_name +
+							'</h3>' +
+							'<p class="ui-li-desc">' +
+							s.goods_list[i].goods_brief +
+							'</p><p class="ui-li-desc">市场价格：' +
+							s.goods_list[i].market_price +
+							'</p><p id="price_'+i+'" class="ui-li-desc w_fontsize w_color">本店价格：' +
+							s.goods_list[i].shop_price +
+							'</p></li>';
+						}else{
+							$id("shop_div").style.display = "block";
+							$id("sort_shop_list_ul").style.display = "none";
+						}
+					}
+					$id("sort_shop_list_ul").innerHTML = sort_shop_list;
+				}else{
+					uexWindow.toast('0','5','没有符合条件的数据！','5000');
+				}
+			}
+		}
+		getScreeningList();//获取该分类下的商品列表
+	})
+	/*window.uexOnload = function(){
+		uexWidgetOne.cbError = function(opCode, errorCode, errorInfo){
+			uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorInfo,"确定");
+		}
+		uexXmlHttpMgr.onData = function(opCode,type,result){
+			var sort_shop_list = '';
+			if(type == 1){
+				var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3); 
+				var s = JSON.parse(res);
+				uexWindow.closeToast();
+				uexXmlHttpMgr.close(opCode);
+				for(var i in s.goods_list){
+					if (s.goods_list != "查询分类列表详细为空") {
+						$id("shop_div").style.display = "none";
+						$id("sort_shop_list_ul").style.display = "block";
+						sort_shop_list += '<li onclick="openGoodsDetails(' + s.goods_list[i].goods_id + ',\'' + s.goods_list[i].goods_name + '\',\'' + s.goods_list[i].goods_brief + '\',\'' + s.goods_list[i].market_price + '\',\'' + s.goods_list[i].shop_price + '\',\'' + image_url+s.goods_list[i].goods_thumb + '\')" class=" ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color">' +
+						'<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url(\''+image_url +s.goods_list[i].goods_thumb+'\');" >' +
+						'</span><h3 class="ui-li-heading">' +
+						s.goods_list[i].goods_name +
+						'</h3>' +
+						'<p class="ui-li-desc">' +
+						s.goods_list[i].goods_brief +
+						'</p><p class="ui-li-desc">市场价格：' +
+						s.goods_list[i].market_price +
+						'</p><p class="ui-li-desc w_fontsize w_color">本店价格：' +
+						s.goods_list[i].shop_price +
+						'</p></li>';
+					}else{
+						$id("shop_div").style.display = "block";
+						$id("sort_shop_list_ul").style.display = "none";
+					}
+				}
+				$id("sort_shop_list_ul").innerHTML = sort_shop_list;
+			}
+		}
+		getScreeningList();//获取该分类下的商品列表
+	}*/
+	
+	function screening_(){
+		uexWindow.evaluateScript('screening','0','screeningSuccess('+id+')');
+		
+		var html_url = "screening.html";
+        openNewWin("screening", html_url, '1');
+		uexWindow.close('-1');
+    }
+	//打开商品详情页
+    function openGoodsDetails(id, name,desc,markePrice,price,imgurl){
+        var html_url = 'goods_details.html?id=' + id + "&name=" + encodeURIComponent(name)+"&desc="+encodeURIComponent(desc)+"&markePrice="+encodeURIComponent(markePrice)+"&price="+encodeURIComponent(price)+"&imgurl="+encodeURIComponent(imgurl);
+        openNewWin("goodsDetails", html_url, 2);
+    }
+    function closeTheWin(){
+		uexWindow.close('-1');
+	}
+	//点击列表事件
+		var t_m = false, t_start_x, t_end_x;
+		function t_m_start(id,t){
+			document.getElementById(id).className = 'ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color w_detils_click';
+			document.getElementById(t).className = 'ui-li-desc w_fontsize w_color2';
+		    t_m = true;
+		    t_start_x = e.touches[0].pageX;
+		}
+		function t_m_move(id,t){
+			document.getElementByIdid(id).className = 'ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color';
+			document.getElementById(t).className = 'ui-li-desc w_fontsize w_color';
+		}
+		
+		
+		function t_m_end(id,t){
+			document.getElementById(id).className = 'ui-body-d ui-li-has-thumb ui-li-static ui-li sort-li ui-li-font-color';
+			document.getElementById(t).className = 'ui-li-desc w_fontsize w_color';
+		    t_m = false;
+		}
+</script>	
+</body>
+</html>

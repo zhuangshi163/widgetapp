@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+  <head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css"> 
+    <link rel="stylesheet" href="css/w_style.css">
+    <link rel="stylesheet" href="css/s_style.css">
+    <link rel="stylesheet" href="css/style.css"> <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+     <script type="text/javascript" src="js/config.js"></script>
+  </head>
+  <body class="ui-mobile-viewport ui_body_d" >
+   
+
+<div id="header" data-role="header" class="ui-header ui-bar-a ui-header-fixed ui_title" >
+<div onclick="uexWindow.evaluateScript('','0','close1()')" id="fh" ontouchstart="t_m_start(this.id)" ontouchmove="t_m_move(this.id)" ontouchend="t_m_end(this.id)" data-role="button" class="ui-btn-left ui-btn-corner-all ui-btn ui-btn-limit ui-bar-a   ui-shadow w_head_btn"> <span class="ui-btn-inner ui-btn-corner-all www_padding"> <span class="ui-btn-text">返回</span> </span></div> 
+
+<!-- <div onclick="close1()"  class="ui-btn ui-btn-limit ui-btn-left ui-btn-iphone      "> <div class="ui-btn-apple-nl"><div class="ui-btn-apple-nr"><div class="ui-btn-apple-nc"> <span class="ui-btn-inner "> <span class="ui-btn-text">返回</span>  </span>  </div></div></div></div>  -->
+<h1 id="search_title" class="ui-title" tabindex="0" role="heading" aria-level="1">
+搜索：手机
+</h1> 
+</div>
+
+<div id="page_0" class="ui-page ui-body-d ui-page-active ui_body_a_dwx" tabindex="0">
+<div class="ui-content ui-body-d ui-fixed-top ui-fixed-bottom w_content_padding">
+<div id="">
+<div id="scroller">
+<p class="w_result">搜索：<span id="w_goods_name"></span>，搜到商品<span id="num"></span>件</p>
+<ul data-role="listview" id="goods_li" class="ui-listview  ui-corner-all  ui-shadow wa">
+	
+</ul>
+
+</div>
+</div>
+<p onclick="addMore()" class='more_p' id="more_" style="display:none;height: 3em;"><a href='javascript:(0)'>更多</a></p>
+</div>
+</div>
+
+<script src="js/main.js"></script>
+
+<script>
+	var search_keyword =new Array();
+	/*获取参数*/
+	//parseParam();
+	var search_result = 0;
+	/*if(search_result.length > 5){
+		search_result = search_result.substr(0,5) + "...";
+	}
+	$id("search_title").innerHTML = "搜索："+search_result;*/
+	
+	var page = '';
+	var pagesize = '';
+	var goods_list="";
+	
+	//zy_init();
+    /*页面切换*/
+	function openage(id,goods_name){
+			var html_url='goods_details.html?id='+id+'&name='+encodeURIComponent(goods_name);
+			openNewWin("goodsDetails",html_url,"2");
+		}
+	 //点击列表事件
+	var t_m = false, t_start_x, t_end_x;
+    function t_m_start(id){
+		$id(id).className = 'w_li_result_click';
+        t_m = true;
+        t_start_x = e.touches[0].pageX;
+    }
+    function t_m_move(id){
+		$id(id).className = '';
+    }
+
+    
+    function t_m_end(id){
+		$id(id).className = '';
+        t_m = false;
+    }
+    
+    //搜索
+    function search(page){
+    	var w_url= image_url + "plugins/zywx/rpc/goods_list.php?jsoncallback=?&act=search&keyword="+encodeURIComponent(search_result)+"&page="+page+"&page_size=10";
+    	uexXmlHttpMgr.open(1, "GET",w_url,"");
+    	uexXmlHttpMgr.send(1);
+     }  
+   
+  //读取文件
+	function readFile(path,size){
+		uexFileMgr.openFile("3",path,1);
+		uexFileMgr.readFile("3",size);
+		uexFileMgr.closeFile("3");
+	}
+    //创建文件
+	function creatFile(path){
+		uexFileMgr.createFile("1",path);
+		uexFileMgr.closeFile("1");
+	}
+	//写入文件
+	function writeFile(path,data){
+		uexFileMgr.openFile("2",path,"1");
+		uexFileMgr.writeFile("2",0,data);
+		uexFileMgr.closeFile("2");
+	}
+	//判断文件是否存在
+	function isFileExistByPath(path){
+	    uexFileMgr.isFileExistByPath(path);
+	}
+	zy_fix("header","","",function(){
+		/*获取参数*/
+		parseParam();
+		search_result = params.search_value;
+		uexWindow.evaluateScript('','1','title1(\''+search_result+'\')');
+		
+		$id("w_goods_name").innerHTML = search_result;
+			$id("search_title").innerHTML = search_result;
+	    	uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+	    		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+	    	}
+	    	uexXmlHttpMgr.onData = function(opCode,status,result){
+	    		if(status == 1){
+		    		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);//截取字符串：去掉？（）
+		    		var o = JSON.parse(res);//把result的结果转化为json对象
+		    		uexXmlHttpMgr.close(opCode);
+		    		isFileExistByPath("wgt://data/search/search_result.txt");//判断文件是否存在
+		    		var num = 0;
+                    for (var i in o.goods) {
+                        num++;
+                        goods_list += '<li onclick="openage(' + o.goods[i].goods_id + ',\'' + o.goods[i].goods_name + '\')" class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color">'+
+						'<span  class="ui-li-thumb ui-li-thumb3" style="background-image:url(\'' + image_url + o.goods[i].goods_thumb + '\');" ></span>'+
+						'<h3 class="ui-li-heading">' + o.goods[i].goods_name + '</h3>'+
+						'<p class="ui-li-desc w_fontsize">' + o.goods[i].goods_brief + '</p>'+
+						'<p class="ui-li-desc w_fontsize">市场价格：' + o.goods[i].market_price + '</p>'+
+						'<p class="ui-li-desc w_fontsize">本店价格：<span class="w_color">' + o.goods[i].shop_price + '</span></p></li>';
+                    }
+		    		$id("num").innerHTML = num;
+		    		$id("goods_li").innerHTML = goods_list;
+		    		
+		    		page = o.pager.page;
+					pagesize = o.pager.page_count;
+					
+					if(page < pagesize){
+						$id("more_").style.display = "block";
+					}else{
+						$id("more_").style.display = "none";
+					}
+	    		}
+	    	}
+	    	uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+		            if (data == 1) {
+		            	readFile("wgt://data/search/search_result.txt",-1);//文件存在，直接读取
+		            }
+		            else {
+		            	creatFile("wgt://data/search/search_result.txt");//创建文件并写入
+		            	var rs = {"search_name":search_result};
+		            	search_keyword.push(rs)
+		            	writeFile("wgt://data/search/search_result.txt",JSON.stringify(search_keyword));
+		            }
+	    	}
+	    	uexFileMgr.cbReadFile = function(opCode,dataType,data){//读取文件回调函数
+	    		if(data != ""){
+	    			var search_con = JSON.parse(data);
+	    			for(var i=0; i<search_con.length; i++){
+	    				if(search_result == search_con[i].search_name){//判断搜索的关键字在文件中是否已经存在，如果存在直接跳出循环
+	    					return;
+	    				}
+	    			}
+	    			var rs1 = {"search_name":search_result};//文件中没有该关键字，写入
+					search_con.push(rs1)
+	            	writeFile("wgt://data/search/search_result.txt",JSON.stringify(search_con));
+	    		}
+	    	}
+	    	search('1');
+	});
+	 /*window.uexOnload = function(){
+	 		$id("w_goods_name").innerHTML = search_result;
+			$id("search_title").innerHTML = search_result;
+	    	uexWidgetOne.cbError = function(opcode,errorcode,errorinfo){
+	    		uexWindow.alert("提示","errorCode:" + errorCode + "\nerrorInfo:" + errorinfo,"确定");
+	    	}
+	    	uexXmlHttpMgr.onData = function(opCode,status,result){
+	    		if(status == 1){
+		    		var res = (result.substr(result.indexOf("?(")+2,result.length)).substr(0,result.length-3);//截取字符串：去掉？（）
+		    		var o = JSON.parse(res);//把result的结果转化为json对象
+		    		uexXmlHttpMgr.close(opCode);
+		    		isFileExistByPath("wgt://data/search/search_result.txt");//判断文件是否存在
+		    		var goods_list="";
+		    		var num = 0;
+		    		for(var i in o.goods){
+		    			num++;
+		    			goods_list += '<li onclick="openage('+o.goods[i].goods_id+',\''+o.goods[i].goods_name+'\')" class=" ui-body-d   ui-li-has-thumb    ui-li-static  ui-li sort-li ui-li-font-color"><span  class="ui-li-thumb ui-li-thumb3" style="background-image:url(\''+image_url+o.goods[i].goods_thumb+'\');" ></span>    <h3 class="ui-li-heading">'+o.goods[i].goods_name+'</h3>    <p class="ui-li-desc w_fontsize">'+o.goods[i].goods_brief+'</p> <p class="ui-li-desc w_fontsize">市场价格：'+o.goods[i].market_price+'</p> <p class="ui-li-desc w_fontsize">本店价格：<span class="w_color">'+o.goods[i].shop_price+'</span></p>       </li>';
+		    			}
+		    		$id("num").innerHTML = num;
+		    		$id("goods_li").innerHTML = goods_list;
+	    		}
+	    	}
+	    	uexFileMgr.cbIsFileExistByPath = function(opCode, dataType, data){
+		            if (data == 1) {
+		            	readFile("wgt://data/search/search_result.txt",-1);//文件存在，直接读取
+		            }
+		            else {
+		            	creatFile("wgt://data/search/search_result.txt");//创建文件并写入
+		            	var rs = {"search_name":search_result};
+		            	search_keyword.push(rs)
+		            	writeFile("wgt://data/search/search_result.txt",JSON.stringify(search_keyword));
+		            }
+	    	}
+	    	uexFileMgr.cbReadFile = function(opCode,dataType,data){//读取文件回调函数
+	    		if(data != ""){
+	    			var search_con = JSON.parse(data);
+	    			for(var i=0; i<search_con.length; i++){
+	    				if(search_result == search_con[i].search_name){//判断搜索的关键字在文件中是否已经存在，如果存在直接跳出循环
+	    					return;
+	    				}
+	    			}
+	    			var rs1 = {"search_name":search_result};//文件中没有该关键字，写入
+					search_con.push(rs1)
+	            	writeFile("wgt://data/search/search_result.txt",JSON.stringify(search_con));
+	    		}
+	    	}
+	    	search();
+	    	
+	     }*/
+		 function close1(){
+		 	uexWindow.evaluateScript('root','0','getSearchValue()');
+			uexWindow.close("-1");
+		 }
+	   //添加更多
+		function addMore(){
+			var current_page = parseInt(page)+1;
+			if(current_page > pagesize){
+				current_page = pagesize;
+			}
+			search(current_page);
+		}
+		
+  </script>
+
+  </body>
+  <script>
+	zy_init();
+</script>
+</html>
