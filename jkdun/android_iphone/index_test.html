@@ -1,0 +1,368 @@
+<html class="ui-mobile landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px"><head>
+    <title>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/ui-media.css">
+    <link rel="stylesheet" href="css/ui-base.css">
+    <link rel="stylesheet" href="css/ui-apple.css">
+    <link rel="stylesheet" href="css/ui-main.css">
+    <script src="js/comm.js"></script>
+    <script src="js/zy_anim.js">
+    </script>
+    <script src="js/zy_control.js">
+    </script>
+ 	<script src="js/zy_tmpl.js">
+    </script>
+    <script src="js/ui-mobileman.js">
+    </script>
+    <script src="js/winManager.js">
+    </script>
+    <script src="js/ADK_Server.js">
+    </script>
+    <script type="text/javascript" src="http://dev.baidu.com/wiki/static/map/API/examples/script/convertor.js"></script>
+    <script>
+    window.name="adkemu";
+    var params=zy_parse();
+
+    function accChange()
+    {
+    	var ax=-$("vRX").value*0.017453293;
+    	var ay=-$("vRY").value*0.017453293;
+    	var az=$("vRZ").value*0.017453293;
+    	var x=0,y=-10,z=0;
+    	var sinx=Math.sin(ax),cosx=Math.cos(ax);
+    	var siny=Math.sin(ay),cosy=Math.cos(ay);
+    	var sinz=Math.sin(az),cosz=Math.cos(az);
+    	
+    	var dx=x*cosz-y*sinz;
+    	var dy=x*sinz+y*cosz;
+    	var dz=z;
+    	
+
+    	var dy1=dy*cosx-dz*sinx;
+    	var dz1=dy*sinx+dz*cosx;
+    	var dx1=dx;
+    	
+    	var dx2=dx1*cosy+dz1*siny;
+    	var dz2=-dx1*siny+dz1*cosy;
+    	var dy2=dy1;
+    	
+    	$('res_x').innerText=dx2.toFixed(2);
+    	$('res_y').innerText=dy2.toFixed(2);
+    	$('res_z').innerText=dz2.toFixed(2);
+    	
+    	winMan_uexSensor_event("1",dx2,dy2,dz2);
+    	
+    }
+    function accChangeRX(t)
+    {
+    	$("imgRX").style.webkitTransform="rotate("+t.value+"deg)";
+    	accChange();
+    }
+    function accChangeRY(t)
+    {
+    	$("imgRY").style.webkitTransform="rotate("+(t.value)+"deg)";
+    	accChange();
+    }
+    function accChangeRZ(t)
+    {
+    	$("imgRZ").style.webkitTransform="rotate("+t.value+"deg)";
+    	accChange();
+    }
+    
+    function oriChange()
+    {
+    	winMan_uexSensor_event("2",$("f_x").value,$("f_y").value,$("f_z").value);
+    }
+    function oriChangeA(t)
+    {
+    	$("res_oria").innerText=t.value;
+    	oriChange();
+    }
+    function oriChangeP(t)
+    {
+    	$("res_orip").innerText=t.value;
+    	oriChange();
+    }
+    function oriChangeR(t)
+    {
+    	$("res_orih").innerText=t.value;
+    	oriChange();
+    }
+    function temChange(t)
+    {
+    	$("res_tem").innerText=t.value;
+    	winMan_uexSensor_event("4",t.value,0,0);
+    }
+    function ligChange(t)
+    {
+    	$("res_lig").innerText=t.value;
+    	winMan_uexSensor_event("6",t.value,0,0);
+    }
+    var initOk=false;
+    window.uexOnload=function()
+    {
+    	if(initOk) return;
+    	initOk=true;
+    	window.name="ADKEMUMain";
+    	initMobileThumb();
+    	{
+    		uexFileMgr.cbOpenFile =function(opId,dataType,data)
+    		{
+    			uexFileMgr.cbReadFile = function(opId,dataType, data){
+    			　　　　if(dataType==0){
+    						var j=JSON.parse(data);
+    						curIndex=j.id;
+    						isLandscape=j.org;
+    						if(isLandscape === undefined)
+    							{
+    								isLandscape=TRUE;
+    							}
+    			　　　　　　	rotateMobiles();
+    			　　　　}
+    			　　}
+    			uexFileMgr.readFile(1,-1);
+    			uexFileMgr.closeFile(1);
+    		}
+    		uexFileMgr.cbIsFileExistByPath=function(opId,dataType,data)
+    		{
+    			if(dataType==2)
+    			{
+    				if(data==1)
+    					uexFileMgr.openFile(1,"wgt://data/config.adk",1);
+    				else
+    				{
+    					curIndex=0;
+    				}
+    			}
+    		}
+    		uexFileMgr.isFileExistByPath("wgt://data/config.adk");
+    		
+    	}
+    	
+    	//setTimeout(showBaiduMap,1000);
+    	initRootPage();
+    }
+    
+var baiduMapReady=false;;    
+function initialize() {
+		baiduMapReady=true;
+}    
+function loadScript() {
+  var script = document.createElement("script");
+  script.src = "http://api.map.baidu.com/api?v=1.2&callback=initialize";
+  document.body.appendChild(script);
+}
+  
+window.onload = loadScript;
+    </script>
+    <style>
+.ui-header-b {
+	
+	box-shadow: 0 1px 2px black, inset 0 3px 7px rgb(62, 62, 62) !important;
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.83),
+		rgba(47, 47, 51, 0.83) ) !important;
+	background-image: linear-gradient(top, rgba(0, 0, 0, 0.83),
+		rgba(47, 47, 51, 0.83) ) !important;
+	
+}
+
+.ui-item-title {
+	background: url(images/title.jpg) no-repeat;
+	background-size: 100% 100%;
+	font-weight: 300;
+	color: #CCC;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.99) !important;
+	font-size: 1.2em;
+	box-shadow: 0px 2px 2px #111;
+	font-family: 微软雅黑;
+	padding:0.2em 0.4em !important; 
+}
+
+.ui-item-title1
+{
+	font-weight: 300;
+	color: #FFFFFF;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.99) !important;
+	font-size: 1.2em;
+	font-family: 微软雅黑;
+}
+
+.ui-item-title2
+{
+	color: #FFFFFF;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.99) !important;
+	font-size: 0.8em;
+	font-family: 微软雅黑;
+}
+
+.ui-item-t2 {
+	font-size: 0.9em;
+	background-image: -webkit-linear-gradient(top, #111, #3c3c3c);
+	background-image: linear-gradient(top, #111, #3c3c3c);
+	margin: 5px 5px;
+	border: 1px solid rgb(82, 82, 83);
+}
+</style>
+  <link rel="stylesheet" type="text/css" href="http://api.map.baidu.com/res/12/bmap.css"></head>
+  <body class="ui-mobile-viewport ui-body-a" style="font-size:16px;border:none">
+   
+
+<div data-role="header" class="ui-header ui-header-fixed ui-header-b" style="opacity:1">
+<div style="padding: 8px 0 0px 8px;margin: 0px;color: #FB0;height: 35px;">
+<img src="images/appcan_logo.png" width="auto" height="auto" style="padding-top:0px;">
+<!--<img src="images/tencent.png" width="auto" height="80%" style="padding-top:0px">-->
+<img class="ui-lightflash" src="images/device-03.png" width="37px" height="37px" style="position:absolute;left:0%;top:0px;">
+</div>
+</div>
+
+
+<div id="page_0" class="ui-page ui-page-active " tabindex="0" style="outline:none;">
+<div class="ui-content  ui-fixed-top ui-fixed-bottom ui-shadow-inset" style="padding-left:3px;background-color:#000 !important;background-image:url(images/bgmask.png);background-repeat:no-repeat;background-size:100% 100%">
+<div class="content-secondary">
+<div style="background: rgba(0, 0, 0, 0.3);padding: 1px 3px;border: 1px solid #555;box-shadow: inset 0 0px 2px #333;" class="ui-smaller">
+<div class="ui-bar  ui-bar-nob">
+<div class=" ui-btn ui-bigger ui-btn-inner ui-item-title" style="display:block">设备旋转模拟</div>
+<div class="ui-bar ui-corner-all ui-big ui-bar-nob  ui-item-t2" style="">
+<div class=" ui-btn ui-item-title1 ui-big" style="display:block;font-size:1em !important">重力加速度分量(m/s²)</div>
+<div class="ui-bar  " style="padding:0.4em 0px;">
+<div class="ui-grid-b">
+  <div class="ui-block-a"><label class="ui-unit-col">x</label><label class="ui-value-col ui-wide-col" id="res_x">0</label></div>
+  <div class="ui-block-b"><label class="ui-unit-col">y</label><label class="ui-value-col ui-wide-col" id="res_y">-10</label></div>
+  <div class="ui-block-c"><label class="ui-unit-col">z</label><label class="ui-value-col ui-wide-col" id="res_z">0</label></div>
+</div>
+</div>
+</div>
+<div class="ui-bar" style="padding:0.0em 0px">
+<div class="ui-grid-b">
+  <div class="ui-block-a">
+  <div class=" ui-btn  ui-item-title1" style="font-size:1em;display:block;margin:0 5px">绕Z旋转</div>
+  <div class="ui-bar ui-bar-nob">
+  <div id="imgRZ" style="position:absolute;width:100%;height:7em;background-image:url(images/front.png);background-size:contain;background-position:center;background-repeat:no-repeat">
+<!--   
+  <span style="position:absolute;top:0px;left:50%;color:red">+Y</span>
+  <span style="position:absolute;top:50%;right:0px;color:red">+X</span>
+  <span style="position:absolute;bottom:0px;left:50%;color:red">-Y</span>
+  <span style="position:absolute;top:50%;left:0px;color:red">-X</span> -->
+  </div>
+  <div style="padding-top:8em">
+  <input id="vRZ" type="range" min="-180" max="180" value="" class="ui-slider-item" style="display:block;width:100%;" onchange="accChangeRZ(this);"></div>
+  </div>
+  </div>
+  <div class="ui-block-b"> 
+  <div class=" ui-btn  ui-item-title1 " style="font-size:1em;display:block;margin:0 5px">绕X旋转</div>
+  <div class="ui-bar ui-bar-nob">
+  <div id="imgRX" style="position:absolute;width:100%;height:7em;background-image:url(images/device-11.png);background-size:contain;background-position:center;background-repeat:no-repeat">
+  
+ <!--  <span style="position:absolute;top:0px;left:50%;color:red">+Y</span>
+  <span style="position:absolute;top:50%;right:0px;color:red">+Z</span>
+  <span style="position:absolute;bottom:0px;left:50%;color:red">-Y</span>
+  <span style="position:absolute;top:50%;left:0px;color:red">-Z</span> -->
+  </div>
+  <div style="padding-top:8em">
+  <input id="vRX" type="range" min="-180" max="180" value="" class="ui-slider-item" style="display:block;width:100%;" onchange="accChangeRX(this)"></div>
+  </div>
+  </div>
+  <div class="ui-block-c">
+  <div class=" ui-btn  ui-item-title1" style="font-size:1em;display:block;margin:0 5px">绕Y旋转</div>
+  <div class="ui-bar ui-bar-nob">
+  
+  <div id="imgRY" style="position:absolute;width:100%;height:7em;background-image:url(images/device-12.png);background-size:contain;background-position:center;background-repeat:no-repeat">
+<!--   <span style="position:absolute;top:0px;left:50%;color:red">+Z</span>
+  <span style="position:absolute;top:50%;right:0px;color:red">+X</span>
+  <span style="position:absolute;bottom:0px;left:50%;color:red">-Z</span>
+  <span style="position:absolute;top:50%;left:0px;color:red">-X</span> -->
+  </div>
+  <div style="padding-top:8em;text-aling:center">
+  <input id="vRY" type="range" min="-180" max="180" value="" class="ui-slider-item" style="display:block;width:100%;" onchange="accChangeRY(this)"></div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="ui-bar ui-bar-nob" style="">
+<div class=" ui-btn ui-bigger ui-btn-inner ui-item-title" style="display:block">方向传感器</div>
+<div class="ui-bar  " style="padding:0.4em 0px">
+<div style="height:2em">
+<input id="f_x" type="range" value="0" min="0" max="360" class="ui-slider-item" onchange="oriChangeA(this)">
+<label class="ui-unit-col">Azimuth</label><label class="ui-value-col" id="res_oria">0</label>
+</div>
+<div style="height:2em">
+<input id="f_y" type="range" value="0" min="-180" max="180" class="ui-slider-item" onchange="oriChangeP(this)">
+<label class="ui-unit-col">Pitch</label><label class="ui-value-col" id="res_orip">0</label>
+</div>
+<div style="height:2em">
+<input id="f_z" type="range" value="0" min="-90" max="90" class="ui-slider-item" onchange="oriChangeR(this)">
+<label class="ui-unit-col">Roll</label><label class="ui-value-col" id="res_orih">0</label>
+</div>
+</div>
+</div>
+<div class="ui-bar ui-bar-nob" style="">
+<div class=" ui-btn ui-bigger ui-btn-inner ui-item-title" style="display:block">温度传感器</div>
+<div class="ui-bar  " style="padding:1em 0px">
+<input type="range" value="" min="-100" max="100" class="ui-slider-item" onchange="temChange(this)">
+<label class="ui-unit-col">℃</label><label class="ui-value-col" id="res_tem">0</label>
+</div>
+</div> 
+<div class="ui-bar ui-bar-nob" style="">
+<div class=" ui-btn ui-bigger ui-btn-inner ui-item-title" style="display:block">光线传感器</div>
+<div class="ui-bar  " style="padding:1em 0px">
+<input type="range" value="" min="0" max="2000" class="ui-slider-item" onchange="ligChange(this)">
+<label class="ui-unit-col">lux</label><label class="ui-value-col" id="res_lig">1</label>
+</div>
+</div>
+<div class="ui-bar ui-bar-nob" style="">
+<div class=" ui-btn ui-bigger ui-btn-inner ui-item-title" style="display:block">GPS</div>
+<iframe id="baiduMap" class="ui-bar ui-body-c" src="map.html" style="width:99%;height:250px;padding:0.4em 0px">
+
+</iframe>
+</div>
+
+</div>
+</div>
+<div class="content-primary">
+<div onclick="rotateMobiles()" class=" ui-bar  ui-btn-corner-top ui-smaller" style="position:absolute;display:inline-block;zindex:1;border:0px;padding:0px">
+
+<div class="ui-bar  " style="opacity:1;padding:1.4em 0px 0;min-height:3em;min-width:8em;z-index:1;">
+<div id="selectLP" class="ui-rotatebtn" style="position: absolute; width: 3.8em; height: 3.8em; left: 50%; top: 50%; margin-top: -1.9em; margin-right: 0px; margin-bottom: 0px; margin-left: -1.9em; z-index: 2; background-size: contain; background-image: url(file:///E:/AppCan/ADK/emulator/ADKEmu/images/device-02.png); background-position: 50% 50%; background-repeat: no-repeat no-repeat; ">
+</div>
+</div>
+<div class=" ui-btn  ui-big ui-item-title1" style="display:block;z-index:1;">横竖屏切换</div>
+</div>
+<div onclick="showMobiles()" class="ui-bar ui-btn-corner-top ui-smaller" style="position:absolute;right:10px;display:inline-block;zindex:1;border:0px;padding:0px">
+
+<div class="ui-bar  " style="padding:1.4em 0px 0;min-height:3em;min-width:8em;z-index:1;">
+<div class="ui-mobile-thumb" style="min-width:3em;
+	min-height:3em;background-image:url(images/select.png);"></div>
+</div>
+<div class=" ui-btn ui-big ui-item-title1" style="display:block;z-index:1;">分辨率选择</div>
+</div>
+
+<div class="ui-bar " style="width:750px;height:750px;">
+
+<img id="mobileBGimg" src="images/mobiles/iphone_320x480.png" class="ui-mobile-bg" style="margin-top: -400px; margin-right: 0px; margin-bottom: 0px; margin-left: -400px; -webkit-transform: rotate(0deg); ">
+<div id="mobileScreen" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; position: absolute; left: 50%; top: 50%; margin-right: 0px; margin-bottom: 0px; width: 320px; height: 480px; margin-top: -240px; margin-left: -160px; -webkit-transform: scale(1); ">
+
+<div style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; " id="root"><iframe name="root" style="position:absolute;left:0px;top:0px;width:100%;height:100%;border:0px;padding:0px;" src="E:/widgetapp/jkdun/android_iphone/index.html"></iframe></div></div>
+
+</div>
+<div id="mobilesCont" class="ui-bar" style="position: absolute; left: 60%; top: 50px; padding-top: 0.4em; padding-right: 0px; padding-bottom: 0.4em; padding-left: 0px; min-height: 6.5em; z-index: 205; box-shadow: rgba(0, 0, 0, 0.746094) 0px 2px 3px; background-image: -webkit-linear-gradient(top, rgb(124, 124, 127), rgb(59, 61, 68)); border-top-left-radius: 0.5em 0.5em; border-top-right-radius: 0.5em 0.5em; border-bottom-right-radius: 0.5em 0.5em; border-bottom-left-radius: 0.5em 0.5em; min-width: 30em; margin-left: -15em; -webkit-transition-duration: 1000ms; -webkit-transition-property: opacity; -webkit-animation-timing-function: ease-in-out; opacity: 0; display: none; ">
+<div class="" style="width:100%;overflow:hidden;margin: 0 auto;height:100%;z-index:1;position:absolute;left:0px;top:0em;">
+<div id="mobiles" class="wbox-hscroll" style="padding:0px;height:100%"><div id="mobiles0" onclick="changeMobile(0)" class="wbox-item ui-mobile-thumb" style="background-image:url(images/mobilesthumb/device-04-iphone.png);padding:2.7em 0"><br><div class="ui-small ui-mobilethumb-des" style="padding-top:15px;">iPhone</div><div class="ui-small ui-mobilethumb-des">320x480</div></div><div id="mobiles1" onclick="changeMobile(1)" class="wbox-item ui-mobile-thumb" style="background-image:url(images/mobilesthumb/device-05-ipad.png);padding:2.7em 0"><br><div class="ui-small ui-mobilethumb-des" style="padding-top:15px;">iPad</div><div class="ui-small ui-mobilethumb-des">768x1024</div></div><div id="mobiles2" onclick="changeMobile(2)" class="wbox-item ui-mobile-thumb" style="background-image:url(images/mobilesthumb/device-09-ME511.png);padding:2.7em 0"><br><div class="ui-small ui-mobilethumb-des" style="padding-top:15px;">ME511</div><div class="ui-small ui-mobilethumb-des">240x320</div></div><div id="mobiles3" onclick="changeMobile(3)" class="wbox-item ui-mobile-thumb" style="background-image:url(images/mobilesthumb/device-07-ME525.png);padding:2.7em 0"><br><div class="ui-small ui-mobilethumb-des" style="padding-top:15px;">ME525</div><div class="ui-small ui-mobilethumb-des">480x854</div></div><div id="mobiles4" onclick="changeMobile(4)" class="wbox-item ui-mobile-thumb" style="background-image:url(images/mobilesthumb/device-08-i9002.png);padding:2.7em 0"><br><div class="ui-small ui-mobilethumb-des" style="padding-top:15px;">I9002</div><div class="ui-small ui-mobilethumb-des">480x800</div></div><div id="mobiles5" onclick="changeMobile(5)" class="wbox-item ui-mobile-thumb" style="background-image:url(images/mobilesthumb/device-10-5800.png);padding:2.7em 0"><br><div class="ui-small ui-mobilethumb-des" style="padding-top:15px;">Nokia 5800</div><div class="ui-small ui-mobilethumb-des">360x640</div></div></div>
+</div>
+</div> 
+</div>
+</div>
+</div>
+
+
+  
+  <script>
+setInterval(function(){window.scrollTo(0,0)},1000);	
+  </script>
+
+<script src="http://api.map.baidu.com/api?v=1.2&amp;callback=initialize"></script><script src="http://api.map.baidu.com/getscript?v=1.2&amp;ak=&amp;services=&amp;t=20121127154638"></script></body></html>

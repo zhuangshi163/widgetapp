@@ -10,7 +10,7 @@
   <logserverip>192.168.1.130</logserverip>  
   <showmyspace>false</showmyspace>  
   <obfuscation>false</obfuscation>  
-  <bgcolor/>  
+  <bgcolor>#ffffff</bgcolor>  
   <orientation>1</orientation>  
   <appSec>b810cac848b1af02046b9600356524e0</appSec> 
 </widget>
